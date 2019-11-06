@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class NpcCivMoveWalk : MonoBehaviour
 {
-    float maxDist = 7f;
-    float walkSpeed = 5f;
+    [Header("Ray Cast Distance")]
+    [SerializeField]float maxDist = 30f;
+
+    [Header("Tuning")]
+    [SerializeField] float walkSpeed = 10f;
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +28,7 @@ public class NpcCivMoveWalk : MonoBehaviour
     }
 
     public void MoveForward (float speed) {
-        this.transform.Translate(0, 0, speed * Time.deltaTime);
+        this.transform.Translate(Vector3.forward * speed * Time.deltaTime);
     }
 
 
@@ -35,7 +38,7 @@ public class NpcCivMoveWalk : MonoBehaviour
         Ray rayCheck = new Ray(this.transform.position, this.transform.forward);
         RaycastHit hit = new RaycastHit();
 
-        if (!Physics.Raycast(rayCheck, out hit, maxDist))
+        if (Physics.Raycast(rayCheck, out hit, maxDist))
         {
             return true;
         }
@@ -47,38 +50,46 @@ public class NpcCivMoveWalk : MonoBehaviour
     {
         List<Vector3> rayDirections = new List<Vector3>();
         rayDirections.Add(this.transform.right);
-        rayDirections.Add( -this.transform.right);
-        rayDirections.Add(-this.transform.forward);
+        rayDirections.Add(-this.transform.right);
 
-        foreach (Vector3 col in collisions)
+        List<Vector3> validDirections = new List<Vector3>();
+
+        foreach (Vector3 dir in rayDirections)
         {
-            foreach (Vector3 dir in rayDirections)
+            bool isValid = true;
+            foreach (Vector3 col in collisions)
             {
                 if (col.Equals(dir))
                 {
-                    rayDirections.Remove(dir);
+                    isValid = false;
                 }
             }
+            if(isValid)
+                validDirections.Add(dir);
         }
 
-        return rayDirections[0];
+        if (validDirections.Count > 0)
+            return validDirections[0];
+
+        else
+            return this.transform.forward;
+       
     }
 
     public List<Vector3> RayCastDirections() {
 
         List<Vector3> listOfCollisions = new List<Vector3>();
 
-        Vector3[] rayDirections = new Vector3[3];
+        Vector3[] rayDirections = new Vector3[2];
         rayDirections[0] = this.transform.right;
         rayDirections[1] = -this.transform.right;
-        rayDirections[2] = -this.transform.forward;
 
         for (int i = 0; i < rayDirections.Length; i++)
         {
             Ray rayCheck = new Ray(this.transform.position, rayDirections[i]);
             RaycastHit hit = new RaycastHit();
-
-            if (!Physics.Raycast(rayCheck, out hit, maxDist))
+            Debug.DrawRay(this.transform.position, rayDirections[i] * maxDist, Color.cyan);
+            if (Physics.Raycast(rayCheck, out hit, maxDist))
             {
                 listOfCollisions.Add(rayDirections[i]);
             }
