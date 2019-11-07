@@ -11,6 +11,10 @@ TagManager:
   - Water
   - CourseChange
   - StayOnCourse
+  - StopChange
+  - TurnRight
+  - TurnLeft
+  - Bezier
   layers:
   - Default
   - TransparentFX
