@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Concrete
+  - Building
+  - Grass
+  - Roads
+  - Water
   layers:
   - Default
   - TransparentFX
@@ -13,9 +18,9 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
+  - Player
+  - Ground
+  - Obstacles
   - 
   - 
   - 
