@@ -9,6 +9,11 @@ TagManager:
   - Grass
   - Roads
   - Water
+<<<<<<< HEAD
+=======
+  - CourseChange
+  - StayOnCourse
+>>>>>>> master
   layers:
   - Default
   - TransparentFX
