@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 82070973006337063}
   - component: {fileID: 82070973006337062}
   - component: {fileID: 82070973006337061}
-  - component: {fileID: 82070973006337060}
+  - component: {fileID: 7766197448397835590}
   m_Layer: 0
   m_Name: NpcCivilian
   m_TagString: Untagged
@@ -89,12 +89,12 @@ CapsuleCollider:
   m_GameObject: {fileID: 82070973006337059}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
---- !u!114 &82070973006337060
+--- !u!114 &7766197448397835590
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -106,5 +106,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf6e6acf03664464199f6bcad805d1f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxDist: 10
-  walkSpeed: 10
+  maxDist: 30
+  personality: {fileID: 0}
+  currentEmotion: {fileID: 0}
+  normal: {fileID: 11400000, guid: 090019cb50ed64a98b8dbd2858fee9fb, type: 2}
+  scared: {fileID: 11400000, guid: 1b5513028832d48b59079aaeeae2bcca, type: 2}
