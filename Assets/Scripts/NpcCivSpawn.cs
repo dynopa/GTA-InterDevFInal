@@ -4,12 +4,21 @@ using UnityEngine;
 
 public class NpcCivSpawn : MonoBehaviour
 {
-
+    [Header("Assign To Use")]
     public GameObject NPCPrefab;
     public GameObject NPCParent;
-    public List<GameObject> spawnCoordList = new List<GameObject>();
 
     public static NpcCivSpawn Instance;
+
+    [Header("Coordinate Max Values")]
+    [SerializeField] float yHeight;
+    [SerializeField] float xMin;
+    [SerializeField] float xMax;
+    [SerializeField] float zMin;
+    [SerializeField] float zMax;
+
+    [Header("Add For Manual Spawn Locations")]
+    public List<GameObject> spawnCoordList = new List<GameObject>();
     // Start is called before the first frame update
     void Start()
     {
@@ -32,23 +41,24 @@ public class NpcCivSpawn : MonoBehaviour
 
         foreach (GameObject obj in spawnCoordList)
         {
-            SpawnAtCoord(obj.transform.position);
+            SpawnAtCoord(obj);
         }
     }
 
-    public void SpawnAtCoord(Vector3 coords)
+    public void SpawnAtCoord(GameObject coords)
     {
-        GameObject newNPC = Instantiate(NPCPrefab, coords, NPCPrefab.transform.rotation);
+        GameObject newNPC = Instantiate(NPCPrefab, coords.transform.position, Quaternion.identity);
+        Destroy(coords);
         newNPC.transform.parent = NPCParent.transform;
     }
 
     public void AddRandomPoint()
     {
-        float xR = Random.Range(0f, 10f);
-        float yR = Random.Range(0f, 10f);
-        float zR = Random.Range(0f, 10f);
+        float xR = Random.Range(xMin, xMax);
+        //float yR = Random.Range(0f, 10f);
+        float zR = Random.Range(zMin, zMax);
         GameObject coordToAdd = new GameObject();
-        coordToAdd.transform.position = new Vector3(xR, yR, zR);
+        coordToAdd.transform.position = new Vector3(xR, yHeight, zR);
 
         spawnCoordList.Add(coordToAdd);
     }
@@ -58,7 +68,7 @@ public class NpcCivSpawn : MonoBehaviour
     /// </summary>
     public void AddRandomPoints()
     {
-        int numOfPoints = Random.Range(1, 10);
+        int numOfPoints = Random.Range(30, 50);
 
         for (int i = 0; i < numOfPoints; i++)
         {
