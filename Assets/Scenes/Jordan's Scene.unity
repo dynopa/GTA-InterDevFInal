@@ -5307,8 +5307,6 @@ MonoBehaviour:
   zMin: -300
   zMax: 300
   spawnCoordList: []
-  allPersonalities:
-  - {fileID: 11400000, guid: d8e87974e54f84c809057eb264dd53a9, type: 2}
 --- !u!4 &1422488659
 Transform:
   m_ObjectHideFlags: 0
@@ -5335,6 +5333,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf1b6d89935414d339693fb6df2255b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxNumberOfNpcCivs: 100
+  allNpcCivs: []
 --- !u!1 &1434250651
 GameObject:
   m_ObjectHideFlags: 0

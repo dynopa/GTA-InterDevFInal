@@ -53,7 +53,7 @@ public class NpcCivSpawn : MonoBehaviour
     public void SpawnAtCoord(GameObject coords)
     {
         GameObject newNPC = Instantiate(NPCPrefab, coords.transform.position, Quaternion.identity);
-        Destroy(coords);
+
         newNPC.transform.parent = NPCParent.transform;
         NpcCivManager.Instance.AddNpc(newNPC);
 
