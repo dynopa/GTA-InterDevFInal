@@ -20,8 +20,7 @@ public class NpcCivSpawn : MonoBehaviour
     [Header("Add For Manual Spawn Locations")]
     public List<GameObject> spawnCoordList = new List<GameObject>();
 
-    [Header("PossiblePersonalities")]
-    public List<NpcBehaviorPersonality_SC> allPersonalities = new List<NpcBehaviorPersonality_SC>();
+
   
 
 
@@ -52,8 +51,8 @@ public class NpcCivSpawn : MonoBehaviour
         Destroy(coords);
         newNPC.transform.parent = NPCParent.transform;
 
-        //Set a random personality to the NPC.
-        newNPC.GetComponent<NpcCivMoveWalk>().SetPersonality(allPersonalities[(int)Random.Range(0, allPersonalities.Count)]);
+        newNPC.GetComponent<NpcCivPersonalityManager>().SetPersonality();
+
     }
 
     /// <summary>

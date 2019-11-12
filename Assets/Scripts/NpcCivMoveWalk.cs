@@ -7,24 +7,7 @@ public class NpcCivMoveWalk : MonoBehaviour
     [Header("Ray Cast Distance")]
     [SerializeField]float maxDist = 30f;
 
-    //[Header("Tuning")]
-    //[SerializeField] float walkSpeed = 10f;
-    [Header("Personality")]
-    [SerializeField] NpcBehaviorPersonality_SC personality;
-
-    [Header("Current Emotion")]
-    [SerializeField] NpcBehaviorEmotion_SC currentEmotion;
-
-    [Header("Possible Emotions")]
-    public NpcBehaviorEmotion_SC normal;
-    public NpcBehaviorEmotion_SC scared;
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        currentEmotion = normal;
-    }
+  
 
     // Update is called once per frame
     void Update()
@@ -33,7 +16,7 @@ public class NpcCivMoveWalk : MonoBehaviour
         //When they detect a collider ahead of them, they choose a new valid directions and turn that way
         //Turns right, left, or back
 
-        MoveForward(currentEmotion.speed);
+        MoveForward(this.GetComponent<NpcCivPersonalityManager>().currentEmotion.speed);
 
         if (RayCastForward())
         {
@@ -132,15 +115,6 @@ public class NpcCivMoveWalk : MonoBehaviour
         }
 
         return listOfCollisions;
-    }
-
-    /// <summary>
-    /// Sets the personality of this NPC.
-    /// </summary>
-    /// <param name="p">The personality to set.</param>
-    public void SetPersonality(NpcBehaviorPersonality_SC p)
-    {
-        this.personality = p;
     }
 
 }
