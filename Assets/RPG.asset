@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8c686b883d74754c83f67ea232ddc15, type: 3}
+  m_Name: RPG
+  m_EditorClassIdentifier: 
+  gunName: RPG
+  gunObj: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+  bulletType: {fileID: 4969592454403873323, guid: 39d516a2900dc7b47ba45dd2d2fc44ef,
+    type: 3}
+  bulletSpeed: 60
+  bulletDamage: 0
+  bulletForce: 7
+  clipSize: 1
+  fullyAuto: 0
+  fireRate: 0
+  reloadTime: 2
+  bloomAmount: 0
+  explosive: 1
+  explosionRadius: 4.5
+  upForce: 0.5
+  recoilAmount: 0
+  gunTextureUI: {fileID: 0}
+  gunshotClip: {fileID: 0}
+  bulletZoomClip: {fileID: 0}

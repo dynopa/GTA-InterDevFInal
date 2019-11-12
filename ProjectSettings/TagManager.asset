@@ -9,11 +9,6 @@ TagManager:
   - Grass
   - Roads
   - Water
-<<<<<<< HEAD
-=======
-  - CourseChange
-  - StayOnCourse
->>>>>>> master
   layers:
   - Default
   - TransparentFX
@@ -23,22 +18,22 @@ TagManager:
   - UI
   - 
   - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   - Player
-  - Ground
   - Obstacles
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Ground
+  - Bullet
   - 
   - 
   - 

@@ -4,16 +4,23 @@ using UnityEngine;
 
 public class BulletMove : MonoBehaviour
 {
-    public float speed;
-    public float damage;
+    [HideInInspector] public float speed;
+    [HideInInspector] public float force;
+    [HideInInspector] public float damage;
+
+    [HideInInspector] public bool explosive;
+    [HideInInspector] public float explosionRadius;
+    [HideInInspector]public float upForceMod;
+
+    public GameObject explosiveParticles;
+
+
     float distanceTraveled;
     float timeAlive;
     Vector3 forwardDir;
 
     Rigidbody rb;
-
-
-    bool shouldDestroy;
+   
 
     private void Awake()
     {
@@ -35,17 +42,54 @@ public class BulletMove : MonoBehaviour
 
         rb.MovePosition(rb.transform.position + moveDistance);
 
-
-        if (shouldDestroy)
-        {
-
-                Destroy(this.gameObject);
-        }
-
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        shouldDestroy = true;
+        if (collision.gameObject.GetComponent<Rigidbody>() != null)
+        {
+            if (explosive)
+            {
+                Explosion(rb.transform.position, explosionRadius);
+            }
+            else
+            {
+                ShootBullet(collision, forwardDir.normalized * force, rb.transform.position);
+            }
+
+        }
+
+        Destroy(this.gameObject);
+    }
+
+    void ShootBullet(Collision collision, Vector3 force, Vector3 position)
+    {
+        collision.gameObject.GetComponent<Rigidbody>().AddForceAtPosition(force, position);
+    }
+
+
+    void Explosion(Vector3 pos, float radius)
+    {
+        Vector3 explosionPos = rb.transform.position;
+        Collider[] colliders = Physics.OverlapSphere(explosionPos, radius);
+
+        Instantiate(explosiveParticles, rb.transform.position, Quaternion.identity);
+
+
+        foreach (Collider hitCollider in colliders)
+        {
+           
+            Rigidbody hitRB = null;
+            if (hitCollider.gameObject.GetComponent<Rigidbody>() != null)
+            {
+                hitRB = hitCollider.gameObject.GetComponent<Rigidbody>();
+            }
+            if (hitRB != null)
+            {
+                hitRB.AddExplosionForce(force, pos, radius, upForceMod, ForceMode.Impulse);
+            }
+
+
+        }
     }
 }

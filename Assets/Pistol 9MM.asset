@@ -12,17 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8c686b883d74754c83f67ea232ddc15, type: 3}
   m_Name: Pistol 9MM
   m_EditorClassIdentifier: 
-  gunName: 9MM Pistol
+  gunName: 9MM
   gunObj: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
   bulletType: {fileID: 2571733839415413415, guid: 27c0a6da32f09dc46a76b128baf1354f,
     type: 3}
   bulletSpeed: 90
   bulletDamage: 15
-  clipAmmo: 8
-  maxAmmo: 48
-  fireTime: 0.3
+  bulletForce: 120
+  clipSize: 12
+  fullyAuto: 0
+  fireRate: 0
   reloadTime: 1
   bloomAmount: 10
+  explosive: 0
+  explosionRadius: 0
+  upForce: 0
   recoilAmount: 0
   gunTextureUI: {fileID: 0}
   gunshotClip: {fileID: 0}

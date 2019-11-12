@@ -14,16 +14,21 @@ public class Gun : ScriptableObject
     public GameObject bulletType;
     public float bulletSpeed;
     public float bulletDamage;
+    public float bulletForce; //Force multiplier when hitting movable objects
     [Space]
     [Header("Gun Stats")]
-    public int clipAmmo;
-    public int maxAmmo;
+    public int clipSize;
     [Space]
-    public float fireTime;
+    public bool fullyAuto;
+    public float fireRate;
     public float reloadTime;
     [Space]
     public float bloomAmount;
     [Space]
+    [Header("Explosives")]
+    public bool explosive;
+    public float explosionRadius;
+    public float upForce;
     [Header("Graphical")]
     public float recoilAmount;
     public Texture2D gunTextureUI;

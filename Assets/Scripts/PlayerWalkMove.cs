@@ -14,7 +14,7 @@ public class PlayerWalkMove : MonoBehaviour
 
     void FixedUpdate()
     {
-        Vector3 pos = PlayerManager.main.rb.transform.position;
+        Vector3 pos = PlayerManager.Instance.rb.transform.position;
         Vector3 input = new Vector3((Input.GetAxis("Horizontal")), 0, (Input.GetAxis("Vertical")));
         if (Mathf.Abs(input.magnitude) < .01f)
         {
@@ -22,14 +22,14 @@ public class PlayerWalkMove : MonoBehaviour
         }
 
         Vector3 newVel = (input * moveSpeed);
-        PlayerManager.main.rb.velocity = newVel;
+        PlayerManager.Instance.rb.velocity = newVel;
 
         //Rotation Adjust
         if (input.magnitude > .2f)
         {
             Quaternion suggestedRotation = Quaternion.LookRotation((newVel).normalized);
             Quaternion newRotation = Quaternion.Slerp(transform.rotation, suggestedRotation, rotationSnapSpeed);
-            PlayerManager.main.rb.MoveRotation(newRotation);
+            PlayerManager.Instance.rb.MoveRotation(newRotation);
         }
 
 
