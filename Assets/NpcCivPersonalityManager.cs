@@ -14,7 +14,7 @@ public class NpcCivPersonalityManager : MonoBehaviour
 
     [Header("Possible Emotions")]
     public NpcBehaviorEmotion_SC normal;
-    public NpcBehaviorEmotion_SC scared;
+    public NpcBehaviorEmotion_SC frightened;
 
     [Header("PossiblePersonalities")]
     public List<NpcBehaviorPersonality_SC> allPersonalities = new List<NpcBehaviorPersonality_SC>();

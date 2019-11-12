@@ -34,6 +34,7 @@ public class NpcCivMoveWalk : MonoBehaviour
     }
 
 
+
     /// <summary>
     /// Detects for colliders in the forward direction using a raycast.
     /// </summary>

@@ -21,9 +21,6 @@ public class NpcCivSpawn : MonoBehaviour
     public List<GameObject> spawnCoordList = new List<GameObject>();
 
 
-  
-
-
     void Awake()
     {
         Instance = this;
@@ -42,6 +39,14 @@ public class NpcCivSpawn : MonoBehaviour
     }
 
     /// <summary>
+    /// Spawns NPC at coordinate. Chooses a random coordinate present in the spawn coords list. Sets a random personaility to the NPC.
+    /// </summary>
+    public void SpawnAtCoord()
+    {
+        SpawnAtCoord(spawnCoordList[Random.Range(0, spawnCoordList.Count)]);
+
+    }
+    /// <summary>
     /// Spawns NPC at coordinate. Takes in the coordinate where the NPC should be spawned. Sets a random personality to the NPC.
     /// </summary>
     /// <param name="coords">Coordinates where the NPC will spawn.</param>
@@ -50,6 +55,7 @@ public class NpcCivSpawn : MonoBehaviour
         GameObject newNPC = Instantiate(NPCPrefab, coords.transform.position, Quaternion.identity);
         Destroy(coords);
         newNPC.transform.parent = NPCParent.transform;
+        NpcCivManager.Instance.AddNpc(newNPC);
 
         newNPC.GetComponent<NpcCivPersonalityManager>().SetPersonality();
 
