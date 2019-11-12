@@ -70,6 +70,7 @@ public class NpcCivSpawn : MonoBehaviour
         //float yR = Random.Range(0f, 10f);
         float zR = Random.Range(zMin, zMax);
         GameObject coordToAdd = new GameObject();
+        coordToAdd.transform.parent = this.transform;
         coordToAdd.transform.position = new Vector3(xR, yHeight, zR);
 
         spawnCoordList.Add(coordToAdd);

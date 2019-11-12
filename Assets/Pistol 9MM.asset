@@ -17,7 +17,7 @@ MonoBehaviour:
   bulletType: {fileID: 2571733839415413415, guid: 27c0a6da32f09dc46a76b128baf1354f,
     type: 3}
   bulletSpeed: 90
-  bulletDamage: 15
+  bulletDamage: 20
   bulletForce: 120
   clipSize: 12
   fullyAuto: 0

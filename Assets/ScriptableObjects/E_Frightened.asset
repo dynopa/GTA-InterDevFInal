@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: E_Frightened
   m_EditorClassIdentifier: 
   distFromPlayer: 100
-  speed: 25
+  speed: 10

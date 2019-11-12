@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: E_Normal
   m_EditorClassIdentifier: 
   distFromPlayer: 30
-  speed: 10
+  speed: 5

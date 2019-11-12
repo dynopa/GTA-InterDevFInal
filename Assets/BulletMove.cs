@@ -6,7 +6,7 @@ public class BulletMove : MonoBehaviour
 {
     [HideInInspector] public float speed;
     [HideInInspector] public float force;
-    [HideInInspector] public float damage;
+    [HideInInspector] public int damage;
 
     [HideInInspector] public bool explosive;
     [HideInInspector] public float explosionRadius;
@@ -65,6 +65,12 @@ public class BulletMove : MonoBehaviour
     void ShootBullet(Collision collision, Vector3 force, Vector3 position)
     {
         collision.gameObject.GetComponent<Rigidbody>().AddForceAtPosition(force, position);
+
+        if (collision.gameObject.GetComponent<NpcCivDeath>() != null)
+        {
+            Debug.Log("HitNPC");
+            collision.gameObject.GetComponent<NpcCivDeath>().ReduceHealth(damage);
+        }
     }
 
 

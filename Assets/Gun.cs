@@ -13,7 +13,7 @@ public class Gun : ScriptableObject
     [Header("Bullet Fire")]
     public GameObject bulletType;
     public float bulletSpeed;
-    public float bulletDamage;
+    public int bulletDamage;
     public float bulletForce; //Force multiplier when hitting movable objects
     [Space]
     [Header("Gun Stats")]
