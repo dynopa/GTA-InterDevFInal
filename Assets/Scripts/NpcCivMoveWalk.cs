@@ -7,6 +7,9 @@ public class NpcCivMoveWalk : MonoBehaviour
     [Header("Ray Cast Distance")]
     [SerializeField]float maxDist = 30f;
 
+    private bool notOnSidewalk;
+    private Vector3 previousSidewalkPos = new Vector3(0, 0, 0);
+
   
 
     // Update is called once per frame
@@ -17,6 +20,18 @@ public class NpcCivMoveWalk : MonoBehaviour
         {
             LookAwayFromPlayer();
         }
+
+        //if (RayCastDown().tag == "Concrete")
+        //{
+        //    previousSidewalkPos = this.transform.position;
+        //    notOnSidewalk = false;
+        //}
+        //else
+        //{
+        //    this.transform.LookAt(this.transform.position + previousSidewalkPos);
+        //}
+
+
 
 
         //NPC constantly moves forward
@@ -64,6 +79,19 @@ public class NpcCivMoveWalk : MonoBehaviour
         }
 
         return false;
+    }
+
+    private GameObject RayCastDown()
+    {
+        Ray rayCheck = new Ray(this.transform.position, -this.transform.up);
+        RaycastHit hit = new RaycastHit();
+
+        if (Physics.Raycast(rayCheck, out hit, maxDist))
+        {
+            return hit.collider.gameObject;
+        }
+
+        return null;
     }
 
     /// <summary>
