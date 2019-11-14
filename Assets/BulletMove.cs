@@ -92,7 +92,19 @@ public class BulletMove : MonoBehaviour
             }
             if (hitRB != null)
             {
-                hitRB.AddExplosionForce(force, pos, radius, upForceMod, ForceMode.Impulse);
+                float forceTmp = force;
+                float upForceTmp = upForceMod;
+
+                if (hitCollider.gameObject.GetComponent<NpcCivDeath>() != null)
+                {
+
+                    Debug.Log("HitNPC");
+                    hitCollider.gameObject.GetComponent<NpcCivDeath>().ReduceHealth(damage);
+                    forceTmp *= 5;
+                    upForceTmp *= 5;
+                }
+
+                hitRB.AddExplosionForce(forceTmp, pos, radius, upForceMod, ForceMode.Impulse);
             }
 
 

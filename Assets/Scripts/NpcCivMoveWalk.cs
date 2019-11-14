@@ -13,15 +13,15 @@ public class NpcCivMoveWalk : MonoBehaviour
     void Update()
     {
 
-
         if (this.GetComponent<NpcCivPersonalityManager>().currentEmotion == this.GetComponent<NpcCivPersonalityManager>().frightened)
         {
             LookAwayFromPlayer();
         }
+
+
         //NPC constantly moves forward
         //When they detect a collider ahead of them, they choose a new valid directions and turn that way
         //Turns right, left, or back
-
         MoveForward(this.GetComponent<NpcCivPersonalityManager>().currentEmotion.speed);
 
         if (RayCastForward())
@@ -30,6 +30,9 @@ public class NpcCivMoveWalk : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Looks the away from player. For use when frightened to constantly move away from the player.
+    /// </summary>
     private void LookAwayFromPlayer()
     {
         this.transform.LookAt(this.transform.position - PlayerManager.Instance.gameObject.transform.position);

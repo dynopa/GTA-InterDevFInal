@@ -41,10 +41,19 @@ public class NpcCivDeath : MonoBehaviour
         if (health <= 0)
         {
             NpcCivManager.Instance.RemoveNpc(this.gameObject);
-            Destroy(this.gameObject);
+            this.gameObject.GetComponent<NpcCivMoveWalk>().enabled = false;
+            this.gameObject.transform.Translate(new Vector3(0, -1, 0));
+            this.gameObject.transform.Rotate(new Vector3(70, 20, 0));
+            Invoke("StopForces", 1);
+            //Destroy(this.gameObject);
             return true;
         }
         return false;
+    }
+
+    private void StopForces ()
+    {
+        this.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
     }
 
 }
