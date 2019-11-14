@@ -12,6 +12,12 @@ public class NpcCivMoveWalk : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+
+        if (this.GetComponent<NpcCivPersonalityManager>().currentEmotion == this.GetComponent<NpcCivPersonalityManager>().frightened)
+        {
+            LookAwayFromPlayer();
+        }
         //NPC constantly moves forward
         //When they detect a collider ahead of them, they choose a new valid directions and turn that way
         //Turns right, left, or back
@@ -22,6 +28,11 @@ public class NpcCivMoveWalk : MonoBehaviour
         {
             this.transform.LookAt(this.transform.position + DecideNewDirection(RayCastDirections()));
         }
+    }
+
+    private void LookAwayFromPlayer()
+    {
+        this.transform.LookAt(this.transform.position - PlayerManager.Instance.gameObject.transform.position);
     }
 
 

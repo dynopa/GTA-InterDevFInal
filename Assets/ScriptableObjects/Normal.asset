@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distFromPlayerToFear: 30
   health: 50
+  resetEmotionTime: 300

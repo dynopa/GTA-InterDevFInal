@@ -19,9 +19,24 @@ public class NpcCivPersonalityManager : MonoBehaviour
     [Header("PossiblePersonalities")]
     public List<NpcBehaviorPersonality_SC> allPersonalities = new List<NpcBehaviorPersonality_SC>();
 
+    int emotionTimeCounter = 0;
+
     void Awake()
     {
         currentEmotion = normal;
+    }
+
+    private void Update()
+    {
+        if (currentEmotion != normal)
+        {
+            emotionTimeCounter++;
+
+            if(emotionTimeCounter >= personality.resetEmotionTime)
+            {
+                currentEmotion = normal;
+            }
+        }
     }
 
     /// <summary>

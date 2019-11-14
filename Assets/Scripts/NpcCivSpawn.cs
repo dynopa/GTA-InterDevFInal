@@ -81,7 +81,7 @@ public class NpcCivSpawn : MonoBehaviour
     /// </summary>
     public void AddRandomPoints()
     {
-        int numOfPoints = Random.Range(30, 50);
+        int numOfPoints = Random.Range(60, 90);
 
         for (int i = 0; i < numOfPoints; i++)
         {

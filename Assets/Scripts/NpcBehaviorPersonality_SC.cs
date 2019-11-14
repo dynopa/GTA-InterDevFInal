@@ -10,4 +10,7 @@ public class NpcBehaviorPersonality_SC : ScriptableObject
 
     [Header("Health")]
     public int health;
+
+    [Header("Reset Emotion Time")]
+    public int resetEmotionTime;
 }
