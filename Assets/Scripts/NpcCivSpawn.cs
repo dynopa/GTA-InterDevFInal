@@ -55,9 +55,17 @@ public class NpcCivSpawn : MonoBehaviour
         GameObject newNPC = Instantiate(NPCPrefab, coords.transform.position, Quaternion.identity);
 
         newNPC.transform.parent = NPCParent.transform;
-        NpcCivManager.Instance.AddNpc(newNPC);
 
-        newNPC.GetComponent<NpcCivPersonalityManager>().SetPersonality();
+        if (CheckForLegalSpawn(newNPC))
+        {
+            NpcCivManager.Instance.AddNpc(newNPC);
+
+            newNPC.GetComponent<NpcCivPersonalityManager>().SetPersonality();
+        }
+        else
+        {
+            Destroy(newNPC);
+        }
 
     }
 
@@ -102,6 +110,27 @@ public class NpcCivSpawn : MonoBehaviour
             AddRandomPoint();
         }
 
+    }
+
+    private bool CheckForLegalSpawn (GameObject npcToCheck)
+    {
+        Ray rayCheck = new Ray(npcToCheck.transform.position, -npcToCheck.transform.up);
+        RaycastHit hit = new RaycastHit();
+
+        if (Physics.Raycast(rayCheck, out hit, 5))
+        {
+            if (hit.collider.gameObject.tag != "Concrete")
+            {
+                return false;
+            } else {
+                return true;
+            }
+
+        }
+        else
+        {
+            return false;
+        }
     }
 
 }

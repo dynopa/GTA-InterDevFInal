@@ -7,10 +7,15 @@ public class NpcCivMoveWalk : MonoBehaviour
     [Header("Ray Cast Distance")]
     [SerializeField]float maxDist = 30f;
 
-    private bool notOnSidewalk;
-    private Vector3 previousSidewalkPos = new Vector3(0, 0, 0);
+    private int forwardAngleRandomizer;
 
-  
+    //private bool notOnSidewalk;
+    //private Vector3 previousSidewalkPos = new Vector3(0, 0, 0);
+    private void Start()
+    {
+        forwardAngleRandomizer = (int)Random.Range(2, 5);
+    }
+
 
     // Update is called once per frame
     void Update()
@@ -20,19 +25,18 @@ public class NpcCivMoveWalk : MonoBehaviour
         {
             LookAwayFromPlayer();
         }
+        else
+        {
+            GameObject inFront = RayCastDown();
+            if (inFront != null && inFront.tag != null)
+            {
+                if (RayCastDown().tag != "Concrete")
+                {
+                    this.transform.LookAt(this.transform.position + DecideNewDirection(RayCastDirectionsAngled()));
 
-        //if (RayCastDown().tag == "Concrete")
-        //{
-        //    previousSidewalkPos = this.transform.position;
-        //    notOnSidewalk = false;
-        //}
-        //else
-        //{
-        //    this.transform.LookAt(this.transform.position + previousSidewalkPos);
-        //}
-
-
-
+                }
+            }
+        }
 
         //NPC constantly moves forward
         //When they detect a collider ahead of them, they choose a new valid directions and turn that way
@@ -50,7 +54,8 @@ public class NpcCivMoveWalk : MonoBehaviour
     /// </summary>
     private void LookAwayFromPlayer()
     {
-        this.transform.LookAt(this.transform.position - PlayerManager.Instance.gameObject.transform.position);
+        //Debug.Log(PlayerManager.Instance.gameObject.transform.position);
+        this.transform.LookAt((this.transform.position - PlayerManager.Instance.gameObject.transform.position) * 1000);
     }
 
 
@@ -81,10 +86,11 @@ public class NpcCivMoveWalk : MonoBehaviour
         return false;
     }
 
-    private GameObject RayCastDown()
+    public GameObject RayCastDown()
     {
-        Ray rayCheck = new Ray(this.transform.position, -this.transform.up);
+        Ray rayCheck = new Ray(this.transform.position, -this.transform.up + (this.transform.forward * forwardAngleRandomizer));
         RaycastHit hit = new RaycastHit();
+        Debug.DrawRay(this.transform.position, (-this.transform.up + (this.transform.forward * forwardAngleRandomizer)), Color.red);
 
         if (Physics.Raycast(rayCheck, out hit, maxDist))
         {
@@ -133,6 +139,7 @@ public class NpcCivMoveWalk : MonoBehaviour
        
     }
 
+
     /// <summary>
     /// Raycasts in the right, left, and back directions to detect for collisions.
     /// </summary>
@@ -154,6 +161,33 @@ public class NpcCivMoveWalk : MonoBehaviour
             if (Physics.Raycast(rayCheck, out hit, maxDist))
             {
                 listOfCollisions.Add(rayDirections[i]);
+            }
+        }
+
+        return listOfCollisions;
+    }
+
+    private List<Vector3> RayCastDirectionsAngled()
+    {
+
+        List<Vector3> listOfCollisions = new List<Vector3>();
+
+        Vector3[] rayDirections = new Vector3[3];
+        rayDirections[0] = -this.transform.up + (this.transform.forward * forwardAngleRandomizer);
+        rayDirections[1] = -this.transform.up + (this.transform.forward * forwardAngleRandomizer);
+        rayDirections[2] = -this.transform.up + (this.transform.forward * forwardAngleRandomizer);
+
+        for (int i = 0; i < rayDirections.Length; i++)
+        {
+            Ray rayCheck = new Ray(this.transform.position, rayDirections[i]);
+            RaycastHit hit = new RaycastHit();
+            Debug.DrawRay(this.transform.position, rayDirections[i] * maxDist, Color.cyan);
+            if (Physics.Raycast(rayCheck, out hit, maxDist))
+            {
+                if (hit.collider.gameObject.tag != "Concrete")
+                {
+                    listOfCollisions.Add(rayDirections[i]);
+                }
             }
         }
 
