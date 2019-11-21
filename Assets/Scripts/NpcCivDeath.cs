@@ -11,13 +11,8 @@ public class NpcCivDeath : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //set up the health of this NPC
         health = this.GetComponent<NpcCivPersonalityManager>().personality.health;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-      
     }
 
 
@@ -44,13 +39,15 @@ public class NpcCivDeath : MonoBehaviour
             this.gameObject.GetComponent<NpcCivMoveWalk>().enabled = false;
             this.gameObject.transform.Translate(new Vector3(0, -1, 0));
             this.gameObject.transform.Rotate(new Vector3(70, 20, 0));
-            Invoke("StopForces", 1);
-            //Destroy(this.gameObject);
+            Invoke("StopForces", .5f);
             return true;
         }
         return false;
     }
 
+    /// <summary>
+    /// Stops the forces acting on the NPC.
+    /// </summary>
     private void StopForces ()
     {
         this.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;

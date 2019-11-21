@@ -86,6 +86,10 @@ public class NpcCivMoveWalk : MonoBehaviour
         return false;
     }
 
+    /// <summary>
+    /// Raycasts in front of this NPC at an angle and returns the object that connects with the raycast. Used to check what the NPC will walk on.
+    /// </summary>
+    /// <returns>The object in front of this NPC.</returns>
     public GameObject RayCastDown()
     {
         Ray rayCheck = new Ray(this.transform.position, -this.transform.up + (this.transform.forward * forwardAngleRandomizer));
@@ -167,6 +171,10 @@ public class NpcCivMoveWalk : MonoBehaviour
         return listOfCollisions;
     }
 
+    /// <summary>
+    /// Raycasts in the right, left, and back directions at a downwards angle to detect for what surfaces are below this NPC in all directions.
+    /// </summary>
+    /// <returns>The valid directions that are tagged as walkable.</returns>
     private List<Vector3> RayCastDirectionsAngled()
     {
 

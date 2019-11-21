@@ -112,6 +112,11 @@ public class NpcCivSpawn : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// Checks for legal spawn location of a given NPC. Spawn locations are legal if they are on walkable surfaces.
+    /// </summary>
+    /// <returns><c>true</c>, if for spawn location was legal, <c>false</c> otherwise.</returns>
+    /// <param name="npcToCheck">Npc to check.</param>
     private bool CheckForLegalSpawn (GameObject npcToCheck)
     {
         Ray rayCheck = new Ray(npcToCheck.transform.position, -npcToCheck.transform.up);

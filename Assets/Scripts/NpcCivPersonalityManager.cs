@@ -49,6 +49,9 @@ public class NpcCivPersonalityManager : MonoBehaviour
         this.personality = p;
     }
 
+    /// <summary>
+    /// Sets the personality of this NPC.
+    /// </summary>
     public void SetPersonality()
     {
         //Set a random personality to the NPC.
