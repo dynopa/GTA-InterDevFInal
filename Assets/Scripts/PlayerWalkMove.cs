@@ -20,8 +20,16 @@ public class PlayerWalkMove : MonoBehaviour
         {
             input = Vector3.zero;
         }
+        Vector3 newVel;
+        if (input.x != 0 && input.z != 0)
+        {
+            newVel = ((input * moveSpeed) / 1.5f);
+        }
+        else
+        {
+            newVel = (input * moveSpeed);
 
-        Vector3 newVel = (input * moveSpeed);
+        }
         PlayerManager.Instance.rb.velocity = newVel;
 
         //Rotation Adjust

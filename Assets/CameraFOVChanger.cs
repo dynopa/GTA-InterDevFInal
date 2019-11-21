@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Camera FOV Changer. Changes the FOV of the camera along the animation curve based on the velocity of the player.
+/// </summary>
 public class CameraFOVChanger : MonoBehaviour
 {
 
@@ -12,6 +15,8 @@ public class CameraFOVChanger : MonoBehaviour
     public float minVelocity;
     public float maxVelocity;
     float t;
+
+
     // Use this for initialization
     void Start()
     {
@@ -21,13 +26,9 @@ public class CameraFOVChanger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log("t " + t);
-        //t += Time.deltaTime;
-        ////float s = t / PlayerManager.Instance.GetComponent<Rigidbody>().velocity.z;
-        //Debug.Log("s " + t);
-
         float velocity = PlayerManager.Instance.GetComponent<Rigidbody>().velocity.magnitude;
-        
+
+        //convert the velocity to a value along the animation curve, then convert that to a FOV value
         velocity = velocity.Remap(minVelocity, maxVelocity, 0, 1);
         velocity = Mathf.Clamp(curve.Evaluate(velocity), 0, 1);
         velocity = velocity.Remap(0, 1, 70, 110);

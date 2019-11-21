@@ -27,16 +27,29 @@ public class NpcCivManager : MonoBehaviour
     }
 
 
+    /// <summary>
+    /// Determines if there is room for more npc civs.
+    /// </summary>
+    /// <returns><c>true</c>, if there is room for more npc civs, <c>false</c> otherwise.</returns>
+    /// <param name="max">Max.</param>
     private bool RoomForMoreNpcCivs(int max)
     {
         return allNpcCivs.Count <= max;
     }
 
+    /// <summary>
+    /// Adds the npc.
+    /// </summary>
+    /// <param name="NpcToAdd">Npc to add.</param>
     public void AddNpc(GameObject NpcToAdd)
     {
         allNpcCivs.Add(NpcToAdd);
     }
 
+    /// <summary>
+    /// Removes the npc.
+    /// </summary>
+    /// <param name="NpcToRemove">Npc to remove.</param>
     public void RemoveNpc(GameObject NpcToRemove)
     {
         allNpcCivs.Remove(NpcToRemove);
