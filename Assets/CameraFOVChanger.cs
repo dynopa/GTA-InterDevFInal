@@ -31,7 +31,7 @@ public class CameraFOVChanger : MonoBehaviour
         //convert the velocity to a value along the animation curve, then convert that to a FOV value
         velocity = velocity.Remap(minVelocity, maxVelocity, 0, 1);
         velocity = Mathf.Clamp(curve.Evaluate(velocity), 0, 1);
-        velocity = velocity.Remap(0, 1, 70, 110);
+        velocity = velocity.Remap(0, 1, 70, 100);
         this.GetComponent<Camera>().fieldOfView = velocity;
 
     }

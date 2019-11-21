@@ -39,7 +39,7 @@ public class NpcCivDeath : MonoBehaviour
             this.gameObject.GetComponent<NpcCivMoveWalk>().enabled = false;
             this.gameObject.transform.Translate(new Vector3(0, -1, 0));
             this.gameObject.transform.Rotate(new Vector3(70, 20, 0));
-            //ScoreManager.Instance.IncreaseScore(10);
+            ScoreManager.Instance.IncreaseScore(10);
             Invoke("StopForces", .5f);
             return true;
         }
@@ -51,6 +51,7 @@ public class NpcCivDeath : MonoBehaviour
     /// </summary>
     private void StopForces ()
     {
+        this.gameObject.GetComponent<Collider>().enabled = false;
         this.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
     }
 
