@@ -55,13 +55,9 @@ public class CarFollowBezier : MonoBehaviour
         sensorStartPos.z += frontSensorOffset;
 
         //Front Sensor
-        if (Physics.Raycast(sensorStartPos, transform.forward, out hit, raycastDistance))
+        if (Physics.Raycast(sensorStartPos, this.transform.forward, out hit, raycastDistance))
         {
     
-        }
-        else
-        {
-            return false;
         }
         Debug.DrawLine(sensorStartPos, hit.point);
         //Right Sensor
@@ -210,4 +206,7 @@ public class CarFollowBezier : MonoBehaviour
         }
 
     }
+
+
+   
 }

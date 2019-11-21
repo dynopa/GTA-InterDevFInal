@@ -84,5 +84,13 @@ public class PlayerCarMove : MonoBehaviour
             Rigidbody hitCarRB = collision.gameObject.GetComponent<Rigidbody>();
             hitCarRB.AddExplosionForce(carLaunchForce, PlayerManager.Instance.rb.transform.position, 4);
         }
+
+         
+    
+        if (collision.transform.gameObject.GetComponent<NpcCivDeath>() != null)
+        {
+            collision.transform.gameObject.GetComponent<NpcCivDeath>().ReduceHealth(100);
+        }
+    
     }
 }
