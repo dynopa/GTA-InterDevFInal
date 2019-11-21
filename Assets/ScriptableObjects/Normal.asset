@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 964214845a3194e73862e10a6516b827, type: 3}
   m_Name: Normal
   m_EditorClassIdentifier: 
-  distFromPlayerToFear: 30
+  distFromPlayerToFear: 5
   health: 50
   resetEmotionTime: 300

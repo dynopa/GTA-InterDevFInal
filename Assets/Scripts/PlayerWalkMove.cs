@@ -15,7 +15,7 @@ public class PlayerWalkMove : MonoBehaviour
     void FixedUpdate()
     {
         Vector3 pos = PlayerManager.Instance.rb.transform.position;
-        Vector3 input = new Vector3((Input.GetAxis("Horizontal")), 0, (Input.GetAxis("Vertical")));
+        Vector3 input = new Vector3((Input.GetAxis("Horizontal")), 0, (Input.GetAxis("Vertical"))).normalized;
         if (Mathf.Abs(input.magnitude) < .01f)
         {
             input = Vector3.zero;

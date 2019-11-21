@@ -8,6 +8,11 @@ public class PlayerManager : MonoBehaviour
     public static PlayerManager Instance;
     public static Vector3 position; //Just used to make players position an easier, concise reference (PlayerManager.position)
 
+
+    public bool inCar;
+    public GameObject currentCar;
+    public Rigidbody carRigidBody;
+
     [Header("Gun Inputs")]
     public KeyCode gunToggleInput;
     [Space]
@@ -31,7 +36,7 @@ public class PlayerManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-
+        carRigidBody = currentCar.GetComponent<Rigidbody>();
         #region Add Player Script Components
         playerWalkMove = GetComponent<PlayerWalkMove>();
         rb = GetComponent<Rigidbody>();
@@ -86,5 +91,19 @@ public class PlayerManager : MonoBehaviour
     {
         position = rb.transform.position; //Just used to make players position an easier, concise reference (PlayerManager.position)
         
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+
+    }
+
+    public void EnterCar(Collider car)
+    {
+        inCar = true;
+        currentCar = car.gameObject;
+        Destroy(currentCar.GetComponent<CarFollowBezier>());
+        Destroy(currentCar.GetComponent<CarAlignToBezier>());
+        carRigidBody = currentCar.GetComponent<Rigidbody>();
     }
 }
