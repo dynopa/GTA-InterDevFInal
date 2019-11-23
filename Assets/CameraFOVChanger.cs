@@ -9,25 +9,22 @@ public class CameraFOVChanger : MonoBehaviour
 {
 
     public AnimationCurve curve = AnimationCurve.Linear(0.0f, 0.0f, 1.0f, 1.0f);
-    public float start;
-    public float end;
 
     public float minVelocity;
     public float maxVelocity;
-    float t;
 
 
     // Use this for initialization
     void Start()
     {
-        t = 0.0f;
+      
     }
 
     // Update is called once per frame
     void Update()
     {
         float velocity = PlayerManager.Instance.GetComponent<Rigidbody>().velocity.magnitude;
-
+        //Debug.Log(velocity);
         //convert the velocity to a value along the animation curve, then convert that to a FOV value
         velocity = velocity.Remap(minVelocity, maxVelocity, 0, 1);
         velocity = Mathf.Clamp(curve.Evaluate(velocity), 0, 1);

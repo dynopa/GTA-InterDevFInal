@@ -30,9 +30,15 @@ public class NpcCivMoveWalk : MonoBehaviour
             GameObject inFront = RayCastDown();
             if (inFront != null && inFront.tag != null)
             {
-                if (RayCastDown().tag != "Concrete")
+                if (inFront.tag != "Concrete")
                 {
-                    this.transform.LookAt(this.transform.position + DecideNewDirection(RayCastDirectionsAngled()));
+                    List<Vector3> angledDirectionPossibilities = RayCastDirectionsAngled();
+                    Debug.Log(angledDirectionPossibilities.Count);
+                    if (angledDirectionPossibilities.Count != 3)
+                    {
+                        this.transform.LookAt(this.transform.position + DecideNewDirection(angledDirectionPossibilities));
+                    }
+
 
                 }
             }

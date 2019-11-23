@@ -2713,26 +2713,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1883820747}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &525879560
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 525879559}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46d2f4cd7879ef84faa0c023533199cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 120
-  turnSpeed: 70
-  backupSpeed: 15
-  accelerateRate: 0.5
-  deccelerateRate: 1
-  rotationSnapSpeed: 0.108
-  carDestroyThreshold: 1
-  carLaunchForce: 500
 --- !u!114 &525879561
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5599,7 +5579,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 8e2f2b651f25d0b49b2da14704fdaba5,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 8e2f2b651f25d0b49b2da14704fdaba5,
         type: 3}
@@ -6350,10 +6330,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  start: 70
-  end: 85
   minVelocity: 2
-  maxVelocity: 30
+  maxVelocity: 40
 --- !u!1 &991795929
 GameObject:
   m_ObjectHideFlags: 0
@@ -12309,10 +12287,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46d2f4cd7879ef84faa0c023533199cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 120
-  turnSpeed: 70
-  backupSpeed: 15
-  accelerateRate: 0.5
+  moveSpeed: 100
+  turnSpeed: 90
+  backupSpeed: 50
+  accelerateRate: 1
   deccelerateRate: 1
   rotationSnapSpeed: 0.108
   carDestroyThreshold: 1
@@ -12502,7 +12480,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 8e2f2b651f25d0b49b2da14704fdaba5,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 8e2f2b651f25d0b49b2da14704fdaba5,
         type: 3}
