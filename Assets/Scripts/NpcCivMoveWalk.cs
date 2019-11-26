@@ -8,9 +8,6 @@ public class NpcCivMoveWalk : MonoBehaviour
     [SerializeField]float maxDist = 30f;
 
     private int forwardAngleRandomizer;
-
-    //private bool notOnSidewalk;
-    //private Vector3 previousSidewalkPos = new Vector3(0, 0, 0);
     private void Start()
     {
         forwardAngleRandomizer = (int)Random.Range(2, 5);
@@ -34,10 +31,10 @@ public class NpcCivMoveWalk : MonoBehaviour
                 {
                     List<Vector3> angledDirectionPossibilities = RayCastDirectionsAngled();
                     Debug.Log(angledDirectionPossibilities.Count);
-                    if (angledDirectionPossibilities.Count != 3)
-                    {
+                    //if (angledDirectionPossibilities.Count != 3)
+                    //{
                         this.transform.LookAt(this.transform.position + DecideNewDirection(angledDirectionPossibilities));
-                    }
+                    //}
 
 
                 }
