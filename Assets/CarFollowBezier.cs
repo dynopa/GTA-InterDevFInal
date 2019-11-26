@@ -17,20 +17,20 @@ public class CarFollowBezier : MonoBehaviour
     public float speed; //Speed at which the player is supposed to move along the bezier.
     [Range(1, 10)]
     public float changePathSpeed; //Keeps the player from jumping rapidly between beziers when one ends.
+    public float accelerateSpeed;
+    public float deccelerateSpeed;
 
     [Header("Object Sensors")]
-    public float raycastDistance;
     public float frontSensorOffset;
-    public float sideSensorsOffset;
-    public float sideSensorsAngle;
+    public Vector3 sensorBoxSize;
 
     [HideInInspector] public bool canRotate;
-    LayerMask carLayer;
+    public LayerMask carLayer;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
-        carLayer = LayerMask.NameToLayer("Car") + LayerMask.NameToLayer("Player");
+        
     }
 
     void Update()
@@ -42,7 +42,7 @@ public class CarFollowBezier : MonoBehaviour
             currentRoute = NearestBezier(transform.position);
             StartCoroutine(FollowRoute(currentRoute));
         }
-       
+
         
 
     }
@@ -50,55 +50,21 @@ public class CarFollowBezier : MonoBehaviour
 
     bool SenseObjects() //Raycasts for cars and people in front;
     {
-        RaycastHit hit;
-        Vector3 sensorStartPos = rb.transform.position;
-        sensorStartPos.z += frontSensorOffset;
-
-        //Front Sensor
-        if (Physics.Raycast(sensorStartPos, this.transform.forward, out hit, raycastDistance))
+        if (Physics.OverlapBox(rb.transform.position + (transform.forward * frontSensorOffset), sensorBoxSize, Quaternion.identity, carLayer) != null)
         {
-    
-        }
-        Debug.DrawLine(sensorStartPos, hit.point);
-        //Right Sensor
-        sensorStartPos.x += sideSensorsOffset;
-        if (Physics.Raycast(sensorStartPos, transform.forward, out hit, raycastDistance))
-        {
-            if (hit.transform.gameObject.layer == carLayer)
+            foreach (Collider collider in Physics.OverlapBox(rb.transform.position + (transform.forward * frontSensorOffset), sensorBoxSize, Quaternion.identity, carLayer))
             {
-                return true;
+                
+                if (collider.gameObject != this.gameObject)
+                {
+                    
+                    return true;
+                }
             }
         }
-        Debug.DrawLine(sensorStartPos, hit.point);
-        //Right Angle Sensor
-        if (Physics.Raycast(sensorStartPos, Quaternion.AngleAxis(sideSensorsAngle, transform.up) * transform.forward, out hit, raycastDistance))
-        {
-            if (hit.transform.gameObject.layer == carLayer)
-            {
-                return true;
-            }
-        }
-        Debug.DrawLine(sensorStartPos, hit.point);
-        //Left Sensor
-        sensorStartPos.x -= 2 * sideSensorsOffset;
-        if (Physics.Raycast(sensorStartPos, transform.forward, out hit, raycastDistance))
-        {
-            if (hit.transform.gameObject.layer == carLayer)
-            {
-                return true;
-            }
-        }
-        Debug.DrawLine(sensorStartPos, hit.point);
-        //Left Angle Sensor
-        if (Physics.Raycast(sensorStartPos, Quaternion.AngleAxis(-sideSensorsAngle, transform.up) * transform.forward, out hit, raycastDistance))
-        {
-            if (hit.transform.gameObject.layer == carLayer)
-            {
-                return true;
-            }
-        }
-        Debug.DrawLine(sensorStartPos, hit.point);
-        return false;
+            return false;
+        
+       
 
     }
 
@@ -124,23 +90,55 @@ public class CarFollowBezier : MonoBehaviour
 
 
         float t = 0;
+        float tIncreasePercentage = 1; //At 1, t will increase at normal rate, at 0, t will not increase at all. Used to accelerate/decellerate when objects are in front
         while (t < 1)
         {
-            print(SenseObjects());
-            if (!SenseObjects())
-            {
-                canRotate = true;   
+            //print(SenseObjects(playerPos - rb.transform.position));
 
-                t += Time.deltaTime / bezLength * speed; //Move along any length of bezier at consistent speed
+            playerPos = currentBezier.GetPositionFromCompletionPercentage(t);
+           
+            if (!SenseObjects())
+            {           
+                if (tIncreasePercentage < 1)
+                {
+                    tIncreasePercentage += accelerateSpeed;
+                }
+                else
+                {
+                    tIncreasePercentage = 1;
+                }
+                
             }
             else
             {
-                canRotate = false;
+                if (tIncreasePercentage > 0)
+                {
+                    tIncreasePercentage -= deccelerateSpeed;
+                }
+                else
+                {
+                    tIncreasePercentage = 0;
+                }
+                
             }
-            playerPos = currentBezier.GetPositionFromCompletionPercentage(t);
-            rb.transform.position = playerPos;
-            // //Absolute max speed 
+
+            if (tIncreasePercentage > .5f)
+            {
+                canRotate = true;
+            }
+            else { canRotate = false; }
+
+
+            t += tIncreasePercentage * Time.deltaTime / bezLength * speed; //Move along any length of bezier at consistent speed
+            
+            rb.MovePosition(playerPos);
+
             yield return new WaitForEndOfFrame();
+
+
+
+
+
 
         }
         enRoute = false;

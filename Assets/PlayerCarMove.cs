@@ -22,9 +22,16 @@ public class PlayerCarMove : MonoBehaviour
     public float carDestroyThreshold; //The velocity magnitude at which the player needs to go when hitting another car to total it
     public float carLaunchForce;
 
+    [HideInInspector] public Rigidbody rb;
+
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
+
     void FixedUpdate()
     {
-        Vector3 pos = PlayerManager.Instance.rb.transform.position;
+        Vector3 pos = rb.transform.position;
         
 
 
@@ -34,23 +41,23 @@ public class PlayerCarMove : MonoBehaviour
         if (Input.GetKey(KeyCode.W))
             {
             //Adds an accelerated movespeed in the direction the car is facing
-            PlayerManager.Instance.rb.AddForce(transform.forward  * moveSpeed * currentAcceleration * 100);
+            rb.AddForce(transform.forward  * moveSpeed * currentAcceleration * 100);
             }
         if (Input.GetKey(KeyCode.S))
         {
-            PlayerManager.Instance.rb.AddForce(-transform.forward * backupSpeed * 100);
+            rb.AddForce(-transform.forward * backupSpeed * 100);
         }
-        if (PlayerManager.Instance.rb.velocity.magnitude > .1f)//Prevent turning if the car is stopped
+        if (rb.velocity.magnitude > .1f)//Prevent turning if the car is stopped
         {
             
             if (Input.GetKey(KeyCode.A))
             {
-                PlayerManager.Instance.rb.AddTorque(0, -turnSpeed *deccelerateRate * 100, 0);
+                rb.AddTorque(0, -turnSpeed *deccelerateRate * 100, 0);
             }
 
             if (Input.GetKey(KeyCode.D))
             {
-                PlayerManager.Instance.rb.AddTorque(0, turnSpeed * deccelerateRate * 100, 0);
+                rb.AddTorque(0, turnSpeed * deccelerateRate * 100, 0);
             }
         }
 
@@ -77,13 +84,13 @@ public class PlayerCarMove : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Car") && PlayerManager.Instance.rb.velocity.magnitude >carDestroyThreshold)
-        {
-           Destroy( collision.gameObject.GetComponent<CarFollowBezier>() );
-           Destroy( collision.gameObject.GetComponent<CarAlignToBezier>() );
-            Rigidbody hitCarRB = collision.gameObject.GetComponent<Rigidbody>();
-            hitCarRB.AddExplosionForce(carLaunchForce, PlayerManager.Instance.rb.transform.position, 4);
-        }
+        //if (collision.gameObject.layer == LayerMask.NameToLayer("Car") && PlayerManager.Instance.rb.velocity.magnitude >carDestroyThreshold)
+        //{
+        //   Destroy( collision.gameObject.GetComponent<CarFollowBezier>() );
+        //   Destroy( collision.gameObject.GetComponent<CarAlignToBezier>() );
+        //    Rigidbody hitCarRB = collision.gameObject.GetComponent<Rigidbody>();
+        //    hitCarRB.AddExplosionForce(carLaunchForce, PlayerManager.Instance.rb.transform.position, 4);
+        //}
 
          
     
