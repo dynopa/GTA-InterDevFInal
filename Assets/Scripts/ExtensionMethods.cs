@@ -19,9 +19,9 @@ public static class ExtensionMethods
     public static Vector3 GetPositionFromCompletionPercentage(this QuadraticBezier main, float t)
     {
 
-        Vector3 p0 = main.controlPoints[0].position;
-        Vector3 p1 = main.controlPoints[1].position;
-        Vector3 p2 = main.controlPoints[2].position;
+        Vector3 p0 = main.points[0];
+        Vector3 p1 = main.points[1];
+        Vector3 p2 = main.points[2];
         if (t < 0)
         {
             return p1;

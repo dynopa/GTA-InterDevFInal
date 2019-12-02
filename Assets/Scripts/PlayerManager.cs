@@ -108,8 +108,9 @@ public class PlayerManager : MonoBehaviour
             playerCarMove.enabled = true;
             playerCollider.enabled = false;
 
-            rb.mass = 30;
-            rb.angularDrag = 15;
+            rb.mass = playerCarMove.mass;
+            rb.drag = playerCarMove.drag;
+            rb.angularDrag = playerCarMove.angularDrag;
         }
         else
         {
@@ -119,6 +120,7 @@ public class PlayerManager : MonoBehaviour
             playerCollider.enabled = true;
 
             rb.mass = 1.8f;
+            rb.drag = 1;
             rb.angularDrag = 2;
         }
 

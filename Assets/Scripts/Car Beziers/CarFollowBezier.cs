@@ -19,18 +19,17 @@ public class CarFollowBezier : MonoBehaviour
     public float changePathSpeed; //Keeps the player from jumping rapidly between beziers when one ends.
 
     [Header("Object Sensors")]
-    public float raycastDistance;
     public float frontSensorOffset;
-    public float sideSensorsOffset;
-    public float sideSensorsAngle;
+    public float sensorWidth;
+    public float sensorDistance;
 
     [HideInInspector] public bool canRotate;
-    LayerMask carLayer;
+    LayerMask threatLayerMask;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
-        carLayer = LayerMask.NameToLayer("Car") + LayerMask.NameToLayer("Player");
+
     }
 
     void Update()
@@ -50,56 +49,22 @@ public class CarFollowBezier : MonoBehaviour
 
     bool SenseObjects() //Raycasts for cars and people in front;
     {
-        RaycastHit hit;
-        Vector3 sensorStartPos = rb.transform.position;
-        sensorStartPos.z += frontSensorOffset;
+        Vector3 sensorPos = transform.position + (transform.forward * frontSensorOffset);
+        Vector3 sensorBounds = new Vector3(sensorWidth, 10, sensorDistance);
 
-        //Front Sensor
-        if (Physics.Raycast(sensorStartPos, this.transform.forward, out hit, raycastDistance))
+
+        Collider[] potentialThreats = Physics.OverlapBox(sensorPos, sensorBounds, Quaternion.identity);
+        foreach (Collider potentialThreat in potentialThreats)
         {
-    
-        }
-        Debug.DrawLine(sensorStartPos, hit.point);
-        //Right Sensor
-        sensorStartPos.x += sideSensorsOffset;
-        if (Physics.Raycast(sensorStartPos, transform.forward, out hit, raycastDistance))
-        {
-            if (hit.transform.gameObject.layer == carLayer)
+            if (potentialThreat.gameObject != this.gameObject)
             {
-                return true;
+                if (potentialThreat.gameObject.layer == LayerMask.NameToLayer("Player") || potentialThreat.gameObject.layer == LayerMask.NameToLayer("Car") || potentialThreat.gameObject.layer == LayerMask.NameToLayer("Civilian"))
+                {
+                    return true;
+                }
             }
         }
-        Debug.DrawLine(sensorStartPos, hit.point);
-        //Right Angle Sensor
-        if (Physics.Raycast(sensorStartPos, Quaternion.AngleAxis(sideSensorsAngle, transform.up) * transform.forward, out hit, raycastDistance))
-        {
-            if (hit.transform.gameObject.layer == carLayer)
-            {
-                return true;
-            }
-        }
-        Debug.DrawLine(sensorStartPos, hit.point);
-        //Left Sensor
-        sensorStartPos.x -= 2 * sideSensorsOffset;
-        if (Physics.Raycast(sensorStartPos, transform.forward, out hit, raycastDistance))
-        {
-            if (hit.transform.gameObject.layer == carLayer)
-            {
-                return true;
-            }
-        }
-        Debug.DrawLine(sensorStartPos, hit.point);
-        //Left Angle Sensor
-        if (Physics.Raycast(sensorStartPos, Quaternion.AngleAxis(-sideSensorsAngle, transform.up) * transform.forward, out hit, raycastDistance))
-        {
-            if (hit.transform.gameObject.layer == carLayer)
-            {
-                return true;
-            }
-        }
-        Debug.DrawLine(sensorStartPos, hit.point);
         return false;
-
     }
 
 
@@ -109,7 +74,7 @@ public class CarFollowBezier : MonoBehaviour
         enRoute = true;
 
         QuadraticBezier currentBezier = currentRoute.gameObject.GetComponent<QuadraticBezier>();
-        Vector3 initialPos = currentBezier.controlPoints[0].position;
+        Vector3 initialPos = currentBezier.points[0];
         bezLength = currentBezier.bezierLength;
 
         if (Mathf.Abs((transform.position - initialPos).magnitude) > 2)
@@ -126,7 +91,7 @@ public class CarFollowBezier : MonoBehaviour
         float t = 0;
         while (t < 1)
         {
-            print(SenseObjects());
+            
             if (!SenseObjects())
             {
                 canRotate = true;   
@@ -150,11 +115,20 @@ public class CarFollowBezier : MonoBehaviour
     //Finds a close bezier start position to the current car's location (upon finishing the movement of a full bezier)
     Transform NearestBezier(Vector3 position)
     {
-        GameObject[] beziers;
-        beziers = GameObject.FindGameObjectsWithTag("Bezier");
+        Collider[] nearColliderCheck = Physics.OverlapSphere(transform.position, 35);
+        List<GameObject> beziers = new List<GameObject>();
+        foreach (Collider collider in nearColliderCheck)
+        {
+            if (collider.transform.tag == "Bezier")
+            {
+                beziers.Add(collider.gameObject);
+            }
+        }
+
+
         GameObject closest = null;
         float distance = 100;
-        if (beziers.Length == 0)
+        if (beziers.Count == 0)
         {
             Debug.LogError("No beziers to track to!");
         }
@@ -163,7 +137,7 @@ public class CarFollowBezier : MonoBehaviour
         List<GameObject> bestPossibilities = new List<GameObject>();
         foreach (GameObject bezier in beziers)
         {
-            Vector3 bezStartPos = bezier.GetComponent<QuadraticBezier>().controlPoints[0].position;
+            Vector3 bezStartPos = bezier.GetComponent<QuadraticBezier>().points[0];
             Vector3 diff = bezStartPos - position;
             float currDistance = diff.magnitude;
             if (currDistance < 4)
@@ -185,7 +159,7 @@ public class CarFollowBezier : MonoBehaviour
         {
             foreach (GameObject bezier in beziers)
             {
-                Vector3 bezStartPos = bezier.GetComponent<QuadraticBezier>().controlPoints[0].position;
+                Vector3 bezStartPos = bezier.GetComponent<QuadraticBezier>().points[0];
                 Vector3 diff = bezStartPos - position;
                 float currDistance = diff.magnitude;
                 if (currDistance < distance)

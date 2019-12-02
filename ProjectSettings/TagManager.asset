@@ -27,10 +27,10 @@ TagManager:
   - 
   - 
   - Car
+  - Bezier
   - 
   - 
-  - 
-  - 
+  - Civilian
   - Player
   - Obstacles
   - Ground
