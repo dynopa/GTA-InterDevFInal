@@ -13,14 +13,12 @@ public class QuadraticBezier : MonoBehaviour
     //More info: https://en.wikipedia.org/wiki/B%C3%A9zier_curve#Quadratic_B%C3%A9zier_curves
     [Header("Gizmos")]
     public bool enableGizmos;
-    [Range(.1f, .499f)]
-    float tStepBetweenMidPoints = .15f; //Distance (in percentage of total bezier) between each midpoint. (ONLY FOR DRAWING VISUALIZATION GIZMOS)
-    public float bezierLength; //Uneditable float value to display the bezier's length in inspector
+    float tStepBetweenMidPoints = .15f; //Distance (in percentage of total bezier) between each midpoint. (ONLY FOR DRAWING VISUALIZATION GIZMOS)   
     [Space]
     public Transform[] controlPoints;
     
     Vector3 gizmoPos;
-
+    [HideInInspector] public float bezierLength;
 
     private void Start()
     {
@@ -64,5 +62,26 @@ public class QuadraticBezier : MonoBehaviour
             
         }
     }
+
+
+    public void CenterBezierPoint() //Centers the bezier point between the start and end positions
+    {
+        controlPoints[1].position = (controlPoints[0].position + controlPoints[2].position) / 2;
+    }
+
+
+
+
+    public void RightAngleBezierPoint1() //Moves the bezier point to form a right angle between the start and end positions
+    {
+        controlPoints[1].position = new Vector3(controlPoints[0].position.x, 0, controlPoints[2].position.z);
+    }
+
+    public void RightAngleBezierPoint2()
+    {
+        controlPoints[1].position = new Vector3(controlPoints[2].position.x, 0, controlPoints[0].position.z);
+    }
+
+
 }
 
