@@ -58,7 +58,9 @@ public class NpcCivMoveWalk : MonoBehaviour
     private void LookAwayFromPlayer()
     {
         //Debug.Log(PlayerManager.Instance.gameObject.transform.position);
-        this.transform.LookAt((this.transform.position - PlayerManager.Instance.gameObject.transform.position) * 1000);
+        Vector3 awayPlayer = (this.transform.position - PlayerManager.Instance.gameObject.transform.position) * 1000;
+        awayPlayer = new Vector3(awayPlayer.x, this.transform.position.y, awayPlayer.z);
+        this.transform.LookAt(awayPlayer);
     }
 
 

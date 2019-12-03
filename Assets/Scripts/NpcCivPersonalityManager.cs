@@ -32,7 +32,7 @@ public class NpcCivPersonalityManager : MonoBehaviour
         {
             emotionTimeCounter++;
 
-            if(emotionTimeCounter >= personality.resetEmotionTime && !this.gameObject.GetComponent<NpcCivMoveWalk>().RayCastDown())
+            if(emotionTimeCounter >= personality.resetEmotionTime && this.gameObject.GetComponent<NpcCivMoveWalk>().RayCastDown() == null)
             {
                 currentEmotion = normal;
                 emotionTimeCounter = 0;
