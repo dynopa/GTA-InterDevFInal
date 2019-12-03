@@ -28,22 +28,6 @@ public class NpcCivSpawn : MonoBehaviour
         Instance = this;
     }
 
-    //public void SetUpTransformList ()
-    //{
-    //    foreach (GameObject obj in spawnCoordList)
-    //    {
-    //        Debug.Log(obj.transform.position);
-    //        spawnCoordListTransforms.Add(obj.transform);
-    //    }
-
-
-    //    while (spawnCoordList.Count != 0)
-    //    {
-    //        Debug.Log(spawnCoordList[0].transform.position);
-    //        spawnCoordList.Remove(spawnCoordList[0]);
-    //    }
-    //}
-
 
     /// <summary>
     /// /Spawns NPC Prefab at every coord in spawnCoordList
