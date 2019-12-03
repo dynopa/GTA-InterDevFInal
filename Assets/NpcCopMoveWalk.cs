@@ -2,15 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NpcCivMoveWalk : MonoBehaviour
+public class NpcCopMoveWalk : MonoBehaviour
 {
     [Header("Ray Cast Distance")]
-    [SerializeField]float maxDist = 30f;
+    [SerializeField] float maxDist = 15f;
+    [SerializeField] float speed = 15f;
 
     private int forwardAngleRandomizer;
     private void Start()
     {
-        forwardAngleRandomizer = (int)Random.Range(2, 5);
+        forwardAngleRandomizer = (int)Random.Range(3, 8);
     }
 
 
@@ -18,12 +19,6 @@ public class NpcCivMoveWalk : MonoBehaviour
     void Update()
     {
 
-        if (this.GetComponent<NpcCivPersonalityManager>().currentEmotion == this.GetComponent<NpcCivPersonalityManager>().frightened)
-        {
-            LookAwayFromPlayer();
-        }
-        else
-        {
             GameObject inFront = RayCastDown();
             if (inFront != null && inFront.tag != null)
             {
@@ -39,12 +34,11 @@ public class NpcCivMoveWalk : MonoBehaviour
 
                 }
             }
-        }
 
         //NPC constantly moves forward
         //When they detect a collider ahead of them, they choose a new valid directions and turn that way
         //Turns right, left, or back
-        MoveForward(this.GetComponent<NpcCivPersonalityManager>().currentEmotion.speed);
+        MoveForward(speed);
 
         if (RayCastForward())
         {
@@ -55,12 +49,12 @@ public class NpcCivMoveWalk : MonoBehaviour
     /// <summary>
     /// Looks the away from player. For use when frightened to constantly move away from the player.
     /// </summary>
-    private void LookAwayFromPlayer()
+    private void LookAtPlayer()
     {
         //Debug.Log(PlayerManager.Instance.gameObject.transform.position);
-        Vector3 awayPlayer = (this.transform.position - PlayerManager.Instance.gameObject.transform.position) * 1000;
-        awayPlayer = new Vector3(awayPlayer.x, this.transform.position.y, awayPlayer.z);
-        this.transform.LookAt(awayPlayer);
+        Vector3 atPlayer = (this.transform.position + PlayerManager.Instance.gameObject.transform.position) * 1000;
+        atPlayer = new Vector3(atPlayer.x, this.transform.position.y, atPlayer.z);
+        this.transform.LookAt(atPlayer);
     }
 
 
@@ -68,7 +62,8 @@ public class NpcCivMoveWalk : MonoBehaviour
     /// Moves the NPC forward at a rate of speed.
     /// </summary>
     /// <param name="speed">Speed.</param>
-    private void MoveForward (float speed) {
+    private void MoveForward(float speed)
+    {
         this.transform.Translate(Vector3.forward * speed * Time.deltaTime);
     }
 
@@ -114,7 +109,7 @@ public class NpcCivMoveWalk : MonoBehaviour
     /// </summary>
     /// <returns>The new direction Vector3.</returns>
     /// <param name="collisions">Collisions.</param>
-    private Vector3 DecideNewDirection (List<Vector3> collisions)
+    private Vector3 DecideNewDirection(List<Vector3> collisions)
     {
         List<Vector3> rayDirections = new List<Vector3>();
         rayDirections.Add(this.transform.right);
@@ -133,7 +128,7 @@ public class NpcCivMoveWalk : MonoBehaviour
                     isValid = false;
                 }
             }
-            if(isValid)
+            if (isValid)
                 validDirections.Add(dir);
         }
 
@@ -145,7 +140,7 @@ public class NpcCivMoveWalk : MonoBehaviour
 
         else
             return this.transform.forward;
-       
+
     }
 
 
@@ -158,12 +153,12 @@ public class NpcCivMoveWalk : MonoBehaviour
     {
         Dictionary<Vector3, Vector3> rayDirections = new Dictionary<Vector3, Vector3>();
         List<Vector3> rayDirectionsAngled = new List<Vector3>();
-        rayDirectionsAngled.Add( -this.transform.up + (-this.transform.forward * forwardAngleRandomizer));
-        rayDirectionsAngled.Add( -this.transform.up + (this.transform.right * forwardAngleRandomizer));
-        rayDirectionsAngled.Add( -this.transform.up + (-this.transform.right * forwardAngleRandomizer));
+        rayDirectionsAngled.Add(-this.transform.up + (-this.transform.forward * forwardAngleRandomizer));
+        rayDirectionsAngled.Add(-this.transform.up + (this.transform.right * forwardAngleRandomizer));
+        rayDirectionsAngled.Add(-this.transform.up + (-this.transform.right * forwardAngleRandomizer));
         rayDirections.Add(-this.transform.up + (-this.transform.forward * forwardAngleRandomizer), this.transform.right);
-        rayDirections.Add( -this.transform.up + (this.transform.right * forwardAngleRandomizer), - this.transform.right);
-        rayDirections.Add( - this.transform.up + (-this.transform.right * forwardAngleRandomizer), - this.transform.forward);
+        rayDirections.Add(-this.transform.up + (this.transform.right * forwardAngleRandomizer), -this.transform.right);
+        rayDirections.Add(-this.transform.up + (-this.transform.right * forwardAngleRandomizer), -this.transform.forward);
 
         List<Vector3> validDirections = new List<Vector3>();
 
@@ -197,7 +192,8 @@ public class NpcCivMoveWalk : MonoBehaviour
     /// Raycasts in the right, left, and back directions to detect for collisions.
     /// </summary>
     /// <returns>The valid directions that do not have collisions.</returns>
-    private List<Vector3> RayCastDirections() {
+    private List<Vector3> RayCastDirections()
+    {
 
         List<Vector3> listOfCollisions = new List<Vector3>();
 
