@@ -21,10 +21,28 @@ public class NpcCivSpawn : MonoBehaviour
     public List<GameObject> spawnCoordList = new List<GameObject>();
 
 
+    private List<Vector3> spawnCoordListVectors = new List<Vector3>();
+
     void Awake()
     {
         Instance = this;
     }
+
+    //public void SetUpTransformList ()
+    //{
+    //    foreach (GameObject obj in spawnCoordList)
+    //    {
+    //        Debug.Log(obj.transform.position);
+    //        spawnCoordListTransforms.Add(obj.transform);
+    //    }
+
+
+    //    while (spawnCoordList.Count != 0)
+    //    {
+    //        Debug.Log(spawnCoordList[0].transform.position);
+    //        spawnCoordList.Remove(spawnCoordList[0]);
+    //    }
+    //}
 
 
     /// <summary>
@@ -32,9 +50,9 @@ public class NpcCivSpawn : MonoBehaviour
     /// </summary>
     public void SpawnAtAllCoords() {
 
-        foreach (GameObject obj in spawnCoordList)
+        foreach (Vector3 v in spawnCoordListVectors)
         {
-            SpawnAtCoord(obj);
+            SpawnAtCoord(v);
         }
     }
 
@@ -43,16 +61,17 @@ public class NpcCivSpawn : MonoBehaviour
     /// </summary>
     public void SpawnAtCoord()
     {
-        SpawnAtCoord(spawnCoordList[Random.Range(0, spawnCoordList.Count)]);
+        //Debug.Log(spawnCoordListVectors[Random.Range(0, spawnCoordListVectors.Count)]);
+        SpawnAtCoord(spawnCoordListVectors[Random.Range(0, spawnCoordListVectors.Count)]);
 
     }
     /// <summary>
     /// Spawns NPC at coordinate. Takes in the coordinate where the NPC should be spawned. Sets a random personality to the NPC.
     /// </summary>
     /// <param name="coords">Coordinates where the NPC will spawn.</param>
-    public void SpawnAtCoord(GameObject coords)
+    public void SpawnAtCoord(Vector3 coords)
     {
-        GameObject newNPC = Instantiate(NPCPrefab, coords.transform.position, Quaternion.identity);
+        GameObject newNPC = Instantiate(NPCPrefab, coords, Quaternion.identity);
 
         newNPC.transform.parent = NPCParent.transform;
 
@@ -81,7 +100,8 @@ public class NpcCivSpawn : MonoBehaviour
         coordToAdd.transform.parent = this.transform;
         coordToAdd.transform.position = new Vector3(xR, yHeight, zR);
 
-        spawnCoordList.Add(coordToAdd);
+        spawnCoordListVectors.Add(coordToAdd.transform.position);
+        Destroy(coordToAdd);
     }
 
     /// <summary>

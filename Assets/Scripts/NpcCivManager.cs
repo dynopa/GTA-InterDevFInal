@@ -16,6 +16,7 @@ public class NpcCivManager : MonoBehaviour
     {
         Instance = this;
         NpcCivSpawn.Instance.AddRandomPoints();
+       //NpcCivSpawn.Instance.SetUpTransformList();
         NpcCivSpawn.Instance.SpawnAtAllCoords();
     }
 

@@ -32,10 +32,14 @@ public class NpcCivPersonalityManager : MonoBehaviour
         {
             emotionTimeCounter++;
 
-            if(emotionTimeCounter >= personality.resetEmotionTime && this.gameObject.GetComponent<NpcCivMoveWalk>().RayCastDown() == null)
+            if(emotionTimeCounter >= personality.resetEmotionTime)
             {
-                currentEmotion = normal;
-                emotionTimeCounter = 0;
+                GameObject frontWalkway = this.gameObject.GetComponent<NpcCivMoveWalk>().RayCastDown();
+                if ( frontWalkway != null && frontWalkway.tag == "Concrete")
+                {
+                    currentEmotion = normal;
+                    emotionTimeCounter = 0;
+                }
             }
         }
     }
