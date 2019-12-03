@@ -31,10 +31,10 @@ public class NpcCivMoveWalk : MonoBehaviour
                 {
                     List<Vector3> angledDirectionPossibilities = RayCastDirectionsAngled();
                     Debug.Log(angledDirectionPossibilities.Count);
-                    //if (angledDirectionPossibilities.Count != 3)
-                    //{
+                    if (angledDirectionPossibilities.Count != 3)
+                    {
                         this.transform.LookAt(this.transform.position + DecideNewDirection(angledDirectionPossibilities));
-                    //}
+                    }
 
 
                 }
@@ -150,6 +150,50 @@ public class NpcCivMoveWalk : MonoBehaviour
 
 
     /// <summary>
+    /// Decides the new direction based on a given list of invalid collision directions.
+    /// </summary>
+    /// <returns>The new direction Vector3.</returns>
+    /// <param name="collisions">Collisions.</param>
+    private Vector3 DecideNewDirectionAngled(List<Vector3> collisions)
+    {
+        Dictionary<Vector3, Vector3> rayDirections = new Dictionary<Vector3, Vector3>();
+        List<Vector3> rayDirectionsAngled = new List<Vector3>();
+        rayDirectionsAngled.Add( -this.transform.up + (-this.transform.forward * forwardAngleRandomizer));
+        rayDirectionsAngled.Add( -this.transform.up + (this.transform.right * forwardAngleRandomizer));
+        rayDirectionsAngled.Add( -this.transform.up + (-this.transform.right * forwardAngleRandomizer));
+        rayDirections.Add(-this.transform.up + (-this.transform.forward * forwardAngleRandomizer), this.transform.right);
+        rayDirections.Add( -this.transform.up + (this.transform.right * forwardAngleRandomizer), - this.transform.right);
+        rayDirections.Add( - this.transform.up + (-this.transform.right * forwardAngleRandomizer), - this.transform.forward);
+
+        List<Vector3> validDirections = new List<Vector3>();
+
+        foreach (Vector3 dir in rayDirectionsAngled)
+        {
+            bool isValid = true;
+            foreach (Vector3 col in collisions)
+            {
+                if (col.Equals(dir))
+                {
+                    isValid = false;
+                }
+            }
+            if (isValid)
+                validDirections.Add(dir);
+        }
+
+        if (validDirections.Count > 0)
+        {
+            int r = Random.Range(0, validDirections.Count);
+            return rayDirections[validDirections[r]];
+
+        }
+
+        else
+            return this.transform.forward;
+
+    }
+
+    /// <summary>
     /// Raycasts in the right, left, and back directions to detect for collisions.
     /// </summary>
     /// <returns>The valid directions that do not have collisions.</returns>
@@ -186,9 +230,9 @@ public class NpcCivMoveWalk : MonoBehaviour
         List<Vector3> listOfCollisions = new List<Vector3>();
 
         Vector3[] rayDirections = new Vector3[3];
-        rayDirections[0] = -this.transform.up + (this.transform.forward * forwardAngleRandomizer);
-        rayDirections[1] = -this.transform.up + (this.transform.forward * forwardAngleRandomizer);
-        rayDirections[2] = -this.transform.up + (this.transform.forward * forwardAngleRandomizer);
+        rayDirections[0] = -this.transform.up + (-this.transform.forward * forwardAngleRandomizer);
+        rayDirections[1] = -this.transform.up + (this.transform.right * forwardAngleRandomizer);
+        rayDirections[2] = -this.transform.up + (-this.transform.right * forwardAngleRandomizer);
 
         for (int i = 0; i < rayDirections.Length; i++)
         {
