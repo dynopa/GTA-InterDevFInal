@@ -260,6 +260,9 @@ MonoBehaviour:
     m_RotationOrder: 4
   minVelocity: 2
   maxVelocity: 40
+  minY: 0
+  maxY: 0
+  changeYDamping: 0
 --- !u!114 &271723107
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2435,12 +2438,12 @@ PrefabInstance:
     - target: {fileID: 7422241954249629754, guid: ec8502e61ffe54276bf316cffc55e166,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.94
+      value: 4.82
       objectReference: {fileID: 0}
     - target: {fileID: 7422241954249629754, guid: ec8502e61ffe54276bf316cffc55e166,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 10.82
+      value: 39.28
       objectReference: {fileID: 0}
     - target: {fileID: 7422241954249629754, guid: ec8502e61ffe54276bf316cffc55e166,
         type: 3}
