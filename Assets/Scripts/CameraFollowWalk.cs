@@ -20,17 +20,20 @@ public class CameraFollowWalk : MonoBehaviour
         cameraHeight = Camera.main.transform.position.y - PlayerManager.position.y;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (inUse)
         {
+            float targetYTemp = Camera.main.transform.position.y;
             Vector3 targetCameraPos = PlayerManager.position + new Vector3(0, cameraHeight, 0);
             if (useEasing)
             {
                 
                 targetCameraPos = ((targetCameraPos - transform.position) * dampingValue) + transform.position;
+                
             }
 
+            targetCameraPos.y = targetYTemp;
             Camera.main.transform.position = targetCameraPos;
         }
     }

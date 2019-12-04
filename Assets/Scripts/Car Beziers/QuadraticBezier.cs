@@ -14,6 +14,9 @@ public class QuadraticBezier : MonoBehaviour
     [Header("Gizmos")]
     public bool enableGizmos;
 
+    [Header("Stoplight Management")]
+    public bool isStoplightNode;
+    public int stopLightOrder;
 
     float tStepBetweenMidPoints = .15f; //Distance (in percentage of total bezier) between each midpoint. (ONLY FOR DRAWING VISUALIZATION GIZMOS)   
     [Space]
@@ -100,6 +103,17 @@ public class QuadraticBezier : MonoBehaviour
     public void RightAngleBezierPoint2()
     {
         controlPoints[1].position = new Vector3(controlPoints[2].position.x, 0, controlPoints[0].position.z);
+    }
+
+    public bool isTurn()
+    {
+        Vector3 movementVector = points[2] - points[0];
+        if (Mathf.Abs(movementVector.x) > 1 && Mathf.Abs(movementVector.z) > 1)
+        {
+            return true;
+        }
+        else return false;
+                
     }
 
 
