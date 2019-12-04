@@ -111,6 +111,8 @@ public class PlayerManager : MonoBehaviour
             rb.mass = playerCarMove.mass;
             rb.drag = playerCarMove.drag;
             rb.angularDrag = playerCarMove.angularDrag;
+            
+            
         }
         else
         {
@@ -153,6 +155,7 @@ public class PlayerManager : MonoBehaviour
         currentCar = car.gameObject;
         Destroy(currentCar.GetComponent<CarFollowBezier>());
         Destroy(currentCar.GetComponent<CarAlignToBezier>());
+        currentCar.GetComponent<CarDestroy>().playerEnteredCar = true;
         
         Destroy(currentCar.GetComponent<Rigidbody>());
 

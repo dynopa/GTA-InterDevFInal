@@ -12,7 +12,13 @@ public class CameraFOVChanger : MonoBehaviour
 
     public float minVelocity;
     public float maxVelocity;
-
+    [Space]
+    public float minY;
+    public float maxY;
+    [Space]
+    [Range(0, 1)]
+    public float changeYDamping;
+    
 
     // Use this for initialization
     void Start()
@@ -21,15 +27,22 @@ public class CameraFOVChanger : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
+        
+        //Gets the velocity value and remaps it along the animation curve
         float velocity = PlayerManager.Instance.GetComponent<Rigidbody>().velocity.magnitude;
-        //Debug.Log(velocity);
-        //convert the velocity to a value along the animation curve, then convert that to a FOV value
+
         velocity = velocity.Remap(minVelocity, maxVelocity, 0, 1);
         velocity = Mathf.Clamp(curve.Evaluate(velocity), 0, 1);
-        velocity = velocity.Remap(0, 1, 70, 100);
-        this.GetComponent<Camera>().fieldOfView = velocity;
+        print(velocity);
+        float targetY = velocity.Remap(0, 1, minY, maxY);
+
+        Vector3 movePos = new Vector3(Camera.main.transform.position.x, targetY, Camera.main.transform.position.z);
+        Camera.main.transform.position = Vector3.Lerp(Camera.main.transform.position, movePos, changeYDamping);
 
     }
+
+
+
 }

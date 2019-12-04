@@ -9,6 +9,8 @@ public class CarFollowBezier : MonoBehaviour
     float bezLength; //Length of the actual bezier line
     private Vector3 playerPos;
     [HideInInspector] public Rigidbody rb;
+    [HideInInspector] public Collider collider;
+    public CarDestroy carDestroyScript;
 
     public bool enRoute; //Whether mid path or not
 
@@ -22,13 +24,26 @@ public class CarFollowBezier : MonoBehaviour
     public float frontSensorOffset;
     public float sensorWidth;
     public float sensorDistance;
+    [Space]
+    public bool inTurn;
 
     [HideInInspector] public bool canRotate;
-    LayerMask threatLayerMask;
+
+    Vector3 initPosition;
+    Quaternion initRotation;
+
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody>();
+        collider = GetComponent<Collider>();
+        carDestroyScript = GetComponent<CarDestroy>();
+    }
 
     private void Start()
     {
-        rb = GetComponent<Rigidbody>();
+
+        initPosition = carDestroyScript.initPosition;
+        initRotation = carDestroyScript.initRotation;
 
     }
 
@@ -70,6 +85,7 @@ public class CarFollowBezier : MonoBehaviour
 
     IEnumerator FollowRoute(Transform route)
     {
+        CheckForRigidbody();
         //Starts Route, creates the points p0 (Start Pos) p1 (Bezier Pos) and p2 (End Pos)
         enRoute = true;
 
@@ -87,11 +103,52 @@ public class CarFollowBezier : MonoBehaviour
 
         }
 
+        QuadraticBezier nextRoute = NearestBezier(currentBezier.points[2]).GetComponent<QuadraticBezier>();
+
+        bool overrideStopping = false;
+        if (currentBezier.isStoplightNode)
+        {
+            if (currentBezier.isTurn())
+            {
+                inTurn = true;
+            }
+            else inTurn = false;
+        }
+        else inTurn = false;
+        
 
         float t = 0;
         while (t < 1)
         {
+            if (!overrideStopping)
+            {
+                if ((transform.position - nextRoute.points[0]).magnitude < 5 && nextRoute.isStoplightNode)
+                {
+                    while (nextRoute.stopLightOrder != StoplightManager.currentLight && StoplightManager.currentLight != 0 && !currentBezier.isStoplightNode)
+                    {
+                        canRotate = false;
+                        yield return new WaitForEndOfFrame();
+                    }
+
+                    while (StoplightManager.currentLight == 0)
+                    {
+                        yield return new WaitForEndOfFrame();
+                    }
+                }
+
+                if (currentBezier.isStoplightNode && StoplightManager.currentLight != currentBezier.stopLightOrder && StoplightManager.currentLight != 0)
+                {
+                    if (currentBezier.isTurn())
+                    {
+                        overrideStopping = true;
+                        collider.enabled = false;
+
+                    }
+                }
+            }
             
+
+
             if (!SenseObjects())
             {
                 canRotate = true;   
@@ -100,14 +157,26 @@ public class CarFollowBezier : MonoBehaviour
             }
             else
             {
-                canRotate = false;
+                if (overrideStopping)
+                {
+                    canRotate = true;
+                    t += Time.deltaTime / bezLength * speed; //Move along any length of bezier at consistent speed
+                }
+                else
+                {
+                    canRotate = false;
+                }
             }
+
+
+
             playerPos = currentBezier.GetPositionFromCompletionPercentage(t);
             rb.transform.position = playerPos;
-            // //Absolute max speed 
+
             yield return new WaitForEndOfFrame();
 
         }
+        collider.enabled = true;
         enRoute = false;
         yield return null;
     }
@@ -115,7 +184,7 @@ public class CarFollowBezier : MonoBehaviour
     //Finds a close bezier start position to the current car's location (upon finishing the movement of a full bezier)
     Transform NearestBezier(Vector3 position)
     {
-        Collider[] nearColliderCheck = Physics.OverlapSphere(transform.position, 35);
+        Collider[] nearColliderCheck = Physics.OverlapSphere(transform.position, 40 );
         List<GameObject> beziers = new List<GameObject>();
         foreach (Collider collider in nearColliderCheck)
         {
@@ -182,5 +251,71 @@ public class CarFollowBezier : MonoBehaviour
     }
 
 
-   
+    private void OnCollisionStay(Collision collision)
+    {
+       if (collision.gameObject.layer == LayerMask.NameToLayer("Car"))
+        {
+            Collider[] potentialCars = Physics.OverlapSphere(initPosition, 10);
+            bool occupiedByCar = false;
+            foreach (Collider collider in potentialCars)
+            {
+                if (collider.gameObject.tag == "Bezier")
+                {
+                    occupiedByCar = true;
+                }
+            }
+
+
+            if (occupiedByCar)
+            {
+                ResetPosition(initPosition, initRotation);
+            }
+        }
+    }
+
+    public void ResetPosition(Vector3 initPos, Quaternion initRot)
+    {
+        CheckForRigidbody();
+
+        StopAllCoroutines();
+        rb.transform.position = initPos;
+        rb.transform.rotation = initRot;
+
+        enRoute = false;
+
+        DestroyParticleSystems();
+        this.gameObject.layer = LayerMask.NameToLayer("Car");
+
+
+    }
+
+    void CheckForRigidbody()
+    {
+        
+
+        if (this.gameObject.GetComponent<Rigidbody>() == null)
+        {
+            carDestroyScript.ReplaceCarScripts();
+        }
+
+        if (rb == null)
+        {
+            carDestroyScript.ReplaceCarScripts();
+            rb = GetComponent<Rigidbody>();
+
+            carDestroyScript.SetRigidBodyVariables();
+        }
+
+        rb.useGravity = false;
+        rb.constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
+
+    }
+
+    void DestroyParticleSystems()
+    {
+        if (GetComponentInChildren<ParticleSystem>() != null)
+        {
+            Destroy(GetComponentInChildren<ParticleSystem>());
+        }
+    }
 }

@@ -74,7 +74,7 @@ public class PlayerCarMove : MonoBehaviour
             {
                 currentAcceleration += accelerateRate * Time.fixedDeltaTime;
             }
-            
+                
         }
         else
         {
@@ -90,7 +90,7 @@ public class PlayerCarMove : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Car") && PlayerManager.Instance.rb.velocity.magnitude > carDestroyThreshold)
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Car") && PlayerManager.Instance.rb.velocity.magnitude > carDestroyThreshold && PlayerManager.Instance.inCar)
         {
 
             collision.transform.gameObject.layer = LayerMask.NameToLayer("Obstacles");
