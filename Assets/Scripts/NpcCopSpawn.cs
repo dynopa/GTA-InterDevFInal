@@ -92,7 +92,7 @@ public class NpcCopSpawn : MonoBehaviour
     /// </summary>
     public void AddRandomPoints()
     {
-        int numOfPoints = Random.Range(20, 50);
+        int numOfPoints = Random.Range(30, 60);
 
         for (int i = 0; i < numOfPoints; i++)
         {
