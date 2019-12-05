@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 7201450219688511042}
   - component: {fileID: 7201450219688511053}
   - component: {fileID: 7201450219688511055}
-  - component: {fileID: 4016286171393983250}
   - component: {fileID: 5124011171889095711}
   - component: {fileID: 8989490031409705966}
   - component: {fileID: 5265385824751147699}
+  - component: {fileID: 2113666571681233099}
   m_Layer: 19
   m_Name: NpcCop
   m_TagString: Untagged
@@ -59,19 +59,6 @@ CapsuleCollider:
   m_Height: 2.9756517
   m_Direction: 1
   m_Center: {x: 0, y: 0.48282582, z: -0.0694851}
---- !u!114 &4016286171393983250
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7201450219688511049}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: adfc41330b6d1477897937ba969fdc45, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 70
 --- !u!54 &5124011171889095711
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -114,6 +101,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 947ab106cd0654870a63d254e1d5d83b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 70
+--- !u!114 &2113666571681233099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7201450219688511049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03032a73f58284930acf43a0b9e6d566, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distanceCheck: 25
 --- !u!1001 &402838594259303275
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -121,6 +122,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7201450219688511042}
     m_Modifications:
+    - target: {fileID: -927199367670048503, guid: 8e2f2b651f25d0b49b2da14704fdaba5,
+        type: 3}
+      propertyPath: m_Name
+      value: roughHuman
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8e2f2b651f25d0b49b2da14704fdaba5,
+        type: 3}
+      propertyPath: m_Layer
+      value: 19
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 8e2f2b651f25d0b49b2da14704fdaba5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -175,16 +186,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: 8e2f2b651f25d0b49b2da14704fdaba5,
-        type: 3}
-      propertyPath: m_Name
-      value: roughHuman
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: 8e2f2b651f25d0b49b2da14704fdaba5,
-        type: 3}
-      propertyPath: m_Layer
-      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: -1504981713932161579, guid: 8e2f2b651f25d0b49b2da14704fdaba5,
         type: 3}

@@ -18,7 +18,26 @@ public class NpcCopMoveWalk : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (NpcCopManager.Instance.GetStarLevel() >= 3)
+        {
+            if (!RayCastForward())
+            {
+                LookAtPlayer();
+            }
+                //this.transform.LookAt(this.transform.position - PlayerManager.Instance.gameObject.transform.position);
+            } else if (NpcCopManager.Instance.GetStarLevel() > 0)
+        {
+            if (Vector3.Distance(this.transform.position, PlayerManager.Instance.gameObject.transform.position) < 45f)
+            {
+                if (!RayCastForward())
+                {
+                    LookAtPlayer();
+                }
+               //this.transform.LookAt(this.transform.position - PlayerManager.Instance.gameObject.transform.position);
+            }
+        }
+        else
+        {
             GameObject inFront = RayCastDown();
             if (inFront != null && inFront.tag != null)
             {
@@ -34,6 +53,7 @@ public class NpcCopMoveWalk : MonoBehaviour
 
                 }
             }
+        }
 
         //NPC constantly moves forward
         //When they detect a collider ahead of them, they choose a new valid directions and turn that way
@@ -52,7 +72,7 @@ public class NpcCopMoveWalk : MonoBehaviour
     private void LookAtPlayer()
     {
         //Debug.Log(PlayerManager.Instance.gameObject.transform.position);
-        Vector3 atPlayer = (this.transform.position + PlayerManager.Instance.gameObject.transform.position) * 1000;
+        Vector3 atPlayer = (PlayerManager.Instance.gameObject.transform.position);
         atPlayer = new Vector3(atPlayer.x, this.transform.position.y, atPlayer.z);
         this.transform.LookAt(atPlayer);
     }

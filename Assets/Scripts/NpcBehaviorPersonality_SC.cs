@@ -13,4 +13,7 @@ public class NpcBehaviorPersonality_SC : ScriptableObject
 
     [Header("Reset Emotion Time")]
     public int resetEmotionTime;
+
+    [Header("Scared Distance From Player")]
+    public float distanceCheck = 25f;
 }

@@ -19,7 +19,7 @@ public class NpcCivPersonalityManager : MonoBehaviour
     [Header("PossiblePersonalities")]
     public List<NpcBehaviorPersonality_SC> allPersonalities = new List<NpcBehaviorPersonality_SC>();
 
-    int emotionTimeCounter = 0;
+    float emotionTimeCounter = 0;
 
     void Awake()
     {
@@ -30,7 +30,7 @@ public class NpcCivPersonalityManager : MonoBehaviour
     {
         if (currentEmotion != normal)
         {
-            emotionTimeCounter++;
+            emotionTimeCounter+=Time.deltaTime;
 
             if(emotionTimeCounter >= personality.resetEmotionTime)
             {
@@ -60,5 +60,13 @@ public class NpcCivPersonalityManager : MonoBehaviour
     {
         //Set a random personality to the NPC.
         SetPersonality(allPersonalities[(int)Random.Range(0, allPersonalities.Count)]);
+    }
+
+    public void CheckForScared()
+    {
+        if (Vector3.Distance(this.transform.position, PlayerManager.Instance.gameObject.transform.position) < personality.distanceCheck)
+        {
+            this.currentEmotion = frightened;
+        }
     }
 }

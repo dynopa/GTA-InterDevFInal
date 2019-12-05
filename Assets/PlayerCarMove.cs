@@ -113,7 +113,10 @@ public class PlayerCarMove : MonoBehaviour
 
         if (collision.transform.gameObject.GetComponent<NpcCivDeath>() != null)
         {
-            collision.transform.gameObject.GetComponent<NpcCivDeath>().ReduceHealth(100);
+            if (this.enabled)
+            {
+                collision.transform.gameObject.GetComponent<NpcCivDeath>().ReduceHealth(100);
+            }
         }
     
     }

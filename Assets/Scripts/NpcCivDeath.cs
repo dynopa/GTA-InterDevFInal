@@ -40,6 +40,7 @@ public class NpcCivDeath : MonoBehaviour
             this.gameObject.transform.Translate(new Vector3(0, -1, 0));
             this.gameObject.transform.Rotate(new Vector3(70, 20, 0));
             ScoreManager.Instance.IncreaseScore(10);
+            NpcCopManager.Instance.CivDeath();
             Invoke("StopForces", .5f);
             return true;
         }

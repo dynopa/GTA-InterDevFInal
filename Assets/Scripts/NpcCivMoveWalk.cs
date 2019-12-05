@@ -20,7 +20,10 @@ public class NpcCivMoveWalk : MonoBehaviour
 
         if (this.GetComponent<NpcCivPersonalityManager>().currentEmotion == this.GetComponent<NpcCivPersonalityManager>().frightened)
         {
-            LookAwayFromPlayer();
+            if (!RayCastForward())
+            {
+                LookAwayFromPlayer();
+            }
         }
         else
         {

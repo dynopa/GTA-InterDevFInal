@@ -83,6 +83,9 @@ public class PlayerGun : MonoBehaviour
             timeUntilNextShot = currentGun.fireRate;
             inventory.availableGuns[inventory.currentGunSelection].currentAmmo--;
 
+            NpcCopManager.Instance.CheckAllCopsForStars();
+            NpcCivManager.Instance.CheckAllNpcsForScared();
+
         }
     }    
 

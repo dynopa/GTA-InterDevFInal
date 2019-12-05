@@ -68,9 +68,13 @@ public class BulletMove : MonoBehaviour
 
         if (collision.gameObject.GetComponent<NpcCivDeath>() != null)
         {
-            Debug.Log("HitNPC");
             collision.gameObject.GetComponent<NpcCivDeath>().ReduceHealth(damage);
+        } 
+        else if (collision.gameObject.GetComponent<NpcCopDeath>() != null)
+        {
+            collision.gameObject.GetComponent<NpcCopDeath>().ReduceHealth(damage);
         }
+
     }
 
 
@@ -98,11 +102,20 @@ public class BulletMove : MonoBehaviour
                 if (hitCollider.gameObject.GetComponent<NpcCivDeath>() != null)
                 {
 
-                    Debug.Log("HitNPC");
+                    //Debug.Log("HitNPC");
                     hitCollider.gameObject.GetComponent<NpcCivDeath>().ReduceHealth(damage);
                     forceTmp *= 5;
                     upForceTmp *= 5;
                 }
+                else if (hitCollider.gameObject.GetComponent<NpcCopDeath>() != null)
+                {
+
+                    //Debug.Log("HitNPC");
+                    hitCollider.gameObject.GetComponent<NpcCopDeath>().ReduceHealth(damage);
+                    forceTmp *= 5;
+                    upForceTmp *= 5;
+                }
+
 
                 hitRB.AddExplosionForce(forceTmp, pos, radius, upForceMod, ForceMode.Impulse);
             }

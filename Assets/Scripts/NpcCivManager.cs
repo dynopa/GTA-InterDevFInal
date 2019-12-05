@@ -55,4 +55,12 @@ public class NpcCivManager : MonoBehaviour
     {
         allNpcCivs.Remove(NpcToRemove);
     }
+
+    public void CheckAllNpcsForScared()
+    {
+        foreach (GameObject npc in allNpcCivs)
+        {
+            npc.GetComponent<NpcCivPersonalityManager>().CheckForScared();
+        }
+    }
 }

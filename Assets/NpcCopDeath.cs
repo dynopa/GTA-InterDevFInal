@@ -23,6 +23,7 @@ public class NpcCopDeath : MonoBehaviour
     public void ReduceHealth(int damage)
     {
         health -= damage;
+        CheckForDeath();
       
     }
 
@@ -34,10 +35,11 @@ public class NpcCopDeath : MonoBehaviour
         if (health <= 0)
         {
             NpcCivManager.Instance.RemoveNpc(this.gameObject);
-            this.gameObject.GetComponent<NpcCivMoveWalk>().enabled = false;
+            this.gameObject.GetComponent<NpcCopMoveWalk>().enabled = false;
             this.gameObject.transform.Translate(new Vector3(0, -1, 0));
             this.gameObject.transform.Rotate(new Vector3(70, 20, 0));
             ScoreManager.Instance.IncreaseScore(10);
+            NpcCopManager.Instance.CopDeath();
             Invoke("StopForces", .5f);
             return true;
         }
