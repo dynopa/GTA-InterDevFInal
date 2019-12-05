@@ -4288,11 +4288,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1415902336}
     m_Modifications:
-    - target: {fileID: 4964214870191668990, guid: 3eafc4da2e6e089418126eb49aa3338b,
-        type: 3}
-      propertyPath: m_Name
-      value: Stop Light Pole (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 8268387671784197357, guid: 3eafc4da2e6e089418126eb49aa3338b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4357,6 +4352,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.50000024
+      objectReference: {fileID: 0}
+    - target: {fileID: 4964214870191668990, guid: 3eafc4da2e6e089418126eb49aa3338b,
+        type: 3}
+      propertyPath: m_Name
+      value: Stop Light Pole (2)
       objectReference: {fileID: 0}
     - target: {fileID: 4964214870191668991, guid: 3eafc4da2e6e089418126eb49aa3338b,
         type: 3}
@@ -8849,11 +8849,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 979659781}
     m_Modifications:
-    - target: {fileID: 4964214870191668990, guid: 3eafc4da2e6e089418126eb49aa3338b,
-        type: 3}
-      propertyPath: m_Name
-      value: Stop Light Pole (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 8268387671784197357, guid: 3eafc4da2e6e089418126eb49aa3338b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8908,6 +8903,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4964214870191668990, guid: 3eafc4da2e6e089418126eb49aa3338b,
+        type: 3}
+      propertyPath: m_Name
+      value: Stop Light Pole (1)
       objectReference: {fileID: 0}
     - target: {fileID: 4964214870191668991, guid: 3eafc4da2e6e089418126eb49aa3338b,
         type: 3}
@@ -9197,11 +9197,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1287283634}
     m_Modifications:
-    - target: {fileID: 4964214870191668990, guid: 3eafc4da2e6e089418126eb49aa3338b,
-        type: 3}
-      propertyPath: m_Name
-      value: Stop Light Pole (4)
-      objectReference: {fileID: 0}
     - target: {fileID: 8268387671784197357, guid: 3eafc4da2e6e089418126eb49aa3338b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9266,6 +9261,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.5000005
+      objectReference: {fileID: 0}
+    - target: {fileID: 4964214870191668990, guid: 3eafc4da2e6e089418126eb49aa3338b,
+        type: 3}
+      propertyPath: m_Name
+      value: Stop Light Pole (4)
       objectReference: {fileID: 0}
     - target: {fileID: 4964214870191668991, guid: 3eafc4da2e6e089418126eb49aa3338b,
         type: 3}
@@ -10672,11 +10672,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1287283634}
     m_Modifications:
-    - target: {fileID: 4964214870191668990, guid: 3eafc4da2e6e089418126eb49aa3338b,
-        type: 3}
-      propertyPath: m_Name
-      value: Stop Light Pole (4)
-      objectReference: {fileID: 0}
     - target: {fileID: 8268387671784197357, guid: 3eafc4da2e6e089418126eb49aa3338b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10731,6 +10726,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4964214870191668990, guid: 3eafc4da2e6e089418126eb49aa3338b,
+        type: 3}
+      propertyPath: m_Name
+      value: Stop Light Pole (4)
       objectReference: {fileID: 0}
     - target: {fileID: 4964214870191668991, guid: 3eafc4da2e6e089418126eb49aa3338b,
         type: 3}
@@ -11865,7 +11865,7 @@ PrefabInstance:
     - target: {fileID: 5373253811808863392, guid: fdb64fb36ea2aa349ac9b041603cdfc7,
         type: 3}
       propertyPath: m_Mass
-      value: 70
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fdb64fb36ea2aa349ac9b041603cdfc7, type: 3}
@@ -12873,6 +12873,92 @@ MonoBehaviour:
   - {x: -60, y: 0, z: 75}
   - {x: -50, y: 0, z: 75}
   - {x: -40, y: 0, z: 75}
+--- !u!1 &663896434
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 663896439}
+  - component: {fileID: 663896438}
+  - component: {fileID: 663896437}
+  - component: {fileID: 663896436}
+  - component: {fileID: 663896435}
+  m_Layer: 21
+  m_Name: PlaytestBounds
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &663896435
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 663896434}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 260, y: 50, z: 1}
+  m_Center: {x: 0, y: 0, z: -100}
+--- !u!65 &663896436
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 663896434}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 260, y: 50, z: 1}
+  m_Center: {x: 0, y: 0, z: 100}
+--- !u!65 &663896437
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 663896434}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 50, z: 220}
+  m_Center: {x: -120, y: 0, z: 0}
+--- !u!65 &663896438
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 663896434}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 50, z: 220}
+  m_Center: {x: 120, y: 0, z: 0}
+--- !u!4 &663896439
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 663896434}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 20
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &664185142
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13210,11 +13296,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1415902336}
     m_Modifications:
-    - target: {fileID: 4964214870191668990, guid: 3eafc4da2e6e089418126eb49aa3338b,
-        type: 3}
-      propertyPath: m_Name
-      value: Stop Light Pole (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 8268387671784197357, guid: 3eafc4da2e6e089418126eb49aa3338b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13269,6 +13350,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4964214870191668990, guid: 3eafc4da2e6e089418126eb49aa3338b,
+        type: 3}
+      propertyPath: m_Name
+      value: Stop Light Pole (1)
       objectReference: {fileID: 0}
     - target: {fileID: 4964214870191668991, guid: 3eafc4da2e6e089418126eb49aa3338b,
         type: 3}
@@ -16590,11 +16676,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 979659781}
     m_Modifications:
-    - target: {fileID: 4964214870191668990, guid: 3eafc4da2e6e089418126eb49aa3338b,
-        type: 3}
-      propertyPath: m_Name
-      value: Stop Light Pole
-      objectReference: {fileID: 0}
     - target: {fileID: 8268387671784197357, guid: 3eafc4da2e6e089418126eb49aa3338b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -16649,6 +16730,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4964214870191668990, guid: 3eafc4da2e6e089418126eb49aa3338b,
+        type: 3}
+      propertyPath: m_Name
+      value: Stop Light Pole
       objectReference: {fileID: 0}
     - target: {fileID: 4964214870191668991, guid: 3eafc4da2e6e089418126eb49aa3338b,
         type: 3}
@@ -22934,11 +23020,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1415902336}
     m_Modifications:
-    - target: {fileID: 4964214870191668990, guid: 3eafc4da2e6e089418126eb49aa3338b,
-        type: 3}
-      propertyPath: m_Name
-      value: Stop Light Pole (3)
-      objectReference: {fileID: 0}
     - target: {fileID: 8268387671784197357, guid: 3eafc4da2e6e089418126eb49aa3338b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -23003,6 +23084,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.5000005
+      objectReference: {fileID: 0}
+    - target: {fileID: 4964214870191668990, guid: 3eafc4da2e6e089418126eb49aa3338b,
+        type: 3}
+      propertyPath: m_Name
+      value: Stop Light Pole (3)
       objectReference: {fileID: 0}
     - target: {fileID: 4964214870191668991, guid: 3eafc4da2e6e089418126eb49aa3338b,
         type: 3}
@@ -23589,7 +23675,7 @@ PrefabInstance:
     - target: {fileID: 5373253811808863392, guid: fdb64fb36ea2aa349ac9b041603cdfc7,
         type: 3}
       propertyPath: m_Mass
-      value: 70
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fdb64fb36ea2aa349ac9b041603cdfc7, type: 3}
@@ -24164,11 +24250,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 979659781}
     m_Modifications:
-    - target: {fileID: 4964214870191668990, guid: 3eafc4da2e6e089418126eb49aa3338b,
-        type: 3}
-      propertyPath: m_Name
-      value: Stop Light Pole (3)
-      objectReference: {fileID: 0}
     - target: {fileID: 8268387671784197357, guid: 3eafc4da2e6e089418126eb49aa3338b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -24233,6 +24314,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.5000005
+      objectReference: {fileID: 0}
+    - target: {fileID: 4964214870191668990, guid: 3eafc4da2e6e089418126eb49aa3338b,
+        type: 3}
+      propertyPath: m_Name
+      value: Stop Light Pole (3)
       objectReference: {fileID: 0}
     - target: {fileID: 4964214870191668991, guid: 3eafc4da2e6e089418126eb49aa3338b,
         type: 3}
@@ -30162,7 +30248,7 @@ PrefabInstance:
     - target: {fileID: 5373253811808863392, guid: fdb64fb36ea2aa349ac9b041603cdfc7,
         type: 3}
       propertyPath: m_Mass
-      value: 70
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fdb64fb36ea2aa349ac9b041603cdfc7, type: 3}
@@ -33378,11 +33464,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 979659781}
     m_Modifications:
-    - target: {fileID: 4964214870191668990, guid: 3eafc4da2e6e089418126eb49aa3338b,
-        type: 3}
-      propertyPath: m_Name
-      value: Stop Light Pole (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 8268387671784197357, guid: 3eafc4da2e6e089418126eb49aa3338b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -33447,6 +33528,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.50000024
+      objectReference: {fileID: 0}
+    - target: {fileID: 4964214870191668990, guid: 3eafc4da2e6e089418126eb49aa3338b,
+        type: 3}
+      propertyPath: m_Name
+      value: Stop Light Pole (2)
       objectReference: {fileID: 0}
     - target: {fileID: 4964214870191668991, guid: 3eafc4da2e6e089418126eb49aa3338b,
         type: 3}
