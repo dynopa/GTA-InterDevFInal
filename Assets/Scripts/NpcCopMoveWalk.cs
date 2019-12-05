@@ -20,14 +20,17 @@ public class NpcCopMoveWalk : MonoBehaviour
     {
         if (NpcCopManager.Instance.GetStarLevel() >= 3)
         {
-            if (!RayCastForward())
+            if (Vector3.Distance(this.transform.position, PlayerManager.Instance.gameObject.transform.position) < 70f)
             {
-                LookAtPlayer();
+                if (!RayCastForward())
+                {
+                    LookAtPlayer();
+                }
             }
                 //this.transform.LookAt(this.transform.position - PlayerManager.Instance.gameObject.transform.position);
             } else if (NpcCopManager.Instance.GetStarLevel() > 0)
         {
-            if (Vector3.Distance(this.transform.position, PlayerManager.Instance.gameObject.transform.position) < 45f)
+            if (Vector3.Distance(this.transform.position, PlayerManager.Instance.gameObject.transform.position) < 35f)
             {
                 if (!RayCastForward())
                 {
@@ -53,6 +56,10 @@ public class NpcCopMoveWalk : MonoBehaviour
 
                 }
             }
+            if (RayCastForward())
+            {
+                this.transform.LookAt(this.transform.position + DecideNewDirection(RayCastDirections()));
+            }
         }
 
         //NPC constantly moves forward
@@ -60,10 +67,6 @@ public class NpcCopMoveWalk : MonoBehaviour
         //Turns right, left, or back
         MoveForward(speed);
 
-        if (RayCastForward())
-        {
-            this.transform.LookAt(this.transform.position + DecideNewDirection(RayCastDirections()));
-        }
     }
 
     /// <summary>
@@ -266,5 +269,15 @@ public class NpcCopMoveWalk : MonoBehaviour
 
         return listOfCollisions;
     }
+
+
+    void OnCollisionEnter(Collision col)
+    {
+        if (col.gameObject.GetComponent<PlayerManager>() != null)
+        {
+            Debug.Log("DEAD");
+        }
+    }
+
 
 }
