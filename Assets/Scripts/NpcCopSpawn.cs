@@ -82,7 +82,7 @@ public class NpcCopSpawn : MonoBehaviour
         GameObject coordToAdd = new GameObject();
         coordToAdd.transform.parent = this.transform;
         coordToAdd.transform.position = new Vector3(xR, yHeight, zR);
-
+        Debug.Log(coordToAdd.transform.position);
         spawnCoordListVectors.Add(coordToAdd.transform.position);
         Destroy(coordToAdd);
     }
@@ -92,7 +92,7 @@ public class NpcCopSpawn : MonoBehaviour
     /// </summary>
     public void AddRandomPoints()
     {
-        int numOfPoints = Random.Range(7, 11);
+        int numOfPoints = Random.Range(20, 50);
 
         for (int i = 0; i < numOfPoints; i++)
         {

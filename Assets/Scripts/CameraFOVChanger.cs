@@ -35,7 +35,6 @@ public class CameraFOVChanger : MonoBehaviour
 
         velocity = velocity.Remap(minVelocity, maxVelocity, 0, 1);
         velocity = Mathf.Clamp(curve.Evaluate(velocity), 0, 1);
-        print(velocity);
         float targetY = velocity.Remap(0, 1, minY, maxY);
 
         Vector3 movePos = new Vector3(Camera.main.transform.position.x, targetY, Camera.main.transform.position.z);

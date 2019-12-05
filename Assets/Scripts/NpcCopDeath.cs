@@ -12,7 +12,8 @@ public class NpcCopDeath : MonoBehaviour
     void Start()
     {
         //set up the health of this NPC
-        health = this.GetComponent<NpcCivPersonalityManager>().personality.health;
+        //health = this.GetComponent<NpcCivPersonalityManager>().personality.health;
+       
     }
 
 
