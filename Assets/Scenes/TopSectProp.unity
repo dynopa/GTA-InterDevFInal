@@ -172,26 +172,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Trash Can Lid
       objectReference: {fileID: 0}
-    - target: {fileID: -8395144002639726196, guid: 59e89f36668a5468197c7f95e9abc091,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 5.6
-      objectReference: {fileID: 0}
-    - target: {fileID: -8395144002639726196, guid: 59e89f36668a5468197c7f95e9abc091,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.73
-      objectReference: {fileID: 0}
-    - target: {fileID: -8395144002639726196, guid: 59e89f36668a5468197c7f95e9abc091,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 5.79
-      objectReference: {fileID: 0}
-    - target: {fileID: -6054058774237248251, guid: 59e89f36668a5468197c7f95e9abc091,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2e5637a8681904ddeabfb57ea4d819f8, type: 2}
     - target: {fileID: -4216859302048453862, guid: 59e89f36668a5468197c7f95e9abc091,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -247,6 +227,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8395144002639726196, guid: 59e89f36668a5468197c7f95e9abc091,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.6
+      objectReference: {fileID: 0}
+    - target: {fileID: -8395144002639726196, guid: 59e89f36668a5468197c7f95e9abc091,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.73
+      objectReference: {fileID: 0}
+    - target: {fileID: -8395144002639726196, guid: 59e89f36668a5468197c7f95e9abc091,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5.79
+      objectReference: {fileID: 0}
+    - target: {fileID: -6054058774237248251, guid: 59e89f36668a5468197c7f95e9abc091,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2e5637a8681904ddeabfb57ea4d819f8, type: 2}
     - target: {fileID: 4063835366044962077, guid: 59e89f36668a5468197c7f95e9abc091,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -1544,8 +1544,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a52c42f4d7b49424eb4b9be6710858bc, type: 2}
-  - {fileID: 2100000, guid: 7249f4f970a274d0f90485bff0dce896, type: 2}
+  - {fileID: 8711808633082530714, guid: c400ec270449be749974e37682a35852, type: 3}
+  - {fileID: 3087397886175806857, guid: c400ec270449be749974e37682a35852, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1888,7 +1888,7 @@ MonoBehaviour:
   m_material: {fileID: 0}
   m_sharedMaterial: {fileID: 0}
   m_isDefaultMaterial: 0
-  m_padding: 0
+  m_padding: 1.25
   m_canvasRenderer: {fileID: 66403128}
   m_TextComponent: {fileID: 847398127}
   m_materialReferenceIndex: 1
@@ -3204,8 +3204,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b9d23a687ab314667add590abc73c74e, type: 2}
-  - {fileID: 2100000, guid: a9fba118abf6f4c76be04a94f09d8ea1, type: 2}
+  - {fileID: -2310514774154243031, guid: 8e2f2b651f25d0b49b2da14704fdaba5, type: 3}
+  - {fileID: -749338713933554755, guid: 8e2f2b651f25d0b49b2da14704fdaba5, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4564,26 +4564,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Trash Can Lid
       objectReference: {fileID: 0}
-    - target: {fileID: -8395144002639726196, guid: 59e89f36668a5468197c7f95e9abc091,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 5.6
-      objectReference: {fileID: 0}
-    - target: {fileID: -8395144002639726196, guid: 59e89f36668a5468197c7f95e9abc091,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.73
-      objectReference: {fileID: 0}
-    - target: {fileID: -8395144002639726196, guid: 59e89f36668a5468197c7f95e9abc091,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 5.79
-      objectReference: {fileID: 0}
-    - target: {fileID: -6054058774237248251, guid: 59e89f36668a5468197c7f95e9abc091,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2e5637a8681904ddeabfb57ea4d819f8, type: 2}
     - target: {fileID: -4216859302048453862, guid: 59e89f36668a5468197c7f95e9abc091,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4639,6 +4619,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8395144002639726196, guid: 59e89f36668a5468197c7f95e9abc091,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.6
+      objectReference: {fileID: 0}
+    - target: {fileID: -8395144002639726196, guid: 59e89f36668a5468197c7f95e9abc091,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.73
+      objectReference: {fileID: 0}
+    - target: {fileID: -8395144002639726196, guid: 59e89f36668a5468197c7f95e9abc091,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5.79
+      objectReference: {fileID: 0}
+    - target: {fileID: -6054058774237248251, guid: 59e89f36668a5468197c7f95e9abc091,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2e5637a8681904ddeabfb57ea4d819f8, type: 2}
     - target: {fileID: 4063835366044962077, guid: 59e89f36668a5468197c7f95e9abc091,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -8173,26 +8173,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Trash Can Lid
       objectReference: {fileID: 0}
-    - target: {fileID: -8395144002639726196, guid: 59e89f36668a5468197c7f95e9abc091,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 5.6
-      objectReference: {fileID: 0}
-    - target: {fileID: -8395144002639726196, guid: 59e89f36668a5468197c7f95e9abc091,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.73
-      objectReference: {fileID: 0}
-    - target: {fileID: -8395144002639726196, guid: 59e89f36668a5468197c7f95e9abc091,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 5.79
-      objectReference: {fileID: 0}
-    - target: {fileID: -6054058774237248251, guid: 59e89f36668a5468197c7f95e9abc091,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2e5637a8681904ddeabfb57ea4d819f8, type: 2}
     - target: {fileID: -4216859302048453862, guid: 59e89f36668a5468197c7f95e9abc091,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8248,6 +8228,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8395144002639726196, guid: 59e89f36668a5468197c7f95e9abc091,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.6
+      objectReference: {fileID: 0}
+    - target: {fileID: -8395144002639726196, guid: 59e89f36668a5468197c7f95e9abc091,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.73
+      objectReference: {fileID: 0}
+    - target: {fileID: -8395144002639726196, guid: 59e89f36668a5468197c7f95e9abc091,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5.79
+      objectReference: {fileID: 0}
+    - target: {fileID: -6054058774237248251, guid: 59e89f36668a5468197c7f95e9abc091,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2e5637a8681904ddeabfb57ea4d819f8, type: 2}
     - target: {fileID: 4063835366044962077, guid: 59e89f36668a5468197c7f95e9abc091,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -11659,6 +11659,16 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 21
       objectReference: {fileID: 0}
+    - target: {fileID: -1499972697524441600, guid: 673a15b8990c34232a69d8d2e58ec435,
+        type: 3}
+      propertyPath: m_Layer
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 7977819192417808284, guid: 673a15b8990c34232a69d8d2e58ec435,
+        type: 3}
+      propertyPath: m_Layer
+      value: 21
+      objectReference: {fileID: 0}
     - target: {fileID: -4628617160327126625, guid: 673a15b8990c34232a69d8d2e58ec435,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -11734,21 +11744,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.7186305
       objectReference: {fileID: 0}
-    - target: {fileID: -1499972697524441600, guid: 673a15b8990c34232a69d8d2e58ec435,
-        type: 3}
-      propertyPath: m_Layer
-      value: 21
-      objectReference: {fileID: 0}
     - target: {fileID: 1318462475825722627, guid: 673a15b8990c34232a69d8d2e58ec435,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 98b72847a164947518b0798b1e7b8350, type: 2}
-    - target: {fileID: 7977819192417808284, guid: 673a15b8990c34232a69d8d2e58ec435,
-        type: 3}
-      propertyPath: m_Layer
-      value: 21
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 673a15b8990c34232a69d8d2e58ec435, type: 3}
 --- !u!1 &616596086
@@ -16222,16 +16222,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1914841235}
     m_Modifications:
-    - target: {fileID: 4949105724379490326, guid: d3e4eb0ef4862a94eb749a8e7b4c4b06,
-        type: 3}
-      propertyPath: m_Name
-      value: One Lane Intersection
-      objectReference: {fileID: 0}
-    - target: {fileID: 4949105724379490326, guid: d3e4eb0ef4862a94eb749a8e7b4c4b06,
-        type: 3}
-      propertyPath: m_Layer
-      value: 16
-      objectReference: {fileID: 0}
     - target: {fileID: 2513701653083771357, guid: d3e4eb0ef4862a94eb749a8e7b4c4b06,
         type: 3}
       propertyPath: m_Layer
@@ -16333,6 +16323,16 @@ PrefabInstance:
       value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 6079919938583780514, guid: d3e4eb0ef4862a94eb749a8e7b4c4b06,
+        type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 4949105724379490326, guid: d3e4eb0ef4862a94eb749a8e7b4c4b06,
+        type: 3}
+      propertyPath: m_Name
+      value: One Lane Intersection
+      objectReference: {fileID: 0}
+    - target: {fileID: 4949105724379490326, guid: d3e4eb0ef4862a94eb749a8e7b4c4b06,
         type: 3}
       propertyPath: m_Layer
       value: 16
@@ -16756,16 +16756,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1914841235}
     m_Modifications:
-    - target: {fileID: 4949105724379490326, guid: d3e4eb0ef4862a94eb749a8e7b4c4b06,
-        type: 3}
-      propertyPath: m_Name
-      value: One Lane Intersection (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4949105724379490326, guid: d3e4eb0ef4862a94eb749a8e7b4c4b06,
-        type: 3}
-      propertyPath: m_Layer
-      value: 16
-      objectReference: {fileID: 0}
     - target: {fileID: 2513701653083771357, guid: d3e4eb0ef4862a94eb749a8e7b4c4b06,
         type: 3}
       propertyPath: m_Layer
@@ -16867,6 +16857,16 @@ PrefabInstance:
       value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 6079919938583780514, guid: d3e4eb0ef4862a94eb749a8e7b4c4b06,
+        type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 4949105724379490326, guid: d3e4eb0ef4862a94eb749a8e7b4c4b06,
+        type: 3}
+      propertyPath: m_Name
+      value: One Lane Intersection (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4949105724379490326, guid: d3e4eb0ef4862a94eb749a8e7b4c4b06,
         type: 3}
       propertyPath: m_Layer
       value: 16
@@ -17805,26 +17805,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Trash Can Lid
       objectReference: {fileID: 0}
-    - target: {fileID: -8395144002639726196, guid: 59e89f36668a5468197c7f95e9abc091,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 5.6
-      objectReference: {fileID: 0}
-    - target: {fileID: -8395144002639726196, guid: 59e89f36668a5468197c7f95e9abc091,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.73
-      objectReference: {fileID: 0}
-    - target: {fileID: -8395144002639726196, guid: 59e89f36668a5468197c7f95e9abc091,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 5.79
-      objectReference: {fileID: 0}
-    - target: {fileID: -6054058774237248251, guid: 59e89f36668a5468197c7f95e9abc091,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2e5637a8681904ddeabfb57ea4d819f8, type: 2}
     - target: {fileID: -4216859302048453862, guid: 59e89f36668a5468197c7f95e9abc091,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -17880,6 +17860,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8395144002639726196, guid: 59e89f36668a5468197c7f95e9abc091,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.6
+      objectReference: {fileID: 0}
+    - target: {fileID: -8395144002639726196, guid: 59e89f36668a5468197c7f95e9abc091,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.73
+      objectReference: {fileID: 0}
+    - target: {fileID: -8395144002639726196, guid: 59e89f36668a5468197c7f95e9abc091,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5.79
+      objectReference: {fileID: 0}
+    - target: {fileID: -6054058774237248251, guid: 59e89f36668a5468197c7f95e9abc091,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2e5637a8681904ddeabfb57ea4d819f8, type: 2}
     - target: {fileID: 4063835366044962077, guid: 59e89f36668a5468197c7f95e9abc091,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -19577,26 +19577,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Trash Can Lid
       objectReference: {fileID: 0}
-    - target: {fileID: -8395144002639726196, guid: 59e89f36668a5468197c7f95e9abc091,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 5.6
-      objectReference: {fileID: 0}
-    - target: {fileID: -8395144002639726196, guid: 59e89f36668a5468197c7f95e9abc091,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.73
-      objectReference: {fileID: 0}
-    - target: {fileID: -8395144002639726196, guid: 59e89f36668a5468197c7f95e9abc091,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 5.79
-      objectReference: {fileID: 0}
-    - target: {fileID: -6054058774237248251, guid: 59e89f36668a5468197c7f95e9abc091,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2e5637a8681904ddeabfb57ea4d819f8, type: 2}
     - target: {fileID: -4216859302048453862, guid: 59e89f36668a5468197c7f95e9abc091,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -19652,6 +19632,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8395144002639726196, guid: 59e89f36668a5468197c7f95e9abc091,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.6
+      objectReference: {fileID: 0}
+    - target: {fileID: -8395144002639726196, guid: 59e89f36668a5468197c7f95e9abc091,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.73
+      objectReference: {fileID: 0}
+    - target: {fileID: -8395144002639726196, guid: 59e89f36668a5468197c7f95e9abc091,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5.79
+      objectReference: {fileID: 0}
+    - target: {fileID: -6054058774237248251, guid: 59e89f36668a5468197c7f95e9abc091,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2e5637a8681904ddeabfb57ea4d819f8, type: 2}
     - target: {fileID: 4063835366044962077, guid: 59e89f36668a5468197c7f95e9abc091,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -22705,16 +22705,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: One Lane Intersection (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 4949105724379490326, guid: d3e4eb0ef4862a94eb749a8e7b4c4b06,
-        type: 3}
-      propertyPath: m_Name
-      value: One Lane Intersection
-      objectReference: {fileID: 0}
-    - target: {fileID: 4949105724379490326, guid: d3e4eb0ef4862a94eb749a8e7b4c4b06,
-        type: 3}
-      propertyPath: m_Layer
-      value: 16
-      objectReference: {fileID: 0}
     - target: {fileID: 2513701653083771357, guid: d3e4eb0ef4862a94eb749a8e7b4c4b06,
         type: 3}
       propertyPath: m_Layer
@@ -22816,6 +22806,16 @@ PrefabInstance:
       value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 6079919938583780514, guid: d3e4eb0ef4862a94eb749a8e7b4c4b06,
+        type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 4949105724379490326, guid: d3e4eb0ef4862a94eb749a8e7b4c4b06,
+        type: 3}
+      propertyPath: m_Name
+      value: One Lane Intersection
+      objectReference: {fileID: 0}
+    - target: {fileID: 4949105724379490326, guid: d3e4eb0ef4862a94eb749a8e7b4c4b06,
         type: 3}
       propertyPath: m_Layer
       value: 16
@@ -25824,26 +25824,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Trash Can Lid
       objectReference: {fileID: 0}
-    - target: {fileID: -8395144002639726196, guid: 59e89f36668a5468197c7f95e9abc091,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 5.6
-      objectReference: {fileID: 0}
-    - target: {fileID: -8395144002639726196, guid: 59e89f36668a5468197c7f95e9abc091,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.73
-      objectReference: {fileID: 0}
-    - target: {fileID: -8395144002639726196, guid: 59e89f36668a5468197c7f95e9abc091,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 5.79
-      objectReference: {fileID: 0}
-    - target: {fileID: -6054058774237248251, guid: 59e89f36668a5468197c7f95e9abc091,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2e5637a8681904ddeabfb57ea4d819f8, type: 2}
     - target: {fileID: -4216859302048453862, guid: 59e89f36668a5468197c7f95e9abc091,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -25899,6 +25879,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8395144002639726196, guid: 59e89f36668a5468197c7f95e9abc091,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.6
+      objectReference: {fileID: 0}
+    - target: {fileID: -8395144002639726196, guid: 59e89f36668a5468197c7f95e9abc091,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.73
+      objectReference: {fileID: 0}
+    - target: {fileID: -8395144002639726196, guid: 59e89f36668a5468197c7f95e9abc091,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5.79
+      objectReference: {fileID: 0}
+    - target: {fileID: -6054058774237248251, guid: 59e89f36668a5468197c7f95e9abc091,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2e5637a8681904ddeabfb57ea4d819f8, type: 2}
     - target: {fileID: 4063835366044962077, guid: 59e89f36668a5468197c7f95e9abc091,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -27617,26 +27617,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Trash Can Lid
       objectReference: {fileID: 0}
-    - target: {fileID: -8395144002639726196, guid: 59e89f36668a5468197c7f95e9abc091,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 5.6
-      objectReference: {fileID: 0}
-    - target: {fileID: -8395144002639726196, guid: 59e89f36668a5468197c7f95e9abc091,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.73
-      objectReference: {fileID: 0}
-    - target: {fileID: -8395144002639726196, guid: 59e89f36668a5468197c7f95e9abc091,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 5.79
-      objectReference: {fileID: 0}
-    - target: {fileID: -6054058774237248251, guid: 59e89f36668a5468197c7f95e9abc091,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2e5637a8681904ddeabfb57ea4d819f8, type: 2}
     - target: {fileID: -4216859302048453862, guid: 59e89f36668a5468197c7f95e9abc091,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -27692,6 +27672,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8395144002639726196, guid: 59e89f36668a5468197c7f95e9abc091,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.6
+      objectReference: {fileID: 0}
+    - target: {fileID: -8395144002639726196, guid: 59e89f36668a5468197c7f95e9abc091,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.73
+      objectReference: {fileID: 0}
+    - target: {fileID: -8395144002639726196, guid: 59e89f36668a5468197c7f95e9abc091,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5.79
+      objectReference: {fileID: 0}
+    - target: {fileID: -6054058774237248251, guid: 59e89f36668a5468197c7f95e9abc091,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2e5637a8681904ddeabfb57ea4d819f8, type: 2}
     - target: {fileID: 4063835366044962077, guid: 59e89f36668a5468197c7f95e9abc091,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -30991,7 +30991,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f07bdc80d0c1a4fe1b88bef5bf32de5c, type: 2}
+  - {fileID: 2100000, guid: c3beb5e1f9f81432483907a906e9b530, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -32694,7 +32694,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 05b03e64a579a4ef9a4c3c6d4e917eb8, type: 2}
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
