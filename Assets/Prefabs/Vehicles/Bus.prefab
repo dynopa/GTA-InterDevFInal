@@ -74,6 +74,7 @@ MonoBehaviour:
   dir: {x: 0, y: 0, z: 0}
   tOffset: 0.0187
   maxRotationSpeed: 5.67
+  followBezier: {fileID: 5373253811808863406}
 --- !u!54 &5373253811808863392
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -202,6 +203,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -113181020801827196, guid: 8babf698a82484c1186aac1c8f2dae87,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d9567032b6ad74b858c9616dd7476384, type: 2}
     - target: {fileID: 1066910053003865102, guid: 8babf698a82484c1186aac1c8f2dae87,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -212,11 +218,6 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 7249f4f970a274d0f90485bff0dce896, type: 2}
-    - target: {fileID: -113181020801827196, guid: 8babf698a82484c1186aac1c8f2dae87,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: d9567032b6ad74b858c9616dd7476384, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8babf698a82484c1186aac1c8f2dae87, type: 3}
 --- !u!4 &1147033693936140539 stripped

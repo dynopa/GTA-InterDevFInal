@@ -15,12 +15,8 @@ public class CarAlignToBezier : MonoBehaviour
     Vector3 pastFrame;
     Vector3 currentVelocity;
 
-    CarFollowBezier followBezier;
+    public CarFollowBezier followBezier;
 
-    private void Start()
-    {
-        followBezier = GetComponent<CarFollowBezier>();
-    }
 
 
     void Update()

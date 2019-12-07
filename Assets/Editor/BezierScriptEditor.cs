@@ -35,6 +35,8 @@ public class BezierScriptEditor : Editor
             thisBezier.RightAngleBezierPoint2();
         }
 
+        if (GUILayout.Button("Calculate Bezier Length"));
+
 
     }
 

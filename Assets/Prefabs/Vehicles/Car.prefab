@@ -161,7 +161,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
   collider: {fileID: 0}
-  carDestroyScript: {fileID: 0}
+  carDestroyScript: {fileID: -417657606019195335}
   enRoute: 0
   speed: 12
   changePathSpeed: 1.7
@@ -185,6 +185,7 @@ MonoBehaviour:
   dir: {x: 0, y: 0, z: 0}
   tOffset: 0.0187
   maxRotationSpeed: 5.67
+  followBezier: {fileID: 3303509334139928633}
 --- !u!54 &3303509334139928639
 Rigidbody:
   m_ObjectHideFlags: 0

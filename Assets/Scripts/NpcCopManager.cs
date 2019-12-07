@@ -9,10 +9,10 @@ public class NpcCopManager : MonoBehaviour
 
     [SerializeField] private List<GameObject> allNpcCops = new List<GameObject>();
 
-    [SerializeField] private int starLevel = 0;
+    public static int starLevel = 0;
 
-    [SerializeField] private int copsKilled = 0;
-    [SerializeField] private int civsKilled = 0;
+    public int copsKilled = 0;
+    public int civsKilled = 0;
 
     public static NpcCopManager Instance;
 
