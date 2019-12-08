@@ -75,8 +75,8 @@ public class NpcCopMoveWalk : MonoBehaviour
     private void LookAtPlayer()
     {
         //Debug.Log(PlayerManager.Instance.gameObject.transform.position);
-        Vector3 atPlayer = (PlayerManager.Instance.gameObject.transform.position);
-        atPlayer = new Vector3(atPlayer.x, this.transform.position.y, atPlayer.z);
+        Transform atPlayer = (PlayerManager.Instance.gameObject.transform);
+        atPlayer.position = new Vector3(atPlayer.position.x, this.transform.position.y, atPlayer.position.z);
         this.transform.LookAt(atPlayer);
     }
 
