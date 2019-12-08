@@ -227,7 +227,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d84e3e837c43b054e9702a2f15cb209f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waitTilDestroyTime: 15
+  waitTilDestroyTime: 10
   changedDistanceToReset: 1
   initPosition: {x: 0, y: 0, z: 0}
   initRotation: {x: 0, y: 0, z: 0, w: 0}
