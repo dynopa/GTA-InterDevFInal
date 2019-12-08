@@ -994,7 +994,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 1
   stopLightOrder: 2
   controlPoints:
@@ -1071,7 +1071,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 1
   stopLightOrder: 2
   controlPoints:
@@ -1357,7 +1357,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 1
   stopLightOrder: 1
   controlPoints:
@@ -1428,7 +1428,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 0
   stopLightOrder: 0
   controlPoints:
@@ -2120,7 +2120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 0
   stopLightOrder: 0
   controlPoints:
@@ -3308,7 +3308,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 1
   stopLightOrder: 1
   controlPoints:
@@ -3787,7 +3787,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 0
   stopLightOrder: 0
   controlPoints:
@@ -4090,7 +4090,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 1
   stopLightOrder: 2
   controlPoints:
@@ -4288,6 +4288,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1415902336}
     m_Modifications:
+    - target: {fileID: 4964214870191668990, guid: 3eafc4da2e6e089418126eb49aa3338b,
+        type: 3}
+      propertyPath: m_Name
+      value: Stop Light Pole (2)
+      objectReference: {fileID: 0}
     - target: {fileID: 8268387671784197357, guid: 3eafc4da2e6e089418126eb49aa3338b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4352,11 +4357,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.50000024
-      objectReference: {fileID: 0}
-    - target: {fileID: 4964214870191668990, guid: 3eafc4da2e6e089418126eb49aa3338b,
-        type: 3}
-      propertyPath: m_Name
-      value: Stop Light Pole (2)
       objectReference: {fileID: 0}
     - target: {fileID: 4964214870191668991, guid: 3eafc4da2e6e089418126eb49aa3338b,
         type: 3}
@@ -4919,7 +4919,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 1
   stopLightOrder: 1
   controlPoints:
@@ -5341,7 +5341,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 1
   stopLightOrder: 2
   controlPoints:
@@ -5474,7 +5474,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 1
   stopLightOrder: 2
   controlPoints:
@@ -6996,7 +6996,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 1
   stopLightOrder: 2
   controlPoints:
@@ -7118,6 +7118,94 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 320124775}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &326169028
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 326169029}
+  - component: {fileID: 326169032}
+  - component: {fileID: 326169031}
+  - component: {fileID: 326169030}
+  m_Layer: 5
+  m_Name: Star_2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &326169029
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 326169028}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1830915669}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -295, y: -256.06}
+  m_SizeDelta: {x: 60, y: 60}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &326169030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 326169028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73415c5097e20bf4ab2a87766b05623e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  starNumber: 2
+  starImage: {fileID: 326169031}
+--- !u!114 &326169031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 326169028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 9942c693a007f844ab4f3263d75a78ef, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &326169032
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 326169028}
+  m_CullTransparentMesh: 0
 --- !u!1 &327057602
 GameObject:
   m_ObjectHideFlags: 0
@@ -7177,7 +7265,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 1
   stopLightOrder: 1
   controlPoints:
@@ -7368,7 +7456,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 1
   stopLightOrder: 1
   controlPoints:
@@ -7929,7 +8017,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 1
   stopLightOrder: 1
   controlPoints:
@@ -8849,6 +8937,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 979659781}
     m_Modifications:
+    - target: {fileID: 4964214870191668990, guid: 3eafc4da2e6e089418126eb49aa3338b,
+        type: 3}
+      propertyPath: m_Name
+      value: Stop Light Pole (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 8268387671784197357, guid: 3eafc4da2e6e089418126eb49aa3338b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8903,11 +8996,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4964214870191668990, guid: 3eafc4da2e6e089418126eb49aa3338b,
-        type: 3}
-      propertyPath: m_Name
-      value: Stop Light Pole (1)
       objectReference: {fileID: 0}
     - target: {fileID: 4964214870191668991, guid: 3eafc4da2e6e089418126eb49aa3338b,
         type: 3}
@@ -8981,7 +9069,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 1
   stopLightOrder: 1
   controlPoints:
@@ -9112,7 +9200,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 1
   stopLightOrder: 1
   controlPoints:
@@ -9197,6 +9285,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1287283634}
     m_Modifications:
+    - target: {fileID: 4964214870191668990, guid: 3eafc4da2e6e089418126eb49aa3338b,
+        type: 3}
+      propertyPath: m_Name
+      value: Stop Light Pole (4)
+      objectReference: {fileID: 0}
     - target: {fileID: 8268387671784197357, guid: 3eafc4da2e6e089418126eb49aa3338b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9261,11 +9354,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.5000005
-      objectReference: {fileID: 0}
-    - target: {fileID: 4964214870191668990, guid: 3eafc4da2e6e089418126eb49aa3338b,
-        type: 3}
-      propertyPath: m_Name
-      value: Stop Light Pole (4)
       objectReference: {fileID: 0}
     - target: {fileID: 4964214870191668991, guid: 3eafc4da2e6e089418126eb49aa3338b,
         type: 3}
@@ -10672,6 +10760,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1287283634}
     m_Modifications:
+    - target: {fileID: 4964214870191668990, guid: 3eafc4da2e6e089418126eb49aa3338b,
+        type: 3}
+      propertyPath: m_Name
+      value: Stop Light Pole (4)
+      objectReference: {fileID: 0}
     - target: {fileID: 8268387671784197357, guid: 3eafc4da2e6e089418126eb49aa3338b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10726,11 +10819,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4964214870191668990, guid: 3eafc4da2e6e089418126eb49aa3338b,
-        type: 3}
-      propertyPath: m_Name
-      value: Stop Light Pole (4)
       objectReference: {fileID: 0}
     - target: {fileID: 4964214870191668991, guid: 3eafc4da2e6e089418126eb49aa3338b,
         type: 3}
@@ -11079,7 +11167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 0
   stopLightOrder: 0
   controlPoints:
@@ -11315,7 +11403,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 1
   stopLightOrder: 2
   controlPoints:
@@ -11386,7 +11474,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 0
   stopLightOrder: 0
   controlPoints:
@@ -12009,7 +12097,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 1
   stopLightOrder: 2
   controlPoints:
@@ -12080,7 +12168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 1
   stopLightOrder: 2
   controlPoints:
@@ -12388,7 +12476,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 1
   stopLightOrder: 1
   controlPoints:
@@ -12459,7 +12547,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 0
   stopLightOrder: 0
   controlPoints:
@@ -12664,7 +12752,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 1
   stopLightOrder: 1
   controlPoints:
@@ -12861,7 +12949,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 1
   stopLightOrder: 2
   controlPoints:
@@ -13296,6 +13384,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1415902336}
     m_Modifications:
+    - target: {fileID: 4964214870191668990, guid: 3eafc4da2e6e089418126eb49aa3338b,
+        type: 3}
+      propertyPath: m_Name
+      value: Stop Light Pole (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 8268387671784197357, guid: 3eafc4da2e6e089418126eb49aa3338b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13350,11 +13443,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4964214870191668990, guid: 3eafc4da2e6e089418126eb49aa3338b,
-        type: 3}
-      propertyPath: m_Name
-      value: Stop Light Pole (1)
       objectReference: {fileID: 0}
     - target: {fileID: 4964214870191668991, guid: 3eafc4da2e6e089418126eb49aa3338b,
         type: 3}
@@ -13688,7 +13776,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 1
   stopLightOrder: 1
   controlPoints:
@@ -13789,7 +13877,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 0
   stopLightOrder: 0
   controlPoints:
@@ -14069,7 +14157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 0
   stopLightOrder: 0
   controlPoints:
@@ -14284,7 +14372,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 1
   stopLightOrder: 2
   controlPoints:
@@ -14624,7 +14712,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 1
   stopLightOrder: 1
   controlPoints:
@@ -14881,7 +14969,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 1
   stopLightOrder: 2
   controlPoints:
@@ -14952,7 +15040,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 1
   stopLightOrder: 2
   controlPoints:
@@ -15023,7 +15111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 1
   stopLightOrder: 1
   controlPoints:
@@ -15342,7 +15430,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 1
   stopLightOrder: 1
   controlPoints:
@@ -15742,7 +15830,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 0
   stopLightOrder: 0
   controlPoints:
@@ -15891,7 +15979,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 1
   stopLightOrder: 1
   controlPoints:
@@ -15998,7 +16086,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 0
   stopLightOrder: 0
   controlPoints:
@@ -16203,7 +16291,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 0
   stopLightOrder: 0
   controlPoints:
@@ -16584,7 +16672,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 0
   stopLightOrder: 0
   controlPoints:
@@ -16676,6 +16764,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 979659781}
     m_Modifications:
+    - target: {fileID: 4964214870191668990, guid: 3eafc4da2e6e089418126eb49aa3338b,
+        type: 3}
+      propertyPath: m_Name
+      value: Stop Light Pole
+      objectReference: {fileID: 0}
     - target: {fileID: 8268387671784197357, guid: 3eafc4da2e6e089418126eb49aa3338b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -16730,11 +16823,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4964214870191668990, guid: 3eafc4da2e6e089418126eb49aa3338b,
-        type: 3}
-      propertyPath: m_Name
-      value: Stop Light Pole
       objectReference: {fileID: 0}
     - target: {fileID: 4964214870191668991, guid: 3eafc4da2e6e089418126eb49aa3338b,
         type: 3}
@@ -17229,7 +17317,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 0
   stopLightOrder: 0
   controlPoints:
@@ -17300,7 +17388,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 1
   stopLightOrder: 2
   controlPoints:
@@ -17595,7 +17683,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 1
   stopLightOrder: 1
   controlPoints:
@@ -17771,7 +17859,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 1
   stopLightOrder: 2
   controlPoints:
@@ -18366,7 +18454,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 0
   stopLightOrder: 0
   controlPoints:
@@ -18721,7 +18809,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 1
   stopLightOrder: 1
   controlPoints:
@@ -19102,7 +19190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 0
   stopLightOrder: 0
   controlPoints:
@@ -19387,7 +19475,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 0
   stopLightOrder: 0
   controlPoints:
@@ -20005,7 +20093,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 0
   stopLightOrder: 0
   controlPoints:
@@ -20076,7 +20164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 1
   stopLightOrder: 1
   controlPoints:
@@ -20207,7 +20295,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 1
   stopLightOrder: 1
   controlPoints:
@@ -20707,7 +20795,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 1
   stopLightOrder: 1
   controlPoints:
@@ -21239,7 +21327,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 1
   stopLightOrder: 2
   controlPoints:
@@ -21496,7 +21584,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 1
   stopLightOrder: 1
   controlPoints:
@@ -22154,7 +22242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 1
   stopLightOrder: 1
   controlPoints:
@@ -22606,7 +22694,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 0
   stopLightOrder: 0
   controlPoints:
@@ -23020,6 +23108,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1415902336}
     m_Modifications:
+    - target: {fileID: 4964214870191668990, guid: 3eafc4da2e6e089418126eb49aa3338b,
+        type: 3}
+      propertyPath: m_Name
+      value: Stop Light Pole (3)
+      objectReference: {fileID: 0}
     - target: {fileID: 8268387671784197357, guid: 3eafc4da2e6e089418126eb49aa3338b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -23084,11 +23177,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.5000005
-      objectReference: {fileID: 0}
-    - target: {fileID: 4964214870191668990, guid: 3eafc4da2e6e089418126eb49aa3338b,
-        type: 3}
-      propertyPath: m_Name
-      value: Stop Light Pole (3)
       objectReference: {fileID: 0}
     - target: {fileID: 4964214870191668991, guid: 3eafc4da2e6e089418126eb49aa3338b,
         type: 3}
@@ -23303,7 +23391,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 1
   stopLightOrder: 2
   controlPoints:
@@ -23744,7 +23832,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 0
   stopLightOrder: 0
   controlPoints:
@@ -23845,7 +23933,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 0
   stopLightOrder: 0
   controlPoints:
@@ -23916,7 +24004,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 0
   stopLightOrder: 0
   controlPoints:
@@ -24031,7 +24119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 1
   stopLightOrder: 1
   controlPoints:
@@ -24250,6 +24338,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 979659781}
     m_Modifications:
+    - target: {fileID: 4964214870191668990, guid: 3eafc4da2e6e089418126eb49aa3338b,
+        type: 3}
+      propertyPath: m_Name
+      value: Stop Light Pole (3)
+      objectReference: {fileID: 0}
     - target: {fileID: 8268387671784197357, guid: 3eafc4da2e6e089418126eb49aa3338b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -24314,11 +24407,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.5000005
-      objectReference: {fileID: 0}
-    - target: {fileID: 4964214870191668990, guid: 3eafc4da2e6e089418126eb49aa3338b,
-        type: 3}
-      propertyPath: m_Name
-      value: Stop Light Pole (3)
       objectReference: {fileID: 0}
     - target: {fileID: 4964214870191668991, guid: 3eafc4da2e6e089418126eb49aa3338b,
         type: 3}
@@ -24916,7 +25004,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 1
   stopLightOrder: 2
   controlPoints:
@@ -25047,7 +25135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 1
   stopLightOrder: 2
   controlPoints:
@@ -25276,7 +25364,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 1
   stopLightOrder: 1
   controlPoints:
@@ -25347,7 +25435,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 1
   stopLightOrder: 1
   controlPoints:
@@ -26503,7 +26591,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 0
   stopLightOrder: 0
   controlPoints:
@@ -27036,7 +27124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 0
   stopLightOrder: 0
   controlPoints:
@@ -27461,7 +27549,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 0
   stopLightOrder: 0
   controlPoints:
@@ -28290,7 +28378,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 0
   stopLightOrder: 0
   controlPoints:
@@ -28436,7 +28524,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 1
   stopLightOrder: 1
   controlPoints:
@@ -28612,7 +28700,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 1
   stopLightOrder: 1
   controlPoints:
@@ -29362,7 +29450,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 1
   stopLightOrder: 1
   controlPoints:
@@ -29601,7 +29689,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxNumberOfNpcCops: 10
   allNpcCops: []
-  starLevel: 0
   copsKilled: 0
   civsKilled: 0
 --- !u!114 &1592823319
@@ -30353,7 +30440,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 1
   stopLightOrder: 1
   controlPoints:
@@ -30424,7 +30511,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 1
   stopLightOrder: 1
   controlPoints:
@@ -31398,7 +31485,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 1
   stopLightOrder: 2
   controlPoints:
@@ -31761,7 +31848,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 1
   stopLightOrder: 1
   controlPoints:
@@ -31952,7 +32039,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 1
   stopLightOrder: 1
   controlPoints:
@@ -32514,7 +32601,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 0
   stopLightOrder: 0
   controlPoints:
@@ -32585,7 +32672,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 1
   stopLightOrder: 2
   controlPoints:
@@ -32929,7 +33016,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 1
   stopLightOrder: 2
   controlPoints:
@@ -33030,7 +33117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 1
   stopLightOrder: 1
   controlPoints:
@@ -33101,7 +33188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 1
   stopLightOrder: 2
   controlPoints:
@@ -33464,6 +33551,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 979659781}
     m_Modifications:
+    - target: {fileID: 4964214870191668990, guid: 3eafc4da2e6e089418126eb49aa3338b,
+        type: 3}
+      propertyPath: m_Name
+      value: Stop Light Pole (2)
+      objectReference: {fileID: 0}
     - target: {fileID: 8268387671784197357, guid: 3eafc4da2e6e089418126eb49aa3338b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -33528,11 +33620,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.50000024
-      objectReference: {fileID: 0}
-    - target: {fileID: 4964214870191668990, guid: 3eafc4da2e6e089418126eb49aa3338b,
-        type: 3}
-      propertyPath: m_Name
-      value: Stop Light Pole (2)
       objectReference: {fileID: 0}
     - target: {fileID: 4964214870191668991, guid: 3eafc4da2e6e089418126eb49aa3338b,
         type: 3}
@@ -33606,7 +33693,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 1
   stopLightOrder: 1
   controlPoints:
@@ -33908,6 +33995,9 @@ RectTransform:
   - {fileID: 1636684956}
   - {fileID: 847398126}
   - {fileID: 1363472040}
+  - {fileID: 1985643103}
+  - {fileID: 326169029}
+  - {fileID: 1887924403}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -34005,7 +34095,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 0
   stopLightOrder: 0
   controlPoints:
@@ -34076,7 +34166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 1
   stopLightOrder: 2
   controlPoints:
@@ -34207,7 +34297,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 1
   stopLightOrder: 2
   controlPoints:
@@ -34278,7 +34368,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 1
   stopLightOrder: 2
   controlPoints:
@@ -34803,7 +34893,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 1
   stopLightOrder: 2
   controlPoints:
@@ -34845,6 +34935,94 @@ Transform:
   m_Father: {fileID: 185769313}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1887924402
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1887924403}
+  - component: {fileID: 1887924406}
+  - component: {fileID: 1887924405}
+  - component: {fileID: 1887924404}
+  m_Layer: 5
+  m_Name: Star_3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1887924403
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1887924402}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1830915669}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -240, y: -256.06}
+  m_SizeDelta: {x: 60, y: 60}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1887924404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1887924402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73415c5097e20bf4ab2a87766b05623e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  starNumber: 3
+  starImage: {fileID: 1887924405}
+--- !u!114 &1887924405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1887924402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 9942c693a007f844ab4f3263d75a78ef, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1887924406
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1887924402}
+  m_CullTransparentMesh: 0
 --- !u!1 &1888569231
 GameObject:
   m_ObjectHideFlags: 0
@@ -35317,7 +35495,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 1
   stopLightOrder: 2
   controlPoints:
@@ -35418,7 +35596,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 0
   stopLightOrder: 0
   controlPoints:
@@ -35615,7 +35793,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 1
   stopLightOrder: 1
   controlPoints:
@@ -35796,6 +35974,94 @@ Transform:
   m_Father: {fileID: 185769313}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1985643102
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1985643103}
+  - component: {fileID: 1985643106}
+  - component: {fileID: 1985643105}
+  - component: {fileID: 1985643104}
+  m_Layer: 5
+  m_Name: Star_1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1985643103
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1985643102}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1830915669}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -350, y: -256.06}
+  m_SizeDelta: {x: 60, y: 60}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1985643104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1985643102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73415c5097e20bf4ab2a87766b05623e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  starNumber: 1
+  starImage: {fileID: 1985643105}
+--- !u!114 &1985643105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1985643102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 9942c693a007f844ab4f3263d75a78ef, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1985643106
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1985643102}
+  m_CullTransparentMesh: 0
 --- !u!1 &2008699430
 GameObject:
   m_ObjectHideFlags: 0
@@ -37023,7 +37289,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 0
   stopLightOrder: 0
   controlPoints:
@@ -37124,7 +37390,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 1
   stopLightOrder: 2
   controlPoints:
@@ -37195,7 +37461,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 1
   stopLightOrder: 2
   controlPoints:
@@ -37266,7 +37532,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 1
   stopLightOrder: 1
   controlPoints:
@@ -37406,7 +37672,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 1
   stopLightOrder: 1
   controlPoints:
@@ -37477,7 +37743,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 1
   stopLightOrder: 1
   controlPoints:
