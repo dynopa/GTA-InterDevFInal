@@ -58,7 +58,7 @@ public class NpcCopSpawn : MonoBehaviour
     {
         GameObject newNPC = Instantiate(NPCPrefab, coords, Quaternion.identity);
 
-        newNPC.transform.parent = NPCParent.transform;
+        //newNPC.transform.parent = NPCParent.transform;
 
         if (CheckForLegalSpawn(newNPC))
         {
@@ -131,16 +131,30 @@ public class NpcCopSpawn : MonoBehaviour
             {
                 return false;
             }
+        }
+    
+            Ray rayCheckF = new Ray(npcToCheck.transform.position, npcToCheck.transform.forward);
+            RaycastHit hitF = new RaycastHit();
+
+            if (Physics.Raycast(rayCheckF, out hit, 1))
+            {
+                if (hitF.collider.gameObject.tag != "Concrete")
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
             else
             {
                 return true;
             }
+        
 
-        }
-        else
-        {
-            return false;
-        }
+
+
     }
 
 }
