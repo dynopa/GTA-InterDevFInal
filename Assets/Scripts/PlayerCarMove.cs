@@ -105,6 +105,8 @@ public class PlayerCarMove : MonoBehaviour
             float velocIncreaseForceMultiplier = Mathf.Sqrt(PlayerManager.Instance.rb.velocity.magnitude) * 10;
 
 
+            NpcCopManager.Instance.IncreaseStarScore(15);
+
             ParticleManager.Instance.InstantiateExplosion(hitCarRB.transform.position, hitCarRB.transform);
             hitCarRB.AddExplosionForce(carLaunchForce * velocIncreaseForceMultiplier, PlayerManager.Instance.rb.transform.position, 15, carUpForce * velocIncreaseForceMultiplier, ForceMode.Impulse);
         }

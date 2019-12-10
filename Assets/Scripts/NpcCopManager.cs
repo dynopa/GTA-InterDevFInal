@@ -43,14 +43,14 @@ public class NpcCopManager : MonoBehaviour
             NpcCopSpawn.Instance.SpawnAtCoord();
         }
 
-        if (starScore > 400)
+        if (starScore > 150)
         {
             starLevel = 3;
-        } else if (starScore > 180) {
+        } else if (starScore > 75) {
 
             starLevel = 2;
 
-        } else if (starScore > 35)
+        } else if (starScore > 30)
         {
             starLevel = 1;
         }
