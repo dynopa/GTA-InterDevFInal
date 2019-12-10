@@ -152,6 +152,7 @@ public class PlayerManager : MonoBehaviour
     public void EnterCar(Collider car)
     {
         inCar = true;
+        NpcCopManager.Instance.CarStolen();
         currentCar = car.gameObject;
         Destroy(currentCar.GetComponent<CarFollowBezier>());
         Destroy(currentCar.GetComponent<CarAlignToBezier>());
