@@ -6203,6 +6203,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1.2
       objectReference: {fileID: 0}
+    - target: {fileID: 3665897031477393810, guid: eaef5e33cfc564d7fbd9400cfac591c0,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e6251142e89134a01ae25e1261306b91, type: 2}
+    - target: {fileID: 3775055101659426159, guid: eaef5e33cfc564d7fbd9400cfac591c0,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e6251142e89134a01ae25e1261306b91, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eaef5e33cfc564d7fbd9400cfac591c0, type: 3}
 --- !u!1 &842863866
