@@ -22,7 +22,7 @@ public class NpcCopMoveWalk : MonoBehaviour
     {
         if (NpcCopManager.Instance.GetStarLevel() >= 3)
         {
-            if (Vector3.Distance(this.transform.position, PlayerManager.Instance.gameObject.transform.position) < 70f)
+            if (Vector3.Distance(this.transform.position, PlayerManager.Instance.gameObject.transform.position) < 50f)
             {
                 if (!RayCastForward())
                 {
@@ -32,7 +32,7 @@ public class NpcCopMoveWalk : MonoBehaviour
                 //this.transform.LookAt(this.transform.position - PlayerManager.Instance.gameObject.transform.position);
             } else if (NpcCopManager.Instance.GetStarLevel() > 0)
         {
-            if (Vector3.Distance(this.transform.position, PlayerManager.Instance.gameObject.transform.position) < 35f)
+            if (Vector3.Distance(this.transform.position, PlayerManager.Instance.gameObject.transform.position) < 20f)
             {
                 if (!RayCastForward())
                 {
@@ -67,8 +67,22 @@ public class NpcCopMoveWalk : MonoBehaviour
         //NPC constantly moves forward
         //When they detect a collider ahead of them, they choose a new valid directions and turn that way
         //Turns right, left, or back
-        MoveForward(speed);
 
+        if (NpcCopManager.Instance.GetStarLevel() > 0)
+        {
+            if (Vector3.Distance(this.transform.position, PlayerManager.Instance.gameObject.transform.position) > 6f)
+            {
+                MoveForward(speed);
+            }
+            else
+            {
+                LookAtPlayer();
+            }
+        }
+        else
+        {
+            MoveForward(speed);
+        }
     }
 
     /// <summary>
