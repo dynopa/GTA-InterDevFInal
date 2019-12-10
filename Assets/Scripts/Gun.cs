@@ -33,8 +33,8 @@ public class Gun : ScriptableObject
     public float recoilAmount;
     public Texture2D gunTextureUI;
     [Header("Audio")]
-    public AudioClip gunshotClip;
-    public AudioClip bulletZoomClip;
+    public AudioClip[] gunshotClips;
+    public AudioClip reloadClip;
 
 
 
