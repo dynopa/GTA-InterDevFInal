@@ -51,8 +51,9 @@ public class CarDestroy : MonoBehaviour
             timeTilDestroy = waitTilDestroyTime;
             positionToMoveFrom = transform.position;
         }
+        
 
-        if (timeTilDestroy < 0 && (transform.position - PlayerManager.position).magnitude > 50 && (initPosition - PlayerManager.position).magnitude > 50)
+        if (timeTilDestroy < 0 && Vector3.Distance(this.transform.position, PlayerManager.Instance.transform.position) > 50 && Vector3.Distance(initPosition, PlayerManager.Instance.transform.position) > 50)
         {
             ReplaceCarScripts();
             carFollowScript.ResetPosition(initPosition, initRotation);

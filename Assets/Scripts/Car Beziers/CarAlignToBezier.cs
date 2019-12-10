@@ -17,7 +17,10 @@ public class CarAlignToBezier : MonoBehaviour
 
     public CarFollowBezier followBezier;
 
-
+    private void Start()
+    {
+        followBezier = GetComponent<CarFollowBezier>();
+    }
 
     void Update()
     {

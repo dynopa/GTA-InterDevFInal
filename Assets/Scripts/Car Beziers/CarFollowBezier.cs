@@ -138,7 +138,7 @@ public class CarFollowBezier : MonoBehaviour
 
                 if (currentBezier.isStoplightNode && StoplightManager.currentLight != currentBezier.stopLightOrder && StoplightManager.currentLight != 0)
                 {
-                    if (currentBezier.isTurn())
+                    if (currentBezier.isTurn() && (transform.position - PlayerManager.position).magnitude > 40)
                     {
                         overrideStopping = true;
                         collider.enabled = false;
