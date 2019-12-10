@@ -19063,22 +19063,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1861920985}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &456472713
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 8244730327321737655}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8611749398982399155}
-  m_Layer: 0
-  m_Name: Missing Prefab (Dummy)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &462344018
 GameObject:
   m_ObjectHideFlags: 0
@@ -21874,6 +21858,22 @@ MonoBehaviour:
   - {x: -90, y: 0, z: -25}
   - {x: -105, y: 0, z: -24.999998}
   - {x: -105, y: 0, z: -40}
+--- !u!1 &630737390
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8244730327321737657}
+  m_Layer: 0
+  m_Name: Recovery GameObject (0)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1001 &630950726
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36342,6 +36342,7 @@ Transform:
   - {fileID: 1313080559}
   - {fileID: 48212149}
   - {fileID: 1886850551}
+  - {fileID: 8244730327321737656}
   - {fileID: 829590806}
   - {fileID: 1496723615}
   m_Father: {fileID: 1317355436}
@@ -45636,7 +45637,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c3beb5e1f9f81432483907a906e9b530, type: 2}
+  - {fileID: 2100000, guid: 5c8412247ab444bfa8836ddae9d148a3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -49730,37 +49731,11 @@ Transform:
   m_Father: {fileID: 185769313}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1886850550
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 8244730327321737655}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1886850551}
-  m_Layer: 0
-  m_Name: StreetLamp (16) (Missing Prefab)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1886850551
+--- !u!4 &1886850551 stripped
 Transform:
-  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 8244730327321737655}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1886850550}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 8611749398982399155}
-  m_Father: {fileID: 1382522497}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1888569231
 GameObject:
   m_ObjectHideFlags: 0
@@ -54663,6 +54638,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c4e650f3c4ab42828bbd9879ffca91a, type: 3}
+--- !u!4 &8244730327321737656 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 8244730327321737655}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8244730327321737657 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 8244730327321737655}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8576235153218980155
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -54732,20 +54717,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e6f871b5123c4c1fbe7465ed50fde80, type: 3}
---- !u!4 &8611749398982399155 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 425659431097822468, guid: 7c4e650f3c4ab42828bbd9879ffca91a,
-    type: 3}
-  m_PrefabInstance: {fileID: 8244730327321737655}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 456472713}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []=
-  m_Father: {fileID: 1886850551}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &8654786193852115094 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6619216813315375781, guid: 11cf97f65a6504687867162dd9e5863b,
