@@ -12,9 +12,15 @@ public class NpcCopManager : MonoBehaviour
     public static int starLevel = 0;
 
     public int copsKilled = 0;
-    private int copsKilledTemp = 0;
+
     public int civsKilled = 0;
-    private int civsKilledTemp = 0;
+
+    public int carsStolen = 0;
+
+    public int shotsNearCop = 0;
+
+
+    [SerializeField] private int starScore = 0;
 
     public static NpcCopManager Instance;
 
@@ -37,30 +43,51 @@ public class NpcCopManager : MonoBehaviour
             NpcCopSpawn.Instance.SpawnAtCoord();
         }
 
-
-        int copsNearby = 0;
-
-        foreach (GameObject cop in allNpcCops)
+        if (starScore > 400)
         {
-            copsNearby += cop.GetComponent<NpcCopStarCheck>().CheckDistance();
+            starLevel = 3;
+        } else if (starScore > 180) {
+
+            starLevel = 2;
+
+        } else if (starScore > 35)
+        {
+            starLevel = 1;
+        }
+        else
+        {
+            starLevel = 0;
         }
 
-        if (copsNearby < 1)
+        starTimer += Time.deltaTime;
+
+        if (starLevel > 0 && starTimer >= .5f / starLevel)
         {
-            if (starLevel != 0)
-            {
-                starTimer += Time.deltaTime;
-
-                if (starTimer >= 30)
-                {
-
-                    starLevel--;
-                    starTimer = 0;
-                    copsKilledTemp = 0;
-                    civsKilledTemp = 0;
-                }
+            starScore--;
+            starTimer = 0;
             }
-        }
+
+        //int copsNearby = 0;
+
+        //foreach (GameObject cop in allNpcCops)
+        //{
+        //    copsNearby += cop.GetComponent<NpcCopStarCheck>().CheckDistance();
+        //}
+
+        //if (copsNearby < 1)
+        //{
+        //    if (starLevel != 0)
+        //    {
+        //        starTimer += Time.deltaTime;
+
+        //        if (starTimer >= 30)
+        //        {
+
+        //            starLevel--;
+        //            starTimer = 0;
+        //        }
+        //    }
+        //}
     }
 
 
@@ -99,37 +126,60 @@ public class NpcCopManager : MonoBehaviour
             copsNearby += cop.GetComponent<NpcCopStarCheck>().CheckDistance();
         }
 
-        if (starLevel == 0)
+        if (copsNearby > 0)
         {
-            if (copsNearby > 0)
-            {
-                starLevel++;
-            }
+            shotsNearCop += copsNearby;
+            starScore += 1;
         }
+
+        //if (starLevel == 0)
+        //{
+        //    if (copsNearby > 0)
+        //    {
+        //        starLevel++;
+        //    }
+        //}
     }
 
     public void CopDeath()
     {
         copsKilled++;
-        copsKilledTemp++;
+        //copsKilledTemp++;
         CheckAllCopsForStars();
 
-        if (civsKilledTemp > 15 && copsKilledTemp > 3 && starLevel < 3)
-        {
-            starLevel++;
-        }
+        starScore += 25;
+
+        //if (civsKilledTemp > 15 && copsKilledTemp > 3 && starLevel < 3)
+        //{
+        //    starLevel++;
+        //}
     }
 
     public void CivDeath()
     {
         civsKilled++;
-        civsKilledTemp++;
+        //civsKilledTemp++;
         CheckAllCopsForStars();
 
-        if (civsKilledTemp > 10 && starLevel < 2)
-        {
-            starLevel++;
-        }
+        starScore += 15;
+
+        //if (civsKilledTemp > 5 && starLevel < 2)
+        //{
+        //    starLevel++;
+        //}
+    }
+
+    public void CarStolen ()
+    {
+        carsStolen++;
+        CheckAllCopsForStars();
+
+        starScore += 8;
+    }
+
+    public void IncreaseStarScore (int scoreToIncrease)
+    {
+        starScore += scoreToIncrease;
     }
 
     public int GetStarLevel()
