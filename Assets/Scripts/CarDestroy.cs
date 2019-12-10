@@ -72,7 +72,7 @@ public class CarDestroy : MonoBehaviour
         if (carFollowScript == null)
         {
             carFollowScript = this.gameObject.AddComponent<CarFollowBezier>();
-            SetFollowScriptToInit();
+            SetFollowScriptToInit();    
         }
 
         if (rb == null)
