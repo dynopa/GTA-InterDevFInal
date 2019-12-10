@@ -131,15 +131,44 @@ public class NpcCivSpawn : MonoBehaviour
             if (hit.collider.gameObject.tag != "Concrete")
             {
                 return false;
-            } else {
+            }
+        }
+
+        Ray rayCheckF = new Ray(npcToCheck.transform.position, npcToCheck.transform.forward);
+        RaycastHit hitF = new RaycastHit();
+
+        if (Physics.Raycast(rayCheckF, out hit, 1))
+        {
+            if (hitF.collider.gameObject.tag != "Concrete")
+            {
+                return false;
+            }
+            else
+            {
                 return true;
             }
-
         }
         else
         {
-            return false;
+            return true;
         }
+        //Ray rayCheck = new Ray(npcToCheck.transform.position, -npcToCheck.transform.up);
+        //RaycastHit hit = new RaycastHit();
+
+        //if (Physics.Raycast(rayCheck, out hit, 5))
+        //{
+        //    if (hit.collider.gameObject.tag != "Concrete")
+        //    {
+        //        return false;
+        //    } else {
+        //        return true;
+        //    }
+
+        //}
+        //else
+        //{
+        //    return false;
+        //}
     }
 
 }
