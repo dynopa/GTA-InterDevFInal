@@ -16,6 +16,8 @@ public class PlayerGun : MonoBehaviour
 
     MeshRenderer gunMR;
     PlayerInventory inventory;
+    public AudioSource[] audioSrc;
+    int currentAudioIndex;
 
     float timeUntilNextShot; //When less than 0, the player can fire;
 
@@ -26,6 +28,7 @@ public class PlayerGun : MonoBehaviour
     {
         gunMR = GetComponent<MeshRenderer>();
         inventory = GetComponentInParent<PlayerInventory>();
+        
     }
 
 
@@ -86,6 +89,18 @@ public class PlayerGun : MonoBehaviour
             NpcCopManager.Instance.CheckAllCopsForStars();
             NpcCivManager.Instance.CheckAllNpcsForScared();
 
+            audioSrc[currentAudioIndex].Stop();
+            audioSrc[currentAudioIndex].pitch = Random.Range(.98f, 1.02f);
+            audioSrc[currentAudioIndex].clip = currentGun.gunshotClips[Random.Range(0, currentGun.gunshotClips.Length)];
+            audioSrc[currentAudioIndex].Play();
+            if (currentAudioIndex + 1 >= audioSrc.Length)
+            {
+                currentAudioIndex = 0;
+            }
+            else
+            {
+                currentAudioIndex++;
+            }
         }
     }    
 

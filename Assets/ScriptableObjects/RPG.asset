@@ -29,5 +29,6 @@ MonoBehaviour:
   upForce: 0.5
   recoilAmount: 0
   gunTextureUI: {fileID: 0}
-  gunshotClip: {fileID: 0}
-  bulletZoomClip: {fileID: 0}
+  gunshotClips:
+  - {fileID: 8300000, guid: 0e02442a31e844a4da5162fc86b37623, type: 3}
+  reloadClip: {fileID: 0}

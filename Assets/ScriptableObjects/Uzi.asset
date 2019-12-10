@@ -21,13 +21,17 @@ MonoBehaviour:
   bulletForce: 130
   clipSize: 24
   fullyAuto: 1
-  fireRate: 0.1
-  reloadTime: 1.2
+  fireRate: 0.07
+  reloadTime: 1.5
   bloomAmount: 0
   explosive: 0
   explosionRadius: 0
   upForce: 0
   recoilAmount: 0
   gunTextureUI: {fileID: 0}
-  gunshotClip: {fileID: 0}
-  bulletZoomClip: {fileID: 0}
+  gunshotClips:
+  - {fileID: 8300000, guid: 7e80e8ac5114a434bab97f9d03181058, type: 3}
+  - {fileID: 8300000, guid: e94a5d64d3533b64faaf81396dff5e8b, type: 3}
+  - {fileID: 8300000, guid: a9d4085cc57bcbc41a2be222da9704e4, type: 3}
+  - {fileID: 8300000, guid: babc6194be1247e4894d0edd0227c068, type: 3}
+  reloadClip: {fileID: 0}
