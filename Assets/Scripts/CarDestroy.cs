@@ -63,6 +63,7 @@ public class CarDestroy : MonoBehaviour
 
     public void ReplaceCarScripts()
     {
+        print("resetting car");
         if (carAlignScript == null)
         {
             carAlignScript = this.gameObject.AddComponent<CarAlignToBezier>();

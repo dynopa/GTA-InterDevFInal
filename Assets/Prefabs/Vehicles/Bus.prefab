@@ -102,7 +102,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.95, y: 4.44, z: 8.59}
+  m_Size: {x: 2.95, y: 4.44, z: 11.21}
   m_Center: {x: 0, y: 2.1, z: 0}
 --- !u!114 &5405000245532498876
 MonoBehaviour:
@@ -128,11 +128,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5373253811808863405}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 8babf698a82484c1186aac1c8f2dae87,
-        type: 3}
-      propertyPath: m_Name
-      value: schoolbus
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 8babf698a82484c1186aac1c8f2dae87,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -202,6 +197,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8babf698a82484c1186aac1c8f2dae87,
+        type: 3}
+      propertyPath: m_Name
+      value: schoolbus
       objectReference: {fileID: 0}
     - target: {fileID: -113181020801827196, guid: 8babf698a82484c1186aac1c8f2dae87,
         type: 3}
