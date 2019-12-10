@@ -12,7 +12,9 @@ public class NpcCopManager : MonoBehaviour
     public static int starLevel = 0;
 
     public int copsKilled = 0;
+    private int copsKilledTemp = 0;
     public int civsKilled = 0;
+    private int civsKilledTemp = 0;
 
     public static NpcCopManager Instance;
 
@@ -54,6 +56,8 @@ public class NpcCopManager : MonoBehaviour
 
                     starLevel--;
                     starTimer = 0;
+                    copsKilledTemp = 0;
+                    civsKilledTemp = 0;
                 }
             }
         }
@@ -107,9 +111,10 @@ public class NpcCopManager : MonoBehaviour
     public void CopDeath()
     {
         copsKilled++;
+        copsKilledTemp++;
         CheckAllCopsForStars();
 
-        if (civsKilled > 15 && copsKilled > 3 && starLevel < 3)
+        if (civsKilledTemp > 15 && copsKilledTemp > 3 && starLevel < 3)
         {
             starLevel++;
         }
@@ -118,9 +123,10 @@ public class NpcCopManager : MonoBehaviour
     public void CivDeath()
     {
         civsKilled++;
+        civsKilledTemp++;
         CheckAllCopsForStars();
 
-        if (civsKilled > 10 && starLevel < 2)
+        if (civsKilledTemp > 10 && starLevel < 2)
         {
             starLevel++;
         }
