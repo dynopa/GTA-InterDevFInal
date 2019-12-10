@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class NpcCopStarCheck : MonoBehaviour
 {
-    [SerializeField] private float distanceCheck = 25f;
+    [SerializeField] private float distanceCheck = 12.5f;
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame

@@ -107,7 +107,9 @@ public class NpcCopManager : MonoBehaviour
     public void CopDeath()
     {
         copsKilled++;
-        if (starLevel < 3)
+        CheckAllCopsForStars();
+
+        if (civsKilled > 15 && copsKilled > 3 && starLevel < 3)
         {
             starLevel++;
         }
@@ -116,7 +118,9 @@ public class NpcCopManager : MonoBehaviour
     public void CivDeath()
     {
         civsKilled++;
-        if (starLevel < 2)
+        CheckAllCopsForStars();
+
+        if (civsKilled > 10 && starLevel < 2)
         {
             starLevel++;
         }

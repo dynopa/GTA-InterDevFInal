@@ -9,6 +9,8 @@ public class NpcCopMoveWalk : MonoBehaviour
     [SerializeField] float speed = 15f;
 
     private int forwardAngleRandomizer;
+
+
     private void Start()
     {
         forwardAngleRandomizer = (int)Random.Range(3, 8);

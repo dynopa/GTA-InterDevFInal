@@ -139,7 +139,7 @@ public class NpcCivSpawn : MonoBehaviour
 
         if (Physics.Raycast(rayCheckF, out hit, 1))
         {
-            if (hitF.collider.gameObject.tag != "Concrete")
+            if (hitF.collider.gameObject != null && hitF.collider.gameObject.tag != "Concrete")
             {
                 return false;
             }

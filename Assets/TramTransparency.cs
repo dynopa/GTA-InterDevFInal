@@ -17,7 +17,9 @@ public class TramTransparency : MonoBehaviour
         if (Vector3.Distance(PlayerManager.Instance.gameObject.transform.position, this.transform.position) < 25f)
        {
             Material tempMat = this.GetComponentInChildren<MeshRenderer>().material;
+            
             Color tempColor = tempMat.color;
+            float tempAlpha = Vector3.Distance(PlayerManager.Instance.gameObject.transform.position, this.transform.position).Remap(.5f, 1f, 0, 25);
             tempColor.a = .5f;
             tempMat.color = tempColor;
             this.GetComponentInChildren<MeshRenderer>().material = tempMat;
