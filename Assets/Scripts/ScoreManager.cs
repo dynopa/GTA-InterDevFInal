@@ -1,22 +1,27 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour
 {
-    [SerializeField]private int score = 0;
+    [SerializeField] private int score = 0;
     public static ScoreManager Instance; 
-    // Start is called before the first frame update
+    public Text scoreText;
+
+    // void Awake() {
+    //     DontDestroyOnLoad(this.gameObject);
+    // }
+   
     void Start()
     {
         Instance = this;
-        score = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        scoreText.text = "Score: " + score;
     }
 
     /// <summary>
