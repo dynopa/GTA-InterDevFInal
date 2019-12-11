@@ -46,16 +46,15 @@ public class BulletMove : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.GetComponent<Rigidbody>() != null)
+        if(explosive)
         {
-            if (explosive)
-            {
-                Explosion(rb.transform.position, explosionRadius);
-            }
-            else
-            {
+            Explosion(rb.transform.position, explosionRadius);
+        }
+        else if (collision.gameObject.GetComponent<Rigidbody>() != null)
+        {
+           
                 ShootBullet(collision, forwardDir.normalized * force, rb.transform.position);
-            }
+            
 
         }
 
@@ -80,11 +79,11 @@ public class BulletMove : MonoBehaviour
 
     void Explosion(Vector3 pos, float radius)
     {
-        Vector3 explosionPos = rb.transform.position;
-        Collider[] colliders = Physics.OverlapSphere(explosionPos, radius);
+        Collider[] colliders = Physics.OverlapSphere(pos, radius);
 
         Instantiate(explosiveParticles, rb.transform.position, Quaternion.identity);
 
+        print("explosion");
 
         foreach (Collider hitCollider in colliders)
         {
@@ -94,6 +93,16 @@ public class BulletMove : MonoBehaviour
             {
                 hitRB = hitCollider.gameObject.GetComponent<Rigidbody>();
             }
+            else if ((hitCollider.gameObject.GetComponentInParent<Rigidbody>() != null))
+            {
+                hitRB = hitCollider.gameObject.GetComponentInParent<Rigidbody>();
+            }
+            else if ((hitCollider.gameObject.GetComponentInChildren<Rigidbody>() != null))
+            {
+                hitRB = hitCollider.gameObject.GetComponentInChildren<Rigidbody>();
+            }
+            print(hitCollider.gameObject.name);
+
             if (hitRB != null)
             {
                 float forceTmp = force;
@@ -104,23 +113,49 @@ public class BulletMove : MonoBehaviour
 
                     //Debug.Log("HitNPC");
                     hitCollider.gameObject.GetComponent<NpcCivDeath>().ReduceHealth(damage);
-                    forceTmp *= 5;
-                    upForceTmp *= 5;
+                    forceTmp *= 2;
+                    upForceTmp *= 2;
                 }
                 else if (hitCollider.gameObject.GetComponent<NpcCopDeath>() != null)
                 {
 
                     //Debug.Log("HitNPC");
                     hitCollider.gameObject.GetComponent<NpcCopDeath>().ReduceHealth(damage);
-                    forceTmp *= 5;
-                    upForceTmp *= 5;
+                    forceTmp *= 2;
+                    upForceTmp *= 2;
+                }
+
+                if (hitCollider.gameObject.layer == LayerMask.NameToLayer("Car"))
+                {
+                    DestroyCar(hitCollider);
                 }
 
 
-                hitRB.AddExplosionForce(forceTmp, pos, radius, upForceMod, ForceMode.Impulse);
+                    hitRB.AddExplosionForce(forceTmp, pos, radius, upForceMod, ForceMode.Impulse);
             }
 
 
         }
+    }
+
+    void DestroyCar(Collider collision)
+    {
+        
+            collision.transform.gameObject.layer = LayerMask.NameToLayer("Obstacles");
+
+
+            Destroy(collision.gameObject.GetComponent<CarFollowBezier>());
+            Destroy(collision.gameObject.GetComponent<CarAlignToBezier>());
+            Rigidbody hitCarRB = collision.gameObject.GetComponent<Rigidbody>();
+            hitCarRB.constraints = RigidbodyConstraints.None;
+            hitCarRB.useGravity = true;
+            hitCarRB.isKinematic = false;
+
+
+            NpcCopManager.Instance.IncreaseStarScore(25);
+
+            ParticleManager.Instance.InstantiateExplosion(hitCarRB.transform.position, hitCarRB.transform);
+            hitCarRB.AddExplosionForce(force * 60, PlayerManager.Instance.rb.transform.position, 15, upForceMod * 10, ForceMode.Impulse);
+        
     }
 }

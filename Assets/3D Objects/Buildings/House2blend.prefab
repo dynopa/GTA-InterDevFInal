@@ -243,6 +243,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5961549982380554775}
+  - component: {fileID: 2484602098736182194}
   m_Layer: 0
   m_Name: House2blend
   m_TagString: Untagged
@@ -268,6 +269,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!65 &2484602098736182194
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7269082234744834052}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 15.6, y: 14.23, z: 19.79}
+  m_Center: {x: 0, y: 0, z: 1.65}
 --- !u!1 &8100263111404000772
 GameObject:
   m_ObjectHideFlags: 0
