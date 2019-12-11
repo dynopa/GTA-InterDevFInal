@@ -6,12 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/TopSectProp.unity
-    guid: de644499947854f908234c9c09c0dae6
-  - enabled: 1
     path: Assets/Scenes/StartScene.unity
     guid: 99295b3dbc1f241768fe9bf090de3a15
   - enabled: 1
+    path: Assets/Scenes/FullScene.unity
+    guid: b89bf6694c4a36e44be647c400dd1cd1
+  - enabled: 1
     path: Assets/Scenes/EndScene.unity
     guid: 99df84acc315c477a96787e66a1cb7d1
+  - enabled: 1
+    path: Assets/Scenes/TopSectProp.unity
+    guid: de644499947854f908234c9c09c0dae6
   m_configObjects: {}

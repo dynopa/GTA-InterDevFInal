@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8469557632496810625}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: 2Lane - Single Turn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -138,7 +138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
   isStoplightNode: 0
   stopLightOrder: 0
   controlPoints:
@@ -172,7 +172,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6032401543716232477}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: End Position
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -204,7 +204,7 @@ GameObject:
   - component: {fileID: 6032401544315838350}
   - component: {fileID: 6032401544315838349}
   - component: {fileID: 4263384738162905074}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Smal90Degree
   m_TagString: Bezier
   m_Icon: {fileID: 0}
@@ -239,7 +239,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 1
+  isStraightLine: 0
   isStoplightNode: 0
   stopLightOrder: 0
   controlPoints:
@@ -273,7 +273,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6032401544873144006}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Bezier Position
   m_TagString: Untagged
   m_Icon: {fileID: 0}

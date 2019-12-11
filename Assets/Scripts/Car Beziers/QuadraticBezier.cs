@@ -54,41 +54,41 @@ public class QuadraticBezier : MonoBehaviour
     {
         //if (Application.isEditor)
         //{
-        //points = new Vector3[3];
-        //points[0] = controlPoints[0].position;
-        //points[1] = controlPoints[1].position;
-        //points[2] = controlPoints[2].position;
+        //    points = new Vector3[3];
+        //    points[0] = controlPoints[0].position;
+        //    points[1] = controlPoints[1].position;
+        //    points[2] = controlPoints[2].position;
 
-        //Vector3 secondToLastPos = Vector3.zero;
-        //bezierLength = 0;
-        //Gizmos.color = Color.grey;
-        ////Draws the lines that display that show the scope of the bezier (start to bezier pos, and bezier to endPos lines)
-        //Gizmos.DrawLine(controlPoints[0].position, controlPoints[1].position);
-        //Gizmos.DrawLine(controlPoints[1].position, controlPoints[2].position);
+        //    Vector3 secondToLastPos = Vector3.zero;
+        //    bezierLength = 0;
+        //    Gizmos.color = Color.grey;
+        //    //Draws the lines that display that show the scope of the bezier (start to bezier pos, and bezier to endPos lines)
+        //    Gizmos.DrawLine(controlPoints[0].position, controlPoints[1].position);
+        //    Gizmos.DrawLine(controlPoints[1].position, controlPoints[2].position);
 
 
-        ////Draws lines between spheres along the bezier with spacing between each sphere as the tStepBetweenMidPoints.
-        //for (float t = 0; t <= 1; t += tStepBetweenMidPoints)
-        //{
-        //    Gizmos.color = Color.yellow;
-        //    float nextT = t + tStepBetweenMidPoints;
-
-        //    gizmoPos = this.GetPositionFromCompletionPercentage(t);
-
-        //    if (nextT < 1 && nextT > 0)
+        //    //Draws lines between spheres along the bezier with spacing between each sphere as the tStepBetweenMidPoints.
+        //    for (float t = 0; t <= 1; t += tStepBetweenMidPoints)
         //    {
+        //        Gizmos.color = Color.yellow;
+        //        float nextT = t + tStepBetweenMidPoints;
 
-        //        Vector3 nextPos = this.GetPositionFromCompletionPercentage(nextT);
-        //        Gizmos.DrawLine(gizmoPos, nextPos);
-        //        bezierLength += Vector3.Distance(gizmoPos, nextPos);
+        //        gizmoPos = this.GetPositionFromCompletionPercentage(t);
+
+        //        if (nextT < 1 && nextT > 0)
+        //        {
+
+        //            Vector3 nextPos = this.GetPositionFromCompletionPercentage(nextT);
+        //            Gizmos.DrawLine(gizmoPos, nextPos);
+        //            bezierLength += Vector3.Distance(gizmoPos, nextPos);
+
+        //        }
+
+        //        secondToLastPos = gizmoPos;
 
         //    }
-
-        //    secondToLastPos = gizmoPos;
-
-        //}
-        //Gizmos.DrawLine(secondToLastPos, points[2]);
-        //bezierLength += Vector3.Distance(secondToLastPos, points[2]);
+        //    Gizmos.DrawLine(secondToLastPos, points[2]);
+        //    bezierLength += Vector3.Distance(secondToLastPos, points[2]);
 
         //}
 

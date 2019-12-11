@@ -321,6 +321,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4966122698254207717}
+  - component: {fileID: 891216584031485289}
   m_Layer: 0
   m_Name: Bakery
   m_TagString: Untagged
@@ -348,6 +349,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!65 &891216584031485289
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8264227983240509686}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 16.1, y: 14.07, z: 21.3}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8525555309507831463
 GameObject:
   m_ObjectHideFlags: 0
