@@ -77,15 +77,37 @@ public class NpcCivSpawn : MonoBehaviour
     /// </summary>
     public void AddRandomPoint()
     {
-        float xR = Random.Range(xMin, xMax);
-        //float yR = Random.Range(0f, 10f);
-        float zR = Random.Range(zMin, zMax);
-        GameObject coordToAdd = new GameObject();
-        coordToAdd.transform.parent = this.transform;
-        coordToAdd.transform.position = new Vector3(xR, yHeight, zR);
+        bool insideBounds = false;
 
-        spawnCoordListVectors.Add(coordToAdd.transform.position);
-        Destroy(coordToAdd);
+        while (!insideBounds) //Will continue to look for a point until one is inside bounds
+        {
+            insideBounds = true;
+
+            float xR = Random.Range(xMin, xMax);
+            //float yR = Random.Range(0f, 10f);
+            float zR = Random.Range(zMin, zMax);
+            Vector3 pos = new Vector3(xR, 0, zR);
+
+            Collider[] nearObjects = Physics.OverlapSphere(pos, 1);
+            foreach (Collider nearObject in nearObjects)
+            {
+                if (nearObject.gameObject.layer == 17)
+                {
+                    insideBounds = false;
+                }
+            }
+
+
+            if (insideBounds)
+            {
+                GameObject coordToAdd = new GameObject();
+                coordToAdd.transform.parent = this.transform;
+                coordToAdd.transform.position = new Vector3(xR, yHeight, zR);
+
+                spawnCoordListVectors.Add(coordToAdd.transform.position);
+                Destroy(coordToAdd);
+            }
+        }
     }
 
     /// <summary>
@@ -137,11 +159,18 @@ public class NpcCivSpawn : MonoBehaviour
         Ray rayCheckF = new Ray(npcToCheck.transform.position, npcToCheck.transform.forward);
         RaycastHit hitF = new RaycastHit();
 
-        if (Physics.Raycast(rayCheckF, out hit, 1))
+        if (Physics.Raycast(rayCheckF, out hitF, 1))
         {
-            if (hitF.collider.gameObject != null && hitF.collider.gameObject.tag != "Concrete")
+            if (hitF.collider.gameObject != null)
             {
-                return false;
+                if (hitF.collider.gameObject.tag != "Concrete")
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
             }
             else
             {
