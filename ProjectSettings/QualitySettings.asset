@@ -184,8 +184,7 @@ QualitySettings:
     asyncUploadBufferSize: 16
     asyncUploadPersistentBuffer: 1
     resolutionScalingFixedDPIFactor: 1
-    excludedTargetPlatforms:
-    - WebGL
+    excludedTargetPlatforms: []
   - serializedVersion: 2
     name: Ultra
     pixelLightCount: 4
@@ -220,7 +219,8 @@ QualitySettings:
     asyncUploadBufferSize: 16
     asyncUploadPersistentBuffer: 1
     resolutionScalingFixedDPIFactor: 1
-    excludedTargetPlatforms: []
+    excludedTargetPlatforms:
+    - WebGL
   m_PerPlatformDefaultQuality:
     Standalone: 0
     WebGL: 0
