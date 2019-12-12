@@ -13,6 +13,6 @@ public class Spinner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.transform.Rotate(Time.deltaTime* spinSpeedx, Time.deltaTime * spinSpeedy, Time.deltaTime * spinSpeedz);
+            this.transform.Rotate(new Vector3(spinSpeedx, spinSpeedy * Time.deltaTime, spinSpeedz));
     }
 }
