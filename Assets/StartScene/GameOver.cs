@@ -8,14 +8,15 @@ public class GameOver : MonoBehaviour
 {
     public Text gameOverText;
 
-    void Update()
+    void Start()
     {
         string stringToPrint = "";
         stringToPrint += "Misdemeanors: \n" + NpcCopManager.Instance.copsKilled.ToString() + " Counts of Vandalism";
-        stringToPrint += "Felonies: \n" + NpcCopManager.Instance.civsKilled.ToString() + " Counts of Manslaughter";
-        stringToPrint += "\n" + NpcCopManager.Instance.carsStolen.ToString() + " Counts of Grand Theft Auto";
-        stringToPrint += "Capital Felonies: \n" + NpcCopManager.Instance.copsKilled.ToString() + " Counts of Police Murder";
-        stringToPrint += "\nYou Scored: " + ScoreManager.Instance.GetScore();
+        stringToPrint += "\n" + NpcCopManager.Instance.shotsNearCop.ToString() + " Shots Fired near Police";
+        stringToPrint += "\n\nFelonies: \n" + NpcCopManager.Instance.civsKilled.ToString() + " Counts of Manslaughter";
+        stringToPrint += "\n" + NpcCopManager.Instance.carsStolen.ToString() + " Counts of Auto Theft";
+        stringToPrint += "\n\nCapital Felonies: \n" + NpcCopManager.Instance.copsKilled.ToString() + " Counts of Police Murder";
+        stringToPrint += "\n\nYou Scored: " + ScoreManager.Instance.GetScore();
 
 
 
