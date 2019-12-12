@@ -22,7 +22,7 @@ public class PlayerDeath : MonoBehaviour
 
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
 
         healthTimer += Time.deltaTime;
@@ -45,7 +45,10 @@ public class PlayerDeath : MonoBehaviour
         {
             if (health < 100)
             {
-                health++;
+                if (Time.frameCount % 3 == 0)
+                {
+                    health++;
+                }
             }
         }
 
