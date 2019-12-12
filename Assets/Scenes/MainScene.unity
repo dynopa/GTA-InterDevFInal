@@ -999,6 +999,7 @@ MonoBehaviour:
   dir: {x: 0, y: 0, z: 0}
   tOffset: 0.0187
   maxRotationSpeed: 5.67
+  followBezier: {fileID: 0}
 --- !u!114 &102154469
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1012,12 +1013,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
+  collider: {fileID: 0}
+  carDestroyScript: {fileID: 0}
   enRoute: 0
   speed: 12
   changePathSpeed: 1.7
   frontSensorOffset: 5.5
   sensorWidth: 0
   sensorDistance: 0
+  inTurn: 0
   canRotate: 0
 --- !u!4 &103051619 stripped
 Transform:
@@ -1352,7 +1356,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
+  isStoplightNode: 0
+  stopLightOrder: 0
   controlPoints:
   - {fileID: 1376275817}
   - {fileID: 624047288}
@@ -1514,7 +1520,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
+  isStoplightNode: 0
+  stopLightOrder: 0
   controlPoints:
   - {fileID: 1329894478}
   - {fileID: 2010582743}
@@ -2359,7 +2367,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
+  isStoplightNode: 0
+  stopLightOrder: 0
   controlPoints:
   - {fileID: 2102765129}
   - {fileID: 549845007}
@@ -2962,26 +2972,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: trashcan
       objectReference: {fileID: 0}
-    - target: {fileID: -8395144002639726196, guid: 59e89f36668a5468197c7f95e9abc091,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 5.6
-      objectReference: {fileID: 0}
-    - target: {fileID: -8395144002639726196, guid: 59e89f36668a5468197c7f95e9abc091,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.73
-      objectReference: {fileID: 0}
-    - target: {fileID: -8395144002639726196, guid: 59e89f36668a5468197c7f95e9abc091,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 5.79
-      objectReference: {fileID: 0}
-    - target: {fileID: -6054058774237248251, guid: 59e89f36668a5468197c7f95e9abc091,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2e5637a8681904ddeabfb57ea4d819f8, type: 2}
     - target: {fileID: -4216859302048453862, guid: 59e89f36668a5468197c7f95e9abc091,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3037,6 +3027,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8395144002639726196, guid: 59e89f36668a5468197c7f95e9abc091,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.6
+      objectReference: {fileID: 0}
+    - target: {fileID: -8395144002639726196, guid: 59e89f36668a5468197c7f95e9abc091,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.73
+      objectReference: {fileID: 0}
+    - target: {fileID: -8395144002639726196, guid: 59e89f36668a5468197c7f95e9abc091,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5.79
+      objectReference: {fileID: 0}
+    - target: {fileID: -6054058774237248251, guid: 59e89f36668a5468197c7f95e9abc091,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2e5637a8681904ddeabfb57ea4d819f8, type: 2}
     - target: {fileID: 4063835366044962077, guid: 59e89f36668a5468197c7f95e9abc091,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -3110,6 +3120,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 14
   rotationSnapSpeed: 0.1
+  footsteps: {fileID: 0}
+  maxVolume: 0
+  minVolume: 0
+  maxSpeedForVolume: 0
+  footstepRaiseVolSpeed: 0
 --- !u!136 &525879564
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -3164,6 +3179,9 @@ MonoBehaviour:
   mass: 0
   drag: 0
   angularDrag: 0
+  sfx_hitCar: []
+  sfx_hitPerson: []
+  sfx_hitObstacle: []
   rb: {fileID: 0}
 --- !u!4 &525879568 stripped
 Transform:
@@ -4489,7 +4507,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
+  isStoplightNode: 0
+  stopLightOrder: 0
   controlPoints:
   - {fileID: 891712526}
   - {fileID: 404984427}
@@ -4895,7 +4915,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
+  isStoplightNode: 0
+  stopLightOrder: 0
   controlPoints:
   - {fileID: 934657532}
   - {fileID: 905129978}
@@ -6087,6 +6109,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
+  scoreText: {fileID: 0}
 --- !u!4 &883492347
 Transform:
   m_ObjectHideFlags: 0
@@ -6742,7 +6765,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
+  isStoplightNode: 0
+  stopLightOrder: 0
   controlPoints:
   - {fileID: 747906674}
   - {fileID: 1082729586}
@@ -6903,6 +6928,9 @@ MonoBehaviour:
     m_RotationOrder: 4
   minVelocity: 2
   maxVelocity: 40
+  minY: 0
+  maxY: 0
+  changeYDamping: 0
 --- !u!1 &991795929
 GameObject:
   m_ObjectHideFlags: 0
@@ -6952,6 +6980,7 @@ MonoBehaviour:
   currentGun: {fileID: 11400000, guid: 8a86f18ae9b1bb04a9ae24ec934be29e, type: 2}
   autoReload: 0
   currentAmmo: 1
+  audioSrc: []
   timeLeftOfReload: 0
 --- !u!23 &991795932
 MeshRenderer:
@@ -7324,7 +7353,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
+  isStoplightNode: 0
+  stopLightOrder: 0
   controlPoints:
   - {fileID: 793655833}
   - {fileID: 2003890322}
@@ -7563,7 +7594,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
+  isStoplightNode: 0
+  stopLightOrder: 0
   controlPoints:
   - {fileID: 835471226}
   - {fileID: 749880901}
@@ -7894,7 +7927,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
+  isStoplightNode: 0
+  stopLightOrder: 0
   controlPoints:
   - {fileID: 1341393562}
   - {fileID: 2096864272}
@@ -8216,6 +8251,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxNumberOfNpcCops: 10
   allNpcCops: []
+  copsKilled: 0
+  civsKilled: 0
+  carsStolen: 0
+  shotsNearCop: 0
+  starScore: 0
 --- !u!114 &1133228208
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8298,7 +8338,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
+  isStoplightNode: 0
+  stopLightOrder: 0
   controlPoints:
   - {fileID: 2123950878}
   - {fileID: 1710173893}
@@ -8600,6 +8642,7 @@ MonoBehaviour:
   dir: {x: 0, y: 0, z: 0}
   tOffset: 0.0187
   maxRotationSpeed: 5.67
+  followBezier: {fileID: 0}
 --- !u!114 &1180389856
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8613,12 +8656,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
+  collider: {fileID: 0}
+  carDestroyScript: {fileID: 0}
   enRoute: 0
   speed: 12
   changePathSpeed: 1.7
   frontSensorOffset: 5.5
   sensorWidth: 0
   sensorDistance: 0
+  inTurn: 0
   canRotate: 0
 --- !u!1 &1182712028
 GameObject:
@@ -8667,7 +8713,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
+  isStoplightNode: 0
+  stopLightOrder: 0
   controlPoints:
   - {fileID: 1289224299}
   - {fileID: 1193844403}
@@ -8737,7 +8785,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
+  isStoplightNode: 0
+  stopLightOrder: 0
   controlPoints:
   - {fileID: 616973213}
   - {fileID: 2040182587}
@@ -10166,7 +10216,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
+  isStoplightNode: 0
+  stopLightOrder: 0
   controlPoints:
   - {fileID: 286428171}
   - {fileID: 635473717}
@@ -11133,7 +11185,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
+  isStoplightNode: 0
+  stopLightOrder: 0
   controlPoints:
   - {fileID: 1541364805}
   - {fileID: 547985238}
@@ -11554,7 +11608,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
+  isStoplightNode: 0
+  stopLightOrder: 0
   controlPoints:
   - {fileID: 1039238807}
   - {fileID: 1475439104}
@@ -11786,6 +11842,7 @@ MonoBehaviour:
   dir: {x: 0, y: 0, z: 0}
   tOffset: 0.0187
   maxRotationSpeed: 5.67
+  followBezier: {fileID: 0}
 --- !u!114 &1642459465
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11799,12 +11856,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
+  collider: {fileID: 0}
+  carDestroyScript: {fileID: 0}
   enRoute: 0
   speed: 12
   changePathSpeed: 1.7
   frontSensorOffset: 6
   sensorWidth: 0
   sensorDistance: 0
+  inTurn: 0
   canRotate: 0
 --- !u!4 &1642459466
 Transform:
@@ -12041,6 +12101,7 @@ MonoBehaviour:
   dir: {x: 0, y: 0, z: 0}
   tOffset: 0.0187
   maxRotationSpeed: 5.67
+  followBezier: {fileID: 0}
 --- !u!114 &1670355754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12054,12 +12115,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
+  collider: {fileID: 0}
+  carDestroyScript: {fileID: 0}
   enRoute: 0
   speed: 12
   changePathSpeed: 1.7
   frontSensorOffset: 5.5
   sensorWidth: 0
   sensorDistance: 0
+  inTurn: 0
   canRotate: 0
 --- !u!4 &1670355755
 Transform:
@@ -12196,7 +12260,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
+  isStoplightNode: 0
+  stopLightOrder: 0
   controlPoints:
   - {fileID: 1736778905}
   - {fileID: 800855289}
@@ -13503,6 +13569,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -927199367670048503, guid: 8e2f2b651f25d0b49b2da14704fdaba5,
+        type: 3}
+      propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8e2f2b651f25d0b49b2da14704fdaba5,
+        type: 3}
+      propertyPath: m_Layer
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8e2f2b651f25d0b49b2da14704fdaba5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 8e2f2b651f25d0b49b2da14704fdaba5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13557,21 +13638,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: 8e2f2b651f25d0b49b2da14704fdaba5,
-        type: 3}
-      propertyPath: m_Name
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: 8e2f2b651f25d0b49b2da14704fdaba5,
-        type: 3}
-      propertyPath: m_Layer
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: 8e2f2b651f25d0b49b2da14704fdaba5,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e2f2b651f25d0b49b2da14704fdaba5, type: 3}
@@ -14205,6 +14271,7 @@ MonoBehaviour:
   dir: {x: 0, y: 0, z: 0}
   tOffset: 0.0187
   maxRotationSpeed: 5.67
+  followBezier: {fileID: 0}
 --- !u!114 &1982962467
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14218,12 +14285,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
+  collider: {fileID: 0}
+  carDestroyScript: {fileID: 0}
   enRoute: 0
   speed: 12
   changePathSpeed: 1.7
   frontSensorOffset: 5.5
   sensorWidth: 0
   sensorDistance: 0
+  inTurn: 0
   canRotate: 0
 --- !u!4 &1982962468
 Transform:
@@ -14460,6 +14530,7 @@ MonoBehaviour:
   dir: {x: 0, y: 0, z: 0}
   tOffset: 0.0187
   maxRotationSpeed: 5.67
+  followBezier: {fileID: 0}
 --- !u!114 &1993793140
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14473,12 +14544,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
+  collider: {fileID: 0}
+  carDestroyScript: {fileID: 0}
   enRoute: 0
   speed: 12
   changePathSpeed: 1.7
   frontSensorOffset: 5.5
   sensorWidth: 0
   sensorDistance: 0
+  inTurn: 0
   canRotate: 0
 --- !u!4 &1993793141
 Transform:
@@ -15136,7 +15210,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
+  isStoplightNode: 0
+  stopLightOrder: 0
   controlPoints:
   - {fileID: 24185273}
   - {fileID: 1121028695}
@@ -15584,7 +15660,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
+  isStoplightNode: 0
+  stopLightOrder: 0
   controlPoints:
   - {fileID: 105432949}
   - {fileID: 544893935}
@@ -15947,7 +16025,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
+  isStoplightNode: 0
+  stopLightOrder: 0
   controlPoints:
   - {fileID: 1258718504}
   - {fileID: 1220636947}
@@ -16398,7 +16478,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 0
+  isStraightLine: 0
+  isStoplightNode: 0
+  stopLightOrder: 0
   controlPoints:
   - {fileID: 739457214}
   - {fileID: 1548120542}
