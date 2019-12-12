@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4971042834535366003}
   - component: {fileID: 3808270011385307713}
   - component: {fileID: 6668883308438254899}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Cube.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 7649490402666350718}
   - component: {fileID: 4551535017059352010}
   - component: {fileID: 2193730460115298366}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Cube.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -166,7 +166,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6180464810173361962}
   - component: {fileID: 3257650447239930733}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Church
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -214,7 +214,7 @@ GameObject:
   - component: {fileID: 3608519622871564036}
   - component: {fileID: 6894821089303997071}
   - component: {fileID: 5622538819903895628}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Cube.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}

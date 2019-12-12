@@ -90,7 +90,7 @@ public class NpcCopSpawn : MonoBehaviour
             Collider[] nearObjects = Physics.OverlapSphere(pos, 1);
             foreach (Collider nearObject in nearObjects)
             {
-                if (nearObject.gameObject.layer == 17)
+                if (nearObject.gameObject.layer == 17 || nearObject.gameObject.layer == 18)
                 {
                     insideBounds = false;
                 }
@@ -116,7 +116,7 @@ public class NpcCopSpawn : MonoBehaviour
     /// </summary>
     public void AddRandomPoints()
     {
-        int numOfPoints = Random.Range(30, 60);
+        int numOfPoints = Random.Range(50, 90);
 
         for (int i = 0; i < numOfPoints; i++)
         {

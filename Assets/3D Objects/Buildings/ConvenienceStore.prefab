@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6191315413630530184}
   - component: {fileID: 2724388516816940474}
   - component: {fileID: 5592322328397380296}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Cube.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 7504510352131758271}
   - component: {fileID: 8274456324237213937}
   - component: {fileID: 9206889023381878095}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -167,7 +167,7 @@ GameObject:
   - component: {fileID: 8880882342585042821}
   - component: {fileID: 3331825302496145969}
   - component: {fileID: 1109851113307400133}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Cube.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -245,7 +245,7 @@ GameObject:
   - component: {fileID: 2522931634922795263}
   - component: {fileID: 5672313202800862580}
   - component: {fileID: 6849989096871638967}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Cube.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -322,7 +322,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4959064011892941009}
   - component: {fileID: 6667970845505094275}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: ConvenienceStore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -373,7 +373,7 @@ GameObject:
   - component: {fileID: 5611173158932126000}
   - component: {fileID: 8103882594009800498}
   - component: {fileID: 1438446132172577313}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Cube.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -451,7 +451,7 @@ GameObject:
   - component: {fileID: 3153657732872037650}
   - component: {fileID: 8262168045169348018}
   - component: {fileID: 710067655959360312}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Cube.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}

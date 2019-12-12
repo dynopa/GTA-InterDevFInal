@@ -121,6 +121,11 @@ public class PlayerManager : MonoBehaviour
             playerCarMove.enabled = false;
             playerCollider.enabled = true;
 
+            if (playerCarMove.carRevving.volume > .02f)
+            {
+                playerCarMove.carRevving.volume *= .1f;
+            }
+
             rb.mass = 1.8f;
             rb.drag = 1;
             rb.angularDrag = 2;
@@ -161,6 +166,7 @@ public class PlayerManager : MonoBehaviour
         Destroy(currentCar.GetComponent<Rigidbody>());
 
         playerWalkMove.footsteps.volume = 0;
+        
         playerWalkMove.enabled = false;
         playerCarMove.enabled = true;
 

@@ -88,10 +88,10 @@ public class NpcCivSpawn : MonoBehaviour
             float zR = Random.Range(zMin, zMax);
             Vector3 pos = new Vector3(xR, 0, zR);
 
-            Collider[] nearObjects = Physics.OverlapSphere(pos, 1);
+            Collider[] nearObjects = Physics.OverlapSphere(pos, .5f);
             foreach (Collider nearObject in nearObjects)
             {
-                if (nearObject.gameObject.layer == 17)
+                if (nearObject.gameObject.layer == 17 || nearObject.gameObject.layer == 18)
                 {
                     insideBounds = false;
                 }
@@ -115,7 +115,7 @@ public class NpcCivSpawn : MonoBehaviour
     /// </summary>
     public void AddRandomPoints()
     {
-        int numOfPoints = Random.Range(60, 90);
+        int numOfPoints = Random.Range(100, 120);
 
         for (int i = 0; i < numOfPoints; i++)
         {
