@@ -13,6 +13,6 @@ public class TutorialButton : MonoBehaviour {
 	}
 
 	void TaskOnClick(){
-		SceneManager.LoadScene(3);
+		SceneManager.LoadScene(1);
 	}
 }
