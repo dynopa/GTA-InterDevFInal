@@ -129,6 +129,7 @@ public class NpcCopManager : MonoBehaviour
         if (copsNearby > 0)
         {
             shotsNearCop += copsNearby;
+            ScoreManager.Instance.IncreaseScore(copsNearby);
             starScore += 1;
         }
 
@@ -146,6 +147,7 @@ public class NpcCopManager : MonoBehaviour
         copsKilled++;
         //copsKilledTemp++;
         CheckAllCopsForStars();
+        ScoreManager.Instance.IncreaseScore(555);
 
         starScore += 25;
 
@@ -160,6 +162,7 @@ public class NpcCopManager : MonoBehaviour
         civsKilled++;
         //civsKilledTemp++;
         CheckAllCopsForStars();
+        ScoreManager.Instance.IncreaseScore(250);
 
         starScore += 15;
 
@@ -173,6 +176,7 @@ public class NpcCopManager : MonoBehaviour
     {
         carsStolen++;
         CheckAllCopsForStars();
+        ScoreManager.Instance.IncreaseScore(100);
 
         starScore += 8;
     }
@@ -180,6 +184,7 @@ public class NpcCopManager : MonoBehaviour
     public void IncreaseStarScore (int scoreToIncrease)
     {
         starScore += scoreToIncrease;
+        ScoreManager.Instance.IncreaseScore(scoreToIncrease * 10);
     }
 
     public int GetStarLevel()

@@ -150,6 +150,7 @@ public class PlayerCarMove : MonoBehaviour
 
 
             NpcCopManager.Instance.IncreaseStarScore(15);
+            ScoreManager.Instance.IncreaseScore(250);
 
             ParticleManager.Instance.InstantiateExplosion(hitCarRB.transform.position, hitCarRB.transform);
             hitCarRB.AddExplosionForce(carLaunchForce * velocIncreaseForceMultiplier, PlayerManager.Instance.rb.transform.position, 15, carUpForce * velocIncreaseForceMultiplier, ForceMode.Impulse);

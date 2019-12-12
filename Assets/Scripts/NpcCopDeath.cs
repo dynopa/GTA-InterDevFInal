@@ -39,7 +39,7 @@ public class NpcCopDeath : MonoBehaviour
             this.gameObject.GetComponent<NpcCopMoveWalk>().enabled = false;
             this.gameObject.transform.Translate(new Vector3(0, -1, 0));
             this.gameObject.transform.Rotate(new Vector3(70, 20, 0));
-            ScoreManager.Instance.IncreaseScore(10);
+            //ScoreManager.Instance.IncreaseScore(10);
             NpcCopManager.Instance.RemoveNpc(this.gameObject);
             NpcCopManager.Instance.CopDeath();
             Invoke("StopForces", .5f);
