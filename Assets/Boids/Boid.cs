@@ -54,8 +54,38 @@ public class Boid : MonoBehaviour
 
     void MoveBoid()
     {
-        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction), Time.deltaTime);
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction), Time.deltaTime * 0.2f);
         transform.position += transform.forward * Time.deltaTime * speed;
+
+        if (transform.position.y <= 10f)
+        {
+            transform.position += Vector3.up * Time.deltaTime * speed;
+        }
+        if (transform.position.y >= 50f)
+        {
+            transform.position -= Vector3.up * Time.deltaTime * speed;
+        }
+        if (transform.position.z >= 430f)
+        {
+            transform.position -= Vector3.forward * Time.deltaTime * speed;
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(-direction), Time.deltaTime * 15f);
+        }
+        if (transform.position.z <= -68f)
+        {
+            transform.position += Vector3.forward * Time.deltaTime * speed;
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction), Time.deltaTime * 15f);
+
+        }
+        if (transform.position.x >= 90f)
+        {
+            transform.position -= Vector3.right * Time.deltaTime * speed;
+
+        }
+        if (transform.position.x <= -88f)
+        {
+            transform.position += Vector3.right * Time.deltaTime * speed;
+
+        }
     }
 
     #region internalfunctions
