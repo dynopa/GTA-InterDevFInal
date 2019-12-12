@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3638447392280480944}
   - component: {fileID: 1500509819740857273}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: Tree2 (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 8865585567106920740}
   - component: {fileID: 5991646442723880134}
   - component: {fileID: 3524731290587500111}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: Icosphere.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 2200323661751153886}
   - component: {fileID: 322210775126682768}
   - component: {fileID: 678088718032099630}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -26,7 +26,7 @@ public class ParticleManager : MonoBehaviour
         {
             pos.y = 1.01f;
             Instantiate(bloodSquirt, pos, Quaternion.identity, parent);
-            SoundEffectManager.Instance.PlaySoundEffect(bloodSplatters[Random.Range(0, bloodSplatters.Length)], 1, true); 
+            SoundEffectManager.Instance.PlaySoundEffect(bloodSplatters[Random.Range(0, bloodSplatters.Length)], Random.Range(.4f, .6f), true); 
         }
     }
 
