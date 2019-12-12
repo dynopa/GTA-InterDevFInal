@@ -44,6 +44,7 @@ public class NpcCopDeath : MonoBehaviour
             NpcCopManager.Instance.RemoveNpc(this.gameObject);
             NpcCopManager.Instance.CopDeath();
             Invoke("StopForces", .5f);
+            Invoke("Despawn", 10f);
             return true;
         }
         return false;
@@ -56,5 +57,17 @@ public class NpcCopDeath : MonoBehaviour
     {
         this.gameObject.GetComponent<Collider>().enabled = false;
         this.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
+    }
+
+    private void Despawn ()
+    {
+        if (Vector3.Distance(this.transform.position, PlayerManager.Instance.gameObject.transform.position) > 30f)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            Invoke("Despawn", 10f);
+        }
     }
 }
