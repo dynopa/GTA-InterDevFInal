@@ -27,7 +27,8 @@ public class CopBulletMove : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
-        forwardDir = transform.forward;
+        forwardDir = transform.forward + new Vector3(Random.Range(-.1f, .1f), 0, Random.Range(-.1f, .1f));
+        forwardDir.Normalize();
     }
 
     void FixedUpdate()

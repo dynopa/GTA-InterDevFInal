@@ -18,10 +18,10 @@ public class displayHealth : MonoBehaviour
     void Update()
     {
         print(pDeath.health);
-        expectedAlpha = (float)pDeath.health/60;
-        float actualAlpha = healthDisplayIncrease.Evaluate(expectedAlpha);
+        expectedAlpha = (float)pDeath.health/45;
+        alphaValue = alphaValue + (.1f * (healthDisplayIncrease.Evaluate(expectedAlpha) - alphaValue));
 
-        bloodDisplay.color = new Color(1, 1, 1, actualAlpha);
+        bloodDisplay.color = new Color(1, 1, 1, alphaValue);
     }
 
 
