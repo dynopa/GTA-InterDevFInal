@@ -88,7 +88,7 @@ public class NpcCopMoveWalk : MonoBehaviour
     /// <summary>
     /// Looks the away from player. For use when frightened to constantly move away from the player.
     /// </summary>
-    private void LookAtPlayer()
+    public void LookAtPlayer()
     {
         //Debug.Log(PlayerManager.Instance.gameObject.transform.position);
         Transform atPlayer = (PlayerManager.Instance.gameObject.transform);
