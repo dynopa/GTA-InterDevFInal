@@ -32,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 9081129948234902877}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -11.610874, y: 0.72, z: 43.12}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.4}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.6}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 1f931233f89d542fd802e943e0bf1328, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -94,8 +94,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.5, y: 5, z: 1}
-  m_Center: {x: 0, y: -0.63, z: -0.25}
+  m_Size: {x: 0.26, y: 1.97, z: 0.58}
+  m_Center: {x: 0, y: 0, z: -0.25}
 --- !u!198 &3560943366778916632
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -284,9 +284,9 @@ ParticleSystem:
         m_RotationOrder: 4
     startColor:
       serializedVersion: 2
-      minMaxState: 0
-      minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
+      minMaxState: 2
+      minColor: {r: 1, g: 0.7867803, b: 0.5235849, a: 1}
+      maxColor: {r: 1, g: 0, b: 0, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -4847,7 +4847,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 60
   force: 120
-  damage: 20
+  damage: 9
   explosive: 0
   explosionRadius: 0
   upForceMod: 0

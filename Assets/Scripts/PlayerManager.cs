@@ -65,14 +65,17 @@ public class PlayerManager : MonoBehaviour
             }
 
             //Switch gun
-            if (Input.GetKeyDown(gunSelectLeftInput))
+            if (!playerGun.inReload)
             {
-                inventory.GunSelectLeft();
-            }
-            if (Input.GetKeyDown(gunSelectRightInput))
-            {
-                inventory.GunSelectRight();
-            }
+                if (Input.GetKeyDown(gunSelectLeftInput))
+                {
+                    inventory.GunSelectLeft();
+                }
+                if (Input.GetKeyDown(gunSelectRightInput))
+                {
+                    inventory.GunSelectRight();
+                }
+            }   
 
             //Fire weapon
             if (Input.GetKeyDown(fireGunInput))

@@ -21,7 +21,6 @@ public class BulletMove : MonoBehaviour
 
     Rigidbody rb;
     public AudioClip hitSound;
-   
 
     private void Awake()
     {
@@ -50,6 +49,7 @@ public class BulletMove : MonoBehaviour
         if(explosive)
         {
             Explosion(rb.transform.position, explosionRadius);
+            SoundEffectManager.Instance.PlaySoundEffect(hitSound, Random.Range(.7f, .85f), true);
         }
         else if (collision.gameObject.GetComponent<Rigidbody>() != null)
         {
@@ -111,22 +111,22 @@ public class BulletMove : MonoBehaviour
             {
                 float forceTmp = force;
                 float upForceTmp = upForceMod;
+                upForceTmp += Random.Range(0, upForceMod);
 
                 if (hitCollider.gameObject.GetComponent<NpcCivDeath>() != null)
                 {
 
                     //Debug.Log("HitNPC");
                     hitCollider.gameObject.GetComponent<NpcCivDeath>().ReduceHealth(damage);
-                    forceTmp *= 2;
-                    upForceTmp *= 2;
+                    forceTmp *= 1.5f;
+                    upForceTmp *= .8f;
                 }
                 else if (hitCollider.gameObject.GetComponent<NpcCopDeath>() != null)
                 {
 
                     //Debug.Log("HitNPC");
                     hitCollider.gameObject.GetComponent<NpcCopDeath>().ReduceHealth(damage);
-                    forceTmp *= 2;
-                    upForceTmp *= 2;
+                    forceTmp *= 2f;
                 }
 
                 if (hitCollider.gameObject.layer == LayerMask.NameToLayer("Car"))
@@ -135,7 +135,7 @@ public class BulletMove : MonoBehaviour
                 }
 
 
-                    hitRB.AddExplosionForce(forceTmp, pos, radius, upForceMod, ForceMode.Impulse);
+                    hitRB.AddExplosionForce(forceTmp, pos, radius, upForceTmp, ForceMode.Impulse);
             }
 
 

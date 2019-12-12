@@ -19,10 +19,10 @@ MonoBehaviour:
   bulletSpeed: 90
   bulletDamage: 20
   bulletForce: 130
-  clipSize: 24
+  clipSize: 30
   fullyAuto: 1
   fireRate: 0.07
-  reloadTime: 1.5
+  reloadTime: 1
   bloomAmount: 0
   explosive: 0
   explosionRadius: 0

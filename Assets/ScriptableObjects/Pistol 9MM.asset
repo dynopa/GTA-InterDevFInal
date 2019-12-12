@@ -22,7 +22,7 @@ MonoBehaviour:
   clipSize: 12
   fullyAuto: 0
   fireRate: 0
-  reloadTime: 1
+  reloadTime: 0
   bloomAmount: 10
   explosive: 0
   explosionRadius: 0

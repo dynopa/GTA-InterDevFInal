@@ -22,7 +22,7 @@ public class PlayerGun : MonoBehaviour
     float timeUntilNextShot; //When less than 0, the player can fire;
 
     [HideInInspector]public float timeLeftOfReload;
-    bool inReload;
+    [HideInInspector]public bool inReload;
 
     void Start()
     {

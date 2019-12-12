@@ -18,14 +18,14 @@ MonoBehaviour:
     type: 3}
   bulletSpeed: 60
   bulletDamage: 100
-  bulletForce: 55
+  bulletForce: 45
   clipSize: 1
   fullyAuto: 0
   fireRate: 0
-  reloadTime: 2
+  reloadTime: 1.8
   bloomAmount: 0
   explosive: 1
-  explosionRadius: 10.5
+  explosionRadius: 9
   upForce: 0.15
   recoilAmount: 0
   gunTextureUI: {fileID: 0}

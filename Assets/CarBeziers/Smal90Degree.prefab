@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4910230228613189090}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: End Position
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4910230229567995449}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Bezier Position
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,7 +71,7 @@ GameObject:
   - component: {fileID: 4910230230143078257}
   - component: {fileID: 4910230230143078258}
   - component: {fileID: 3222699960401338125}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Smal90Degree
   m_TagString: Bezier
   m_Icon: {fileID: 0}
@@ -106,12 +106,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a086cbe25d17f346865ec164a05b60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableGizmos: 1
+  isStraightLine: 0
+  isStoplightNode: 0
+  stopLightOrder: 0
   controlPoints:
   - {fileID: 4910230230143078257}
   - {fileID: 4910230229567995449}
   - {fileID: 4910230228613189090}
   bezierLength: 7.1466255
+  points:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
 --- !u!135 &3222699960401338125
 SphereCollider:
   m_ObjectHideFlags: 0

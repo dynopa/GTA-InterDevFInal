@@ -27,6 +27,11 @@ public class CarFollowBezier : MonoBehaviour
     [Space]
     public bool inTurn;
 
+    [Space]
+    [Header("Car Hit")]
+    public AudioClip[] sfx_hitCar;
+
+
     [HideInInspector] public bool canRotate;
 
     Vector3 initPosition;
@@ -350,6 +355,37 @@ public class CarFollowBezier : MonoBehaviour
         if (GetComponentInChildren<ParticleSystem>() != null)
         {
             Destroy(GetComponentInChildren<ParticleSystem>());
+        }
+    }
+
+
+    private void OnCollisionEnter(Collision collision) //Checks for 
+    {
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Car") && rb.velocity.magnitude > 9)
+        {
+
+            collision.transform.gameObject.layer = LayerMask.NameToLayer("Obstacles");
+
+
+            Destroy(collision.gameObject.GetComponent<CarFollowBezier>());
+            Destroy(collision.gameObject.GetComponent<CarAlignToBezier>());
+            Rigidbody hitCarRB = collision.gameObject.GetComponent<Rigidbody>();
+            hitCarRB.constraints = RigidbodyConstraints.None;
+            hitCarRB.useGravity = true;
+            hitCarRB.isKinematic = false;
+            float velocIncreaseForceMultiplier = Mathf.Sqrt(rb.velocity.magnitude) * 10;
+
+
+            NpcCopManager.Instance.IncreaseStarScore(10);
+            ScoreManager.Instance.IncreaseScore(100);
+
+            ParticleManager.Instance.InstantiateExplosion(hitCarRB.transform.position, hitCarRB.transform);
+            hitCarRB.AddExplosionForce(25 * velocIncreaseForceMultiplier,rb.transform.position, 15, .05f * velocIncreaseForceMultiplier, ForceMode.Impulse);
+
+
+            //Audio
+            SoundEffectManager.Instance.PlaySoundEffect(sfx_hitCar[Random.Range(0, sfx_hitCar.Length)], Random.Range(.4f, .6f), true);
+
         }
     }
 }

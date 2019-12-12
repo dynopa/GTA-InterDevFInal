@@ -45,7 +45,7 @@ public class PlayerDeath : MonoBehaviour
 
         if (recoveringHealth)
         {
-            if (health < 50)
+            if (health < 45)
             {
                 if (Time.frameCount % 3 == 0)
                 {
@@ -54,7 +54,7 @@ public class PlayerDeath : MonoBehaviour
             }
             else
             {
-                health = 50;
+                health = 45;
                 recoveringHealth = false;
             }
 
