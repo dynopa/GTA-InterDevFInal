@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5989835125651919381}
   - component: {fileID: 5319187700065569371}
   - component: {fileID: 4954025429451374565}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 1207318570957909944}
   - component: {fileID: 5308711690400614168}
   - component: {fileID: 3665897031477393810}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Cube.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -166,7 +166,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9211947397958118011}
   - component: {fileID: 2070139118501635441}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Apartment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -215,7 +215,7 @@ GameObject:
   - component: {fileID: 1731084147424164437}
   - component: {fileID: 8484027322194325470}
   - component: {fileID: 7211749415465843997}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Cube.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -293,7 +293,7 @@ GameObject:
   - component: {fileID: 4628135091384601903}
   - component: {fileID: 1529058237236459675}
   - component: {fileID: 3775055101659426159}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Cube.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}

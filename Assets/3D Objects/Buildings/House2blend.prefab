@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5854886855124815001}
   - component: {fileID: 3537775163856853115}
   - component: {fileID: 9005732425538778043}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Cube.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 9100908473725747833}
   - component: {fileID: 7259039819679849015}
   - component: {fileID: 7614738864180342665}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -167,7 +167,7 @@ GameObject:
   - component: {fileID: 7878685939019029827}
   - component: {fileID: 4059019917070625015}
   - component: {fileID: 1805793759414746371}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Cube.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -244,7 +244,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5961549982380554775}
   - component: {fileID: 2484602098736182194}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: House2blend
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -293,7 +293,7 @@ GameObject:
   - component: {fileID: 3849113794041162297}
   - component: {fileID: 6400062160994451378}
   - component: {fileID: 5294404279612681585}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Cube.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5559729132338886926}
   - component: {fileID: 5764499415435793810}
   - component: {fileID: 8676707809292515482}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Cube.014
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 3081399626772927673}
   - component: {fileID: 9205756382134968589}
   - component: {fileID: 6816924157947819257}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Cube.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -167,7 +167,7 @@ GameObject:
   - component: {fileID: 1526242689191588845}
   - component: {fileID: 6694069738709880322}
   - component: {fileID: 1113964560870420241}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Hospital
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -229,7 +229,7 @@ GameObject:
   - component: {fileID: 8286393679794103235}
   - component: {fileID: 2253054478837380680}
   - component: {fileID: 1075343366022325387}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Cube.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -307,7 +307,7 @@ GameObject:
   - component: {fileID: 5830739994132205062}
   - component: {fileID: 1986862034930014007}
   - component: {fileID: 4844260775342318787}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Cube.000
   m_TagString: Untagged
   m_Icon: {fileID: 0}

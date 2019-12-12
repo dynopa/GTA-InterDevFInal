@@ -35,6 +35,33 @@ public class PlayerCarMove : MonoBehaviour
 
     [HideInInspector] public Rigidbody rb;
 
+    [Header("Engine Sound Effects")]
+    public AudioSource carRevving;
+    [Space]
+    public float maxCarSpeedToRev;
+    [Space]
+    [Range(0, 1f)]
+    public float minVol;
+    [Range(0, 1f)]
+    public float maxVol;
+    [Space]
+    [Range(.8f, 1.4f)]
+    public float minPitch;
+    [Range(.8f, 1.4f)]
+    public float maxPitch;
+    [Space]
+    [Range(0,1f)]
+    public float volAccelerate;
+    [Range(0, 1f)]
+    public float volDecelerate;
+    [Space]
+    [Range(0, 1f)]
+    public float pitchAccelerate;
+    [Range(0, 1f)]
+    public float pitchDecelerate;
+
+
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -43,10 +70,22 @@ public class PlayerCarMove : MonoBehaviour
     void FixedUpdate()
     {
         Vector3 pos = rb.transform.position;
-        
 
 
 
+        float expectedVolume = rb.velocity.magnitude.Remap(0, maxCarSpeedToRev, minVol, maxVol);
+        float expectedPitch = rb.velocity.magnitude.Remap(0, maxCarSpeedToRev, minPitch, maxPitch);
+
+        if (carRevving.volume < expectedVolume)
+        {
+            carRevving.volume = carRevving.volume + (volAccelerate * (expectedVolume - carRevving.volume));
+            carRevving.pitch = carRevving.pitch + (pitchAccelerate * (expectedPitch - carRevving.pitch));
+        }
+        else
+        {
+            carRevving.volume = carRevving.volume + (volDecelerate * (expectedVolume - carRevving.volume));
+            carRevving.pitch = carRevving.pitch + (pitchAccelerate * (expectedPitch - carRevving.pitch));
+        }
 
 
         if (Input.GetKey(KeyCode.W))
@@ -117,7 +156,7 @@ public class PlayerCarMove : MonoBehaviour
 
 
             //Audio
-            SoundEffectManager.Instance.PlaySoundEffect(sfx_hitCar[Random.Range(0, sfx_hitCar.Length)], Random.Range(.7f, .85f), true);
+            SoundEffectManager.Instance.PlaySoundEffect(sfx_hitCar[Random.Range(0, sfx_hitCar.Length)], Random.Range(.55f, .7f), true);
 
         }
 
@@ -128,14 +167,24 @@ public class PlayerCarMove : MonoBehaviour
             if (this.enabled)
             {
                 collision.transform.gameObject.GetComponent<NpcCivDeath>().ReduceHealth(100);
+                SoundEffectManager.Instance.PlaySoundEffect(sfx_hitPerson[Random.Range(0, sfx_hitPerson.Length)], Random.Range(.15f, .3f), true);
+                ParticleManager.Instance.InstantiateBloodSquirt(collision.transform.position, collision.transform);
+
             }
-        } else if (collision.transform.gameObject.GetComponent<NpcCopDeath>() != null)
+        }
+        else if (collision.transform.gameObject.GetComponent<NpcCopDeath>() != null)
             {
                 if (this.enabled)
                 {
                     collision.transform.gameObject.GetComponent<NpcCopDeath>().ReduceHealth(100);
-                }
+                    SoundEffectManager.Instance.PlaySoundEffect(sfx_hitPerson[Random.Range(0, sfx_hitPerson.Length)], Random.Range(.15f, .3f), true);
+                ParticleManager.Instance.InstantiateBloodSquirt(collision.transform.position, collision.transform);
             }
+            }
+        else if (collision.transform.gameObject.layer == 21 && Random.Range(0,1f) > .4f)
+        {
+            SoundEffectManager.Instance.PlaySoundEffect(sfx_hitPerson[Random.Range(0, sfx_hitPerson.Length)], Random.Range(.1f, .2f), true);
+        }
 
     }
 }
