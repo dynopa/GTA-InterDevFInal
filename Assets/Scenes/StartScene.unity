@@ -1108,16 +1108,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 3.9511657
       objectReference: {fileID: 0}
-    - target: {fileID: 8061363097572977680, guid: 62ed7ce442c9e42cca3de3cc888f2adf,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 86fac379953af624daad0339a99a73bd, type: 2}
-    - target: {fileID: 2268754811050229402, guid: 62ed7ce442c9e42cca3de3cc888f2adf,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: d9d953e2867324469b74c36d1ccb4852, type: 2}
     - target: {fileID: 5695587903565737704, guid: 62ed7ce442c9e42cca3de3cc888f2adf,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -1133,6 +1123,16 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8061363097572977680, guid: 62ed7ce442c9e42cca3de3cc888f2adf,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 86fac379953af624daad0339a99a73bd, type: 2}
+    - target: {fileID: 2268754811050229402, guid: 62ed7ce442c9e42cca3de3cc888f2adf,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d9d953e2867324469b74c36d1ccb4852, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62ed7ce442c9e42cca3de3cc888f2adf, type: 3}
 --- !u!1 &594340793
@@ -2475,7 +2475,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 93.4
   orthographic: 0
   orthographic size: 5
   m_Depth: -1

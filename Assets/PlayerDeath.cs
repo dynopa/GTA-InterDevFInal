@@ -1,11 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerDeath : MonoBehaviour
 {
 
-    [SerializeField] public int health;
+    public int health;
 
     float healthTimer = 0;
 
@@ -41,15 +42,22 @@ public class PlayerDeath : MonoBehaviour
         }
 
 
+
         if (recoveringHealth)
         {
-            if (health < 100)
+            if (health < 50)
             {
                 if (Time.frameCount % 3 == 0)
                 {
                     health++;
                 }
             }
+            else
+            {
+                health = 50;
+                recoveringHealth = false;
+            }
+
         }
 
 
@@ -71,7 +79,7 @@ public class PlayerDeath : MonoBehaviour
     /// <summary>
     /// Checks for the death of the NPC.
     /// </summary>
-    private bool CheckForDeath()
+    private void CheckForDeath()
     {
         if (health <= 0)
         {
@@ -84,9 +92,9 @@ public class PlayerDeath : MonoBehaviour
             //NpcCopManager.Instance.RemoveNpc(this.gameObject);
             //NpcCopManager.Instance.CopDeath();
             Invoke("StopForces", .5f);
-            return true;
+            SceneManager.LoadScene("EndScene");
         }
-        return false;
+        
     }
 
     /// <summary>

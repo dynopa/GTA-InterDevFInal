@@ -64,9 +64,9 @@ public class NpcCopShoot : MonoBehaviour
 
     public IEnumerator ShootGun()
     {
-        yield return new WaitForSeconds(.5f);
+        yield return new WaitForSeconds(.6f / NpcCopManager.starLevel * 1.5f);
         float t = 0;
-        while (t < .4f)
+        while (t < .4f / Mathf.Sqrt((float)NpcCopManager.starLevel))
         {
             t += Time.deltaTime;
             this.gameObject.GetComponent<NpcCopMoveWalk>().LookAtPlayer();

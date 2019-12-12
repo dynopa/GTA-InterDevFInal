@@ -73,7 +73,13 @@ public class CopBulletMove : MonoBehaviour
         }
          else if (collision.gameObject.GetComponent<PlayerDeath>() != null)
         {
-            collision.gameObject.GetComponent<PlayerDeath>().ReduceHealth(damage);
+
+            if (PlayerManager.Instance.inCar)
+            {
+                collision.gameObject.GetComponent<PlayerDeath>().ReduceHealth(damage/3);
+            }
+            else { collision.gameObject.GetComponent<PlayerDeath>().ReduceHealth(damage); }
+            
         }
 
     }
