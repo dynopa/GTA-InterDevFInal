@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ScoreManager : MonoBehaviour
 {
@@ -9,9 +10,9 @@ public class ScoreManager : MonoBehaviour
     public static ScoreManager Instance; 
     public Text scoreText;
 
-    // void Awake() {
-    //     DontDestroyOnLoad(this.gameObject);
-    // }
+    void Awake() {
+        DontDestroyOnLoad(this.gameObject);
+    }
    
     void Start()
     {
@@ -22,6 +23,9 @@ public class ScoreManager : MonoBehaviour
     void Update()
     {
         scoreText.text = "Score: " + score;
+        if (Input.GetKey(KeyCode.P)){
+            SceneManager.LoadScene(2);
+        }
     }
 
     /// <summary>
@@ -39,5 +43,9 @@ public class ScoreManager : MonoBehaviour
     public void IncreaseScore (int scoreIncrement)
     {
         score += scoreIncrement;
+    }
+
+    public string GetScore () {
+        return this.score.ToString();
     }
 }

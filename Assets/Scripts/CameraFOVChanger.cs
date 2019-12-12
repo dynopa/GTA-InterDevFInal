@@ -29,6 +29,7 @@ public class CameraFOVChanger : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        //kawabunga
         
         //Gets the velocity value and remaps it along the animation curve
         float velocity = PlayerManager.Instance.GetComponent<Rigidbody>().velocity.magnitude;
