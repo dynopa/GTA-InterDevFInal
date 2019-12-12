@@ -37,6 +37,7 @@ public class PlayerDeath : MonoBehaviour
                 recoveringHealth = false;
             }
             oldHealthTemp = health;
+            healthTimer = 0;
         }
 
 
