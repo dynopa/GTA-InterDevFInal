@@ -82,6 +82,26 @@ public class CarFollowBezier : MonoBehaviour
         return false;
     }
 
+    bool SensePlayer() //Raycasts for cars and people in front;
+    {
+        Vector3 sensorPos = transform.position + (transform.forward * frontSensorOffset);
+        Vector3 sensorBounds = new Vector3(sensorWidth*1.3f, 10, sensorDistance*1.3f);
+
+
+        Collider[] potentialThreats = Physics.OverlapBox(sensorPos, sensorBounds, Quaternion.identity);
+        foreach (Collider potentialThreat in potentialThreats)
+        {
+            if (potentialThreat.gameObject != this.gameObject)
+            {
+                if (potentialThreat.gameObject.layer == LayerMask.NameToLayer("Player"))
+                {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
 
     IEnumerator FollowRoute(Transform route)
     {
@@ -118,6 +138,8 @@ public class CarFollowBezier : MonoBehaviour
         
 
         float t = 0;
+        bool hasHonked = false;
+
         while (t < 1)
         {
             if (!overrideStopping)
@@ -157,6 +179,18 @@ public class CarFollowBezier : MonoBehaviour
             }
             else
             {
+                if (!hasHonked) //If the car has not honked on its current route and a player is in front of it, then there is a 40% chance it will honk its horn
+                {
+                    if (SensePlayer())
+                    {
+                        hasHonked = true;
+                        
+                        SoundEffectManager.Instance.CarHonk();
+                        
+                    }
+                }
+
+
                 if (overrideStopping)
                 {
                     canRotate = true;

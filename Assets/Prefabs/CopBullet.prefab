@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5050031619630209325}
   - component: {fileID: 3273789027057730537}
   - component: {fileID: 7199693725385704765}
-  m_Layer: 0
+  m_Layer: 24
   m_Name: CopBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}

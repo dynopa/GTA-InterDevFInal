@@ -48,11 +48,8 @@ public class CopBulletMove : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (explosive)
-        {
-            Explosion(rb.transform.position, explosionRadius);
-        }
-        else if (collision.gameObject.GetComponent<Rigidbody>() != null)
+
+        if (collision.gameObject.GetComponent<Rigidbody>() != null)
         {
 
             ShootBullet(collision, forwardDir.normalized * force, rb.transform.position);
@@ -74,10 +71,7 @@ public class CopBulletMove : MonoBehaviour
         {
             collision.gameObject.GetComponent<NpcCivDeath>().ReduceHealth(damage);
         }
-        else if (collision.gameObject.GetComponent<NpcCopDeath>() != null)
-        {
-            collision.gameObject.GetComponent<NpcCopDeath>().ReduceHealth(damage);
-        } else if (collision.gameObject.GetComponent<PlayerDeath>() != null)
+         else if (collision.gameObject.GetComponent<PlayerDeath>() != null)
         {
             collision.gameObject.GetComponent<PlayerDeath>().ReduceHealth(damage);
         }

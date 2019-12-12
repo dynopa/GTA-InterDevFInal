@@ -17,7 +17,7 @@ public class NpcCopShoot : MonoBehaviour
     public float shootTimer = 0;
     public float shootThreshold = 1f;
 
-
+    bool inGunShootMode;
 
     void Start()
     {
@@ -48,26 +48,41 @@ public class NpcCopShoot : MonoBehaviour
 
         if (isShooting)
         {
-
-            if (Time.frameCount % 180 <= 2)
+            if (!inGunShootMode)
             {
-                GunFire(this.transform.forward);
-                
+
+                inGunShootMode = true;
+                StartCoroutine(ShootGun());
             }
+        }
+        else
+        {
+            inGunShootMode = false;
         }
     }
 
 
+    public IEnumerator ShootGun()
+    {
+        yield return new WaitForSeconds(1);
+        float t = 0;
+        while (t < .5f)
+        {
+            t += Time.deltaTime;
+            this.gameObject.GetComponent<NpcCopMoveWalk>().LookAtPlayer();
+            yield return new WaitForEndOfFrame();
+        }
+
+        GunFire(this.transform.forward);
+        isShooting = false;
+    }
 
     public void GunFire(Vector3 dir) // Shoots a bullet of a given gun in a given direction
     {
 
 
             GameObject bulletInstance = Instantiate(bulletPrefab, transform.position, Quaternion.LookRotation(dir));
- 
 
-
-        
     }
     }
 

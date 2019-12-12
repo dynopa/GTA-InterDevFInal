@@ -55,39 +55,41 @@ public class PlayerManager : MonoBehaviour
 
     private void Update()
     {
+        if (!inCar)
+        {
+            #region Gun Inputs
+            //Toggle weapon out or not  
+            if (Input.GetKeyDown(gunToggleInput))
+            {
+                playerGun.ToggleGunOut();
+            }
 
-        #region Gun Inputs
-        //Toggle weapon out or not  
-        if (Input.GetKeyDown(gunToggleInput)) 
-        {
-            playerGun.ToggleGunOut();
-        }
+            //Switch gun
+            if (Input.GetKeyDown(gunSelectLeftInput))
+            {
+                inventory.GunSelectLeft();
+            }
+            if (Input.GetKeyDown(gunSelectRightInput))
+            {
+                inventory.GunSelectRight();
+            }
 
-        //Switch gun
-        if (Input.GetKeyDown(gunSelectLeftInput))
-        {
-            inventory.GunSelectLeft();
-        }
-        if (Input.GetKeyDown(gunSelectRightInput))
-        {
-            inventory.GunSelectRight();
-        }
-        
-        //Fire weapon
-        if (Input.GetKeyDown(fireGunInput))
-        {
-            playerGun.GunFire(playerGun.currentGun, transform.forward);
-        }
-        if (Input.GetKey(fireGunInput) & playerGun.currentGun.fullyAuto)
-        {
-            playerGun.GunFire(playerGun.currentGun, transform.forward);
-        }
+            //Fire weapon
+            if (Input.GetKeyDown(fireGunInput))
+            {
+                playerGun.GunFire(playerGun.currentGun, transform.forward);
+            }
+            if (Input.GetKey(fireGunInput) & playerGun.currentGun.fullyAuto)
+            {
+                playerGun.GunFire(playerGun.currentGun, transform.forward);
+            }
 
-        if (Input.GetKeyDown(reloadInput))
-        {
-            playerGun.Reload();
+            if (Input.GetKeyDown(reloadInput))
+            {
+                playerGun.Reload();
+            }
+            #endregion
         }
-        #endregion
 
         playerGun.currentGun = inventory.availableGuns[inventory.currentGunSelection].gunType;
 
