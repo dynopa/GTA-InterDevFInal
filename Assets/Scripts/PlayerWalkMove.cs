@@ -12,6 +12,20 @@ public class PlayerWalkMove : MonoBehaviour
     [Range(0f, 1f)]
     public float rotationSnapSpeed;
 
+    [Header("Footsteps")]
+    public AudioSource footsteps;
+    [Range(0,1f)]
+    public float maxVolume;
+    [Range(0,1f)]
+    public float minVolume;
+    [Space]
+    public float maxSpeedForVolume;
+    [Space]
+    [Range(0,1f)]
+    public float footstepRaiseVolSpeed;
+
+    float currentFootstepVolume;
+
     void FixedUpdate()
     {
         Vector3 pos = PlayerManager.Instance.rb.transform.position;
@@ -31,8 +45,17 @@ public class PlayerWalkMove : MonoBehaviour
         }
         PlayerManager.Instance.rb.velocity = newVel;
 
+        if (!PlayerManager.Instance.inCar)
+        {
+            //Audio
+            float expectedFootstepVolume = PlayerManager.Instance.rb.velocity.magnitude.Remap(0, maxSpeedForVolume, minVolume, maxVolume);
+            currentFootstepVolume = currentFootstepVolume + (footstepRaiseVolSpeed * (expectedFootstepVolume - currentFootstepVolume));
+            footsteps.volume = currentFootstepVolume;
+        }
+        else footsteps.volume = 0;
+
         //Rotation Adjust
-        if (input.magnitude > .2f)
+        if (input.magnitude > .15f)
         {
             Quaternion suggestedRotation = Quaternion.LookRotation((newVel).normalized);
             Quaternion newRotation = Quaternion.Slerp(transform.rotation, suggestedRotation, rotationSnapSpeed);

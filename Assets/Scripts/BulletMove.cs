@@ -20,6 +20,7 @@ public class BulletMove : MonoBehaviour
     Vector3 forwardDir;
 
     Rigidbody rb;
+    public AudioClip hitSound;
    
 
     private void Awake()
@@ -54,9 +55,12 @@ public class BulletMove : MonoBehaviour
         {
            
                 ShootBullet(collision, forwardDir.normalized * force, rb.transform.position);
-            
 
+            SoundEffectManager.Instance.PlaySoundEffect(hitSound, Random.Range(.5f, .8f), true);
         }
+
+
+
 
         Destroy(this.gameObject);
     }

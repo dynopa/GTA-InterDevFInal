@@ -130,3 +130,4 @@ MonoBehaviour:
   upForceMod: 0
   explosiveParticles: {fileID: 475116407960586198, guid: 685864949f4562041883fc3035907e22,
     type: 3}
+  hitSound: {fileID: 8300000, guid: fdd55e3d9c346444786f72f18482beb4, type: 3}

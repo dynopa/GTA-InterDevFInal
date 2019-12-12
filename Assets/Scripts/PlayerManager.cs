@@ -160,7 +160,7 @@ public class PlayerManager : MonoBehaviour
         
         Destroy(currentCar.GetComponent<Rigidbody>());
 
-
+        playerWalkMove.footsteps.volume = 0;
         playerWalkMove.enabled = false;
         playerCarMove.enabled = true;
 

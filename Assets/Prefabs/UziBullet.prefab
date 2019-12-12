@@ -111,6 +111,9 @@ MonoBehaviour:
   damage: 0
   explosive: 0
   explosionRadius: 0
+  upForceMod: 0
+  explosiveParticles: {fileID: 0}
+  hitSound: {fileID: 8300000, guid: 37c60be806f434f45822fc66c905c45c, type: 3}
 --- !u!54 &9203428202053419750
 Rigidbody:
   m_ObjectHideFlags: 0

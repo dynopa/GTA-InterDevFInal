@@ -28,6 +28,11 @@ public class PlayerCarMove : MonoBehaviour
     public float drag;
     public float angularDrag;
 
+    [Header("Car Audio")]
+    public AudioClip[] sfx_hitCar;
+    public AudioClip[] sfx_hitPerson;
+    public AudioClip[] sfx_hitObstacle;
+
     [HideInInspector] public Rigidbody rb;
 
     private void Awake()
@@ -109,6 +114,11 @@ public class PlayerCarMove : MonoBehaviour
 
             ParticleManager.Instance.InstantiateExplosion(hitCarRB.transform.position, hitCarRB.transform);
             hitCarRB.AddExplosionForce(carLaunchForce * velocIncreaseForceMultiplier, PlayerManager.Instance.rb.transform.position, 15, carUpForce * velocIncreaseForceMultiplier, ForceMode.Impulse);
+
+
+            //Audio
+            SoundEffectManager.Instance.PlaySoundEffect(sfx_hitCar[Random.Range(0, sfx_hitCar.Length)], Random.Range(.7f, .85f), true);
+
         }
 
 
