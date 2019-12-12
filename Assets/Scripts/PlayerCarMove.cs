@@ -181,7 +181,7 @@ public class PlayerCarMove : MonoBehaviour
                 ParticleManager.Instance.InstantiateBloodSquirt(collision.transform.position, collision.transform);
             }
             }
-        else if (collision.transform.gameObject.layer == 21 && Random.Range(0,1f) > .4f)
+        else if (collision.transform.gameObject.layer == 21 && Random.Range(0,1f) > .75f)
         {
             SoundEffectManager.Instance.PlaySoundEffect(sfx_hitPerson[Random.Range(0, sfx_hitPerson.Length)], Random.Range(.1f, .2f), true);
         }
