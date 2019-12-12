@@ -5,7 +5,13 @@ using UnityEngine;
 public class PlayerDeath : MonoBehaviour
 {
 
-    [SerializeField] int health;
+    [SerializeField] public int health;
+
+    float healthTimer = 0;
+
+    int oldHealthTemp = 0;
+
+    bool recoveringHealth = false;
 
 
     // Start is called before the first frame update
@@ -13,6 +19,35 @@ public class PlayerDeath : MonoBehaviour
     {
         //set up the health of this NPC
         //health = this.GetComponent<NpcCivPersonalityManager>().personality.health;
+
+    }
+
+    private void Update()
+    {
+
+        healthTimer += Time.deltaTime;
+
+        if (healthTimer >= 5f)
+        {
+            if ( oldHealthTemp <= health) {
+                recoveringHealth = true;
+            }
+            else
+            {
+                recoveringHealth = false;
+            }
+            oldHealthTemp = health;
+        }
+
+
+        if (recoveringHealth)
+        {
+            if (health < 100)
+            {
+                health++;
+            }
+        }
+
 
     }
 
@@ -24,6 +59,7 @@ public class PlayerDeath : MonoBehaviour
     public void ReduceHealth(int damage)
     {
         health -= damage;
+        recoveringHealth = false;
         CheckForDeath();
 
     }
