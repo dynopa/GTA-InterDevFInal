@@ -22,7 +22,7 @@ MonoBehaviour:
   clipSize: 12
   fullyAuto: 0
   fireRate: 0
-  reloadTime: 0
+  reloadTime: 0.65
   bloomAmount: 10
   explosive: 0
   explosionRadius: 0
@@ -34,4 +34,4 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 992dbd7109f020f42b758aa9e960b6dc, type: 3}
   - {fileID: 8300000, guid: eab4ec8e4cbdbf540bafe14b21a5e2af, type: 3}
   - {fileID: 8300000, guid: 258bb46ab95f5da4c97002e94f9a6d46, type: 3}
-  reloadClip: {fileID: 0}
+  reloadClip: {fileID: 8300000, guid: 6b65cf29230d8674ca6ede90ebe4b8b8, type: 3}

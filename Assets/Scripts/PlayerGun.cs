@@ -61,8 +61,24 @@ public class PlayerGun : MonoBehaviour
     {
         if (!inReload && currentAmmo < currentGun.clipSize)
         {
+            PlayReloadSound();
             inReload = true;
             timeLeftOfReload = currentGun.reloadTime;
+        }
+    }
+
+    public void PlayReloadSound()
+    {
+        audioSrc[currentAudioIndex].pitch = 1;
+        audioSrc[currentAudioIndex].clip = currentGun.reloadClip;
+        audioSrc[currentAudioIndex].Play();
+        if (currentAudioIndex + 1 >= audioSrc.Length)
+        {
+            currentAudioIndex = 0;
+        }
+        else
+        {
+            currentAudioIndex++;
         }
     }
 
