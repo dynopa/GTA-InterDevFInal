@@ -56,18 +56,24 @@ public class NpcCopSpawn : MonoBehaviour
     /// <param name="coords">Coordinates where the NPC will spawn.</param>
     public void SpawnAtCoord(Vector3 coords)
     {
+        if (Vector3.Distance(this.transform.position, PlayerManager.Instance.gameObject.transform.position) > 25f) { 
         GameObject newNPC = Instantiate(NPCPrefab, coords, Quaternion.identity);
-
-        //newNPC.transform.parent = NPCParent.transform;
-
-        if (CheckForLegalSpawn(newNPC))
-        {
-            NpcCopManager.Instance.AddNpc(newNPC);
+            if (CheckForLegalSpawn(newNPC))
+            {
+                NpcCopManager.Instance.AddNpc(newNPC);
+            }
+            else
+            {
+                Destroy(newNPC);
+            }
         }
         else
         {
-            Destroy(newNPC);
+            SpawnAtCoord();
         }
+
+        //newNPC.transform.parent = NPCParent.transform;
+
 
     }
 
